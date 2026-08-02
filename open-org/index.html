@@ -858,8 +858,8 @@ footer {
     <circle cx="100" cy="100" r="9" stroke="#D4993D" stroke-width="0.6" opacity="0.4"/>
   </svg>
   <span class="section-label">open org standard · v0.1 working draft</span>
-  <h1>Your organisation,<br>in your own words.</h1>
-  <p class="lead">A data standard for organisations that would rather be found than filtered. Keep one living profile of who you are. Publish your strategy and the ideas you'd like to get on with. Decide who sees what, and for how long. Funders discover, organisations stay in control.</p>
+  <h1>Maintain your own truth, once.<br>Share it on your terms.</h1>
+  <p class="lead">A data standard for self-sovereign organisational profiles. Keep one living representation of your organisation, publish the ideas you'd like to get on with, and decide who sees what. Stop rewriting the same information for every funder. Funders discover, organisations stay in control.</p>
   <div class="hero-cta">
     <a href="#schema" class="btn btn-primary">Read the schema
       <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 7h8"/><path d="M8 4l3 3-3 3"/></svg>
@@ -875,9 +875,9 @@ footer {
 <section id="what">
   <span class="section-label">what it is</span>
   <h2>Your organisation is more than an application form</h2>
-  <p>The grant application was a good technology for a world short of information. A funder needed some way to find out what you do, what you need, and whether you can be trusted — so they asked everyone the same questions, in writing, and read the answers. That worked while writing well was hard.</p>
-  <p>It isn't hard any more. Polished prose is free now, and machines write applications for machines to read. The filter the whole thing depended on has gone, and nobody has replaced it with anything better.</p>
-  <p>Open Org is the other way round. You keep one living profile of your organisation — structured, machine-readable, written for you rather than for someone's form. You publish your strategy and the ideas you'd like to get on with. Funders come looking and find you already there. No form. Nothing rewritten for the fifth time this year.</p>
+  <p>A foundation puts out a call. Organisations write applications. A panel reads them, scores them, funds some, rejects most. This was designed for a world of information scarcity, where a funder needed some structured way to surface what organisations do, what they need, and whether they're credible.</p>
+  <p>That world is gone. LLMs made it ridiculously easy to produce polished sounding applications, and funders are drowning in a soup of pretty good. The response has been to use LLMs on the other side too, to sift and score — machines writing applications for machines to read, while the human decisions the money is supposed to enable get further away. The form's filter ran on information asymmetry. LLMs broke it by making proof cheap.</p>
+  <p>So what if the relationship ran the other way? You keep a living, structured, machine-readable representation of your organisation — not written for any specific funder or call, but maintained for your own purposes. You publish your strategy and your ideas. Funders become discoverers rather than gatekeepers: they go looking, and find you already there. This is an attempt to write that down as a standard, so it can be argued with.</p>
 
   <!-- ══ THE SHIFT ══ -->
   <figure class="diagram">
@@ -1024,7 +1024,7 @@ footer {
         </svg>
       </div>
       <h3>Federated</h3>
-      <p>No central platform. Open protocols, and your organisation as its own node on the network.</p>
+      <p>No one owns the index. No single entity decides who's visible. The organisation is its own node in the network.</p>
     </div>
     <div class="card accent-left">
       <div class="feature-icon">
@@ -1054,7 +1054,7 @@ footer {
         </svg>
       </div>
       <h3>Ideas-first</h3>
-      <p>Say what you'd like to do before anyone asks for it. Ideas stay visible, and they find each other.</p>
+      <p>Organisations are always thinking about what they'd do with resource. Publish it before anyone asks, and funders browse a landscape of ideas rather than applications.</p>
     </div>
   </div>
 </section>
@@ -1065,7 +1065,7 @@ footer {
 <section id="schema">
   <span class="section-label">schema</span>
   <h2>Four objects, one vocabulary</h2>
-  <p>Four core object types. Each has a <em>minimum viable</em> shape — the smallest set of fields that makes it actually useful, rather than merely valid. The schema stays loose so nobody is locked out, and the tooling nudges every object toward the shape that works. <a href="#" onclick="document.querySelector('.mvp-block').scrollIntoView({behavior:'smooth'}); return false;" style="color: var(--green); font-weight: 500;">See the minimums for each ↓</a></p>
+  <p>The application form jumbles together things that should be separate: identity (who is this organisation?), evidence (what have they done and learned?), intent (what do they want to do next?), and fit (does this align with what we fund?). Four objects, kept apart. Each has a <em>minimum viable</em> shape — the smallest set of fields that makes it actually useful, rather than merely valid. The schema stays loose so nobody is locked out, and the tooling nudges every object toward the shape that works. <a href="#" onclick="document.querySelector('.mvp-block').scrollIntoView({behavior:'smooth'}); return false;" style="color: var(--green); font-weight: 500;">See the minimums for each ↓</a></p>
 
   <div class="tree">
     <span class="file">open-org/</span><br>
@@ -1164,7 +1164,7 @@ footer {
     </div>
     <div class="card accent-teal">
       <h3>Idea</h3>
-      <p>Seeds of intent — themed, placed, loosely costed, linked to your evidence and to other organisations' ideas. Published before anyone asks.</p>
+      <p>Not a full proposal — more like a seed. Themed, placed, loosely costed, linked to your evidence and to other organisations' ideas. It sits there, discoverable, evolving.</p>
       <span class="tag">org-idea/v0.1</span>
     </div>
     <div class="card accent-gold">
@@ -1226,7 +1226,7 @@ footer {
 <section id="agent">
   <span class="section-label">the local agent</span>
   <h2>It pulls, it assembles, it federates</h2>
-  <p>The agent is your organisation's node on the network. It runs on your infrastructure, or somebody trustworthy runs it for you. It connects to the systems you already have over MCP and APIs, uses an LLM to turn what it finds into structured drafts, and federates whatever you approve. It proposes. You decide. It never publishes on its own.</p>
+  <p>The central artefact isn't a platform or a protocol — it's a local agent running on or for each organisation. It does the work so people don't have to. It connects to the systems you already use over MCP and APIs, an LLM assists with structuring and summarising, and it federates whatever you approve. You keep editorial control throughout. The organisation decides; the agent enforces.</p>
 
   <!-- ══ ANIMATED DATA FLOW MAP ══ -->
   <figure class="diagram diagram-bleed">
@@ -1444,7 +1444,7 @@ footer {
     </div>
     <div class="card">
       <h3>Enriches from public data</h3>
-      <p>Charity Commission, Companies House, your llms.txt. From a charity number alone, most of your baseline profile fills itself in.</p>
+      <p>Charity Commission, Companies House, your llms.txt. From a charity number alone, most of a baseline profile can be generated with no manual input at all.</p>
     </div>
     <div class="card">
       <h3>Structures with AI</h3>
@@ -1479,7 +1479,7 @@ footer {
 <section id="access">
   <span class="section-label">access and visibility</span>
   <h2>What's visible, and to whom</h2>
-  <p>Not everything is public, and nothing is open forever. Visibility works in bands. The outside world sees who you are, what you're for, and what you'd like to do. Anything deeper needs a grant, and every grant runs out. You set the bands. You see every view.</p>
+  <p>If funders could see everything, this would just become a new panopticon. So visibility works in bands. The outside world sees who you are, what you're for, and what you'd like to do. Anything deeper needs a grant, and every grant runs out. You see exactly who has looked at what, and you can revoke it. The power relationship has to be genuinely mutual, or none of this is worth building.</p>
 
   <!-- ══ VISIBILITY TIERS ══ -->
   <figure class="diagram">
@@ -1630,11 +1630,11 @@ footer {
         </g>
       </svg>
     </div>
-    <figcaption><strong>Structured strategy makes ecosystems visible.</strong> A funder looking for food insecurity work in coastal Norfolk might find no single organisation that covers it — but three whose strategies all name it, and who already work alongside one another. The matcher surfaces the cluster. Then the funder can fund the cluster, instead of picking one bid and hoping.</figcaption>
+    <figcaption><strong>Structured strategy makes ecosystems visible.</strong> A funder looking for food insecurity work in coastal Norfolk might find no single organisation that covers it — but three whose strategies all name it, and who already work alongside one another. The matcher surfaces the cluster — six organisations across two places, all circling similar work. Fund into ecosystems, not isolated bids.</figcaption>
   </figure>
 
   <div class="callout">
-    <strong>The sweet spot:</strong> relational enough that trust and conversation still do the real work. Structured enough that being found doesn't depend on who you already know. The playing field doesn't level itself — you have to build the level in.
+    <strong>Equity by design, not afterthought:</strong> relational enough that trust and conversation still do the real work, structured enough that being found doesn't depend on who you already know. The risk is obvious — if rich profiles are easier for well-resourced organisations to maintain, we've only moved the privilege barrier from who writes the best application to who maintains the best profile. The playing field doesn't level itself. You have to build the level in.
   </div>
 </section>
 
@@ -1644,7 +1644,7 @@ footer {
 <section id="positioning">
   <span class="section-label">positioning</span>
   <h2>Between relational and transactional</h2>
-  <p>Go purely relational and you drift back to the boys' club, where privilege decides who gets the relationships. Stay with the forms and you get an arms race nobody wins. Open Org sits in between: enough structure that being discovered doesn't depend on already being known.</p>
+  <p>There's a lot to like about going fully relational — it removes the performance and centres the relationship. But who gets the relationships? Who gets invited into the room? Access to funder networks is overwhelmingly a function of privilege, and the organisations doing the most important work in the most underserved communities are often furthest from those networks. So the question probably isn't "applications or relationships?" but how you build infrastructure that lets relationships form on more equitable terms.</p>
 
   <div class="spectrum-wrap">
     <div class="spectrum-end left">
@@ -1673,14 +1673,14 @@ footer {
 
   <div class="card accent-left" style="margin-bottom: 1.5rem;">
     <h3>Version 0.1 — Working Draft</h3>
-    <p>The schema is drafted, the architecture mapped, the integrations identified. None of it has met reality yet. What comes next: sharpen it with organisations and funders who'll tell me what's wrong with it, build a reference agent, and test the whole thing on real relationships.</p>
+    <p>This is an early exploration, not a finished concept — the writing is sometimes the thinking. The schema is drafted, the architecture mapped, the integrations identified, and none of it has met reality yet. What comes next: define the schema properly with input from organisations and funders, build a reference agent starting simple, then test it on real relationships — a willing funder, a small cohort of organisations, a genuine alternative to a funding round. See what breaks.</p>
   </div>
 
   <div class="grid-2">
     <div class="card">
       <span class="tag">phase 1</span>
       <h3>Prove the concept</h3>
-      <p style="font-size: 0.9rem;">Static profile generator. Manual strategy and idea creation. Submit to Murmurations. Basic funder search.</p>
+      <p style="font-size: 0.9rem;">Static profile generator, manual strategy and idea creation, submitted to Murmurations. Start small and build it up.</p>
     </div>
     <div class="card">
       <span class="tag">phase 2</span>
