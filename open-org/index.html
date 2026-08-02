@@ -498,6 +498,224 @@ code {
 .toc a.is-active::before { width: 22px; background: var(--green); opacity: 1; }
 @media (min-width: 1180px) { .toc { display: block; } }
 
+/* ─────────────────────────────────────────────────────
+   DIAGRAMS — shared scaffolding
+   ───────────────────────────────────────────────────── */
+figure.diagram { margin: 2.25rem 0; }
+figure.diagram figcaption {
+  font-size: 0.88rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin-top: 1rem;
+}
+figure.diagram figcaption strong { color: var(--text); font-weight: 500; }
+.diagram-frame {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.diagram-frame svg { display: block; width: 100%; height: auto; }
+.diagram-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.diagram-scroll svg { min-width: 940px; }
+/* Wide diagrams break out of the 820px text column */
+figure.diagram-bleed {
+  width: max(100%, min(1100px, calc(100vw - 4rem)));
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+/* ...but never underneath the fixed contents list */
+@media (min-width: 1180px) {
+  figure.diagram-bleed { width: max(100%, min(1100px, calc(100vw - 32rem))); }
+}
+.scroll-hint {
+  display: none;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-top: 0.65rem;
+}
+@media (max-width: 980px) { .scroll-hint { display: block; } }
+
+/* ── The animated flow map ── */
+.fm text { font-family: var(--font-body); }
+.fm .fm-zone { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.09em; fill: var(--text-muted); }
+.fm .fm-title { font-family: var(--font-heading); font-size: 15px; fill: var(--navy); }
+.fm .fm-title-sm { font-family: var(--font-heading); font-size: 13px; fill: var(--navy); }
+.fm .fm-sub { font-family: var(--font-mono); font-size: 9.5px; fill: var(--text-muted); }
+.fm .fm-item { font-size: 11.5px; fill: var(--text-body); }
+.fm .fm-chip-t { font-family: var(--font-mono); font-size: 10px; fill: var(--text-body); }
+.fm .fm-code { font-family: var(--font-mono); font-size: 11.5px; fill: var(--green); }
+.fm .fm-file { font-family: var(--font-mono); font-size: 10px; fill: var(--text-body); }
+
+.fm-box { fill: var(--card); stroke: var(--green-soft); stroke-width: 1.2; }
+.fm-box-open { fill: var(--card); stroke: #B9C7D2; stroke-width: 1.2; }
+.fm-box-funder { fill: var(--card); stroke: #BDB2D6; stroke-width: 1.2; }
+.fm-box-gate { fill: #FBF4E7; stroke: var(--gold); stroke-width: 1.4; }
+.fm-box-agent { fill: var(--green-bg); stroke: var(--green); stroke-width: 1.4; }
+.fm-box-pub { fill: #FFFFFF; stroke: var(--green); stroke-width: 1.4; }
+.fm-file-chip { fill: var(--green-bg); stroke: none; }
+.fm-zone-org { fill: rgba(45,139,122,0.035); stroke: var(--green); stroke-width: 1; stroke-dasharray: 6 5; opacity: 0.9; }
+.fm-zone-open { fill: rgba(139,164,184,0.06); stroke: #8BA4B8; stroke-width: 1; stroke-dasharray: 6 5; }
+.fm-zone-funder { fill: rgba(123,107,165,0.05); stroke: var(--purple); stroke-width: 1; stroke-dasharray: 6 5; }
+.fm-chip rect { fill: var(--card); }
+.fm-chip.on-tint rect { fill: #F7F4EC; }
+
+.fm-edge { fill: none; stroke-width: 1.4; stroke-dasharray: 3 7; animation: fm-flow 1.05s linear infinite; }
+.fm-edge-gated { fill: none; stroke-width: 1.5; stroke-dasharray: 9 5; animation: fm-flow-gated 1.5s linear infinite; }
+.fm-edge-quiet { fill: none; stroke-width: 1.2; stroke-dasharray: 1 4; }
+.e-org { stroke: var(--green); }
+.e-open { stroke: #8BA4B8; }
+.e-gold { stroke: var(--gold); }
+.e-funder { stroke: var(--purple); }
+.e-quiet { stroke: var(--text-muted); opacity: 0.7; }
+@keyframes fm-flow { to { stroke-dashoffset: -10; } }
+@keyframes fm-flow-gated { to { stroke-dashoffset: -14; } }
+
+/* Flow map legend */
+.fm-legend {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+  margin-top: 1.1rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+.fm-legend-group { display: flex; flex-wrap: wrap; gap: 0.5rem 1.1rem; }
+.fm-legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.fm-legend i {
+  display: inline-block; width: 12px; height: 12px; border-radius: 3px;
+  border: 1.2px solid currentColor; flex-shrink: 0;
+}
+.fm-legend .sw-org { color: var(--green); background: var(--green-bg); }
+.fm-legend .sw-open { color: #8BA4B8; background: rgba(139,164,184,0.14); }
+.fm-legend .sw-funder { color: var(--purple); background: rgba(123,107,165,0.12); }
+.fm-legend .sw-gate { color: var(--gold); background: #FBF4E7; }
+.fm-legend u { display: inline-block; width: 20px; height: 0; border-top-width: 1.5px; flex-shrink: 0; text-decoration: none; }
+.fm-legend .ln-open { border-top-style: dotted; border-top-color: var(--green); }
+.fm-legend .ln-gated { border-top-style: dashed; border-top-color: var(--gold); }
+.fm-legend .ln-off { border-top-style: dotted; border-top-color: var(--text-muted); }
+
+/* ── Two-panel comparison (the shift) ── */
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0 0; }
+.compare-panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.25rem 1.4rem;
+}
+.compare-panel.then { border-top: 3px solid var(--coral); }
+.compare-panel.now { border-top: 3px solid var(--green); }
+.compare-panel .panel-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.15rem;
+}
+.compare-panel.then .panel-kicker { color: var(--coral); }
+.compare-panel.now .panel-kicker { color: var(--green); }
+.compare-panel h3 { font-size: 1.1rem; margin-bottom: 0.6rem; }
+.compare-panel svg { display: block; width: 100%; height: auto; margin: 0.4rem 0 0.9rem; }
+.compare-panel p { font-size: 0.88rem; margin-bottom: 0; line-height: 1.6; }
+.compare text { font-family: var(--font-mono); font-size: 8.5px; fill: var(--text-muted); }
+@media (max-width: 700px) { .compare { grid-template-columns: 1fr; } }
+
+/* ── Object model + cluster diagrams ── */
+.dgm text { font-family: var(--font-body); }
+.dgm .d-title { font-family: var(--font-heading); font-size: 14px; fill: var(--navy); }
+.dgm .d-sub { font-family: var(--font-mono); font-size: 9px; fill: var(--text-muted); }
+.dgm .d-edge-label { font-family: var(--font-mono); font-size: 9.5px; fill: var(--text-muted); }
+.dgm .d-item { font-size: 11px; fill: var(--text-body); }
+.dgm .d-chip rect { fill: var(--card); }
+.dgm .d-node { fill: var(--card); stroke-width: 1.4; }
+.dgm .n-profile { stroke: var(--green); fill: var(--green-bg); }
+.dgm .n-strategy { stroke: var(--purple); }
+.dgm .n-idea { stroke: var(--teal); }
+.dgm .n-access { stroke: var(--gold); }
+.dgm .d-link { fill: none; stroke-width: 1.2; stroke-dasharray: 3 6; animation: fm-flow 1.4s linear infinite; }
+
+/* ── Visibility rings ── */
+.rings-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: center; }
+.rings-wrap svg { display: block; width: 100%; height: auto; }
+.rings-key { display: flex; flex-direction: column; gap: 0.75rem; }
+.rings-key-item { display: flex; gap: 0.7rem; align-items: flex-start; }
+.rings-key-item i {
+  width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; margin-top: 0.3rem;
+  border: 1.4px solid currentColor;
+}
+.rings-key-item .k-public { color: var(--green); background: var(--green); }
+.rings-key-item .k-summary { color: var(--green); background: var(--green-soft); }
+.rings-key-item .k-granted { color: var(--gold); background: #FBF4E7; }
+.rings-key-item .k-never { color: var(--text-muted); background: transparent; }
+.rings-key-item .k-label { font-size: 0.88rem; line-height: 1.5; }
+.rings-key-item .k-label strong { color: var(--text); font-weight: 500; display: block; font-size: 0.9rem; }
+.rings-key-item .k-label span { color: var(--text-muted); font-family: var(--font-mono); font-size: 0.72rem; }
+@media (max-width: 700px) { .rings-wrap { grid-template-columns: 1fr; } }
+
+/* ── Track (grant lifecycle, idea lifecycle) ── */
+.track {
+  display: grid;
+  gap: 0;
+  margin: 1.5rem 0 0;
+  position: relative;
+}
+.track.steps-4 { grid-template-columns: repeat(4, 1fr); }
+.track.steps-5 { grid-template-columns: repeat(5, 1fr); }
+.track-step { position: relative; padding: 0 0.4rem; text-align: center; }
+.track-step::before {
+  content: "";
+  position: absolute;
+  top: 7px; left: 0; right: 0;
+  height: 1.5px;
+  background: var(--border);
+}
+.track-step:first-child::before { left: 50%; }
+.track-step:last-child::before { right: 50%; }
+.track-dot {
+  position: relative;
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 1.6px solid var(--green-soft);
+  margin: 0 auto 0.6rem;
+  z-index: 1;
+}
+.track-step.is-key .track-dot { border-color: var(--gold); background: var(--gold); box-shadow: 0 0 0 4px #FBF4E7; }
+.track-step.is-end .track-dot { border-color: var(--text-muted); border-style: dashed; }
+.track-name {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.track-step.is-key .track-name { color: var(--gold); }
+.track-note { font-size: 0.76rem; color: var(--text-muted); line-height: 1.45; display: block; }
+.track-foot {
+  margin-top: 1.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .track.steps-4, .track.steps-5 { grid-template-columns: 1fr; gap: 1.1rem; }
+  .track-step { text-align: left; padding: 0 0 0 1.6rem; }
+  .track-step::before { top: 0; bottom: 0; left: 7px; right: auto; width: 1.5px; height: auto; }
+  .track-step:first-child::before { top: 7px; left: 7px; }
+  .track-step:last-child::before { bottom: 50%; top: 0; }
+  .track-dot { position: absolute; left: 0; top: 0; margin: 0; }
+}
+
+/* Reduced motion — covers the hero pulse and every diagram animation */
+@media (prefers-reduced-motion: reduce) {
+  .hero-visual circle.node-ring,
+  .hero-visual circle.node-ring-2,
+  .hero-visual circle.node-ring-3 { animation: none; opacity: 0.45; }
+  .fm-edge, .fm-edge-gated, .dgm .d-link { animation: none; }
+  .mvp-panel.is-active { animation: none; }
+}
+
 /* FOOTER */
 footer {
   background: var(--navy);
@@ -575,6 +793,7 @@ footer {
     <li><a href="#schema" data-toc="schema">Schema</a></li>
     <li><a href="#layers" data-toc="layers">Architecture</a></li>
     <li><a href="#agent" data-toc="agent">Agent</a></li>
+    <li><a href="#access" data-toc="access">Access</a></li>
     <li><a href="#strategy" data-toc="strategy">Strategy</a></li>
     <li><a href="#positioning" data-toc="positioning">Positioning</a></li>
     <li><a href="#getting-started" data-toc="getting-started">Get started</a></li>
@@ -658,6 +877,93 @@ footer {
   <h2>Your organisation is more than an application form</h2>
   <p>The grant application was a technology for a pre-digital information environment. LLMs broke the filter it relied on. We need something different.</p>
   <p>Open Org lets organisations maintain a living, structured, machine-readable profile of themselves — not written for any specific funder, but maintained for their own purposes. Funders become discoverers, not gatekeepers. The application form disappears. In its place: self-sovereign profiles, published ideas, and transparent relationships between resource and purpose.</p>
+
+  <!-- ══ THE SHIFT ══ -->
+  <figure class="diagram">
+    <div class="compare">
+      <div class="compare-panel then">
+        <span class="panel-kicker">the form</span>
+        <h3>One narrow slot</h3>
+        <svg viewBox="0 0 320 176" role="img" aria-label="Many organisations funnel into a single application form; only a couple pass through it.">
+          <g aria-hidden="true">
+            <!-- organisations -->
+            <g fill="none" stroke="#8BA4B8" stroke-width="1.2">
+              <circle cx="24" cy="26" r="5"/><circle cx="24" cy="48" r="5"/>
+              <circle cx="24" cy="70" r="5"/><circle cx="24" cy="92" r="5"/>
+              <circle cx="24" cy="114" r="5"/><circle cx="24" cy="136" r="5"/>
+            </g>
+            <!-- everything converges on one point -->
+            <g fill="none" stroke="#8BA4B8" stroke-width="0.9" opacity="0.55">
+              <path d="M31 26 C 90 26, 110 78, 141 84"/>
+              <path d="M31 48 C 90 48, 112 82, 141 86"/>
+              <path d="M31 70 C 90 70, 116 84, 141 88"/>
+              <path d="M31 92 C 90 92, 116 88, 141 90"/>
+              <path d="M31 114 C 90 114, 112 90, 141 92"/>
+              <path d="M31 136 C 90 136, 110 94, 141 94"/>
+            </g>
+            <!-- the form: a wall with one slot -->
+            <path d="M152 18 L152 82" stroke="#C75B3A" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M152 96 L152 158" stroke="#C75B3A" stroke-width="3.5" stroke-linecap="round"/>
+            <!-- the few that get through -->
+            <g fill="none" stroke="#C75B3A" stroke-width="1.1">
+              <path d="M158 89 C 200 89, 220 62, 258 60"/>
+              <path d="M158 89 C 200 89, 220 116, 258 118"/>
+              <circle cx="266" cy="60" r="5.5" fill="#C75B3A" fill-opacity="0.18"/>
+              <circle cx="266" cy="118" r="5.5" fill="#C75B3A" fill-opacity="0.18"/>
+            </g>
+            <text x="10" y="168">many apply</text>
+            <text x="152" y="12" text-anchor="middle" fill="#C75B3A">the form</text>
+            <text x="310" y="168" text-anchor="end">a few get through</text>
+          </g>
+        </svg>
+        <p>The filter was scarcity of information. LLMs removed it — now the form rewards whoever writes best, not whoever works best.</p>
+      </div>
+
+      <div class="compare-panel now">
+        <span class="panel-kicker">open org</span>
+        <h3>Many open doors</h3>
+        <svg viewBox="0 0 320 176" role="img" aria-label="Organisations publish their own profiles outward; a funder reaches into the network and discovers several of them directly.">
+          <g aria-hidden="true">
+            <!-- funder reaching in -->
+            <g fill="none" stroke="#2D8B7A" stroke-width="1" stroke-dasharray="3 4" opacity="0.75">
+              <path d="M246 88 C 200 82, 170 40, 108 36"/>
+              <path d="M246 88 C 200 88, 170 96, 96 88"/>
+              <path d="M246 88 C 200 94, 170 132, 84 140"/>
+              <path d="M246 88 C 210 80, 200 58, 172 62"/>
+            </g>
+            <!-- organisations, each publishing outward -->
+            <g fill="none" stroke="#2D8B7A">
+              <g stroke-width="1.1">
+                <circle cx="100" cy="36" r="6"/><circle cx="88" cy="88" r="6"/>
+                <circle cx="76" cy="140" r="6"/><circle cx="164" cy="62" r="6"/>
+                <circle cx="150" cy="126" r="6"/><circle cx="30" cy="60" r="6"/>
+                <circle cx="38" cy="116" r="6"/>
+              </g>
+              <g stroke-width="0.8" opacity="0.4">
+                <circle cx="100" cy="36" r="12"/><circle cx="88" cy="88" r="12"/>
+                <circle cx="76" cy="140" r="12"/><circle cx="164" cy="62" r="12"/>
+                <circle cx="150" cy="126" r="12"/><circle cx="30" cy="60" r="12"/>
+                <circle cx="38" cy="116" r="12"/>
+              </g>
+            </g>
+            <g fill="#D4993D">
+              <circle cx="100" cy="36" r="2"/><circle cx="88" cy="88" r="2"/>
+              <circle cx="76" cy="140" r="2"/><circle cx="164" cy="62" r="2"/>
+              <circle cx="150" cy="126" r="2"/><circle cx="30" cy="60" r="2"/>
+              <circle cx="38" cy="116" r="2"/>
+            </g>
+            <!-- the funder -->
+            <rect x="248" y="72" width="34" height="34" rx="8" fill="#FEFCF9" stroke="#7B6BA5" stroke-width="1.4"/>
+            <circle cx="265" cy="89" r="4" fill="#7B6BA5" fill-opacity="0.3" stroke="#7B6BA5" stroke-width="1"/>
+            <text x="10" y="168">everyone is visible</text>
+            <text x="310" y="168" text-anchor="end" fill="#7B6BA5">funders discover</text>
+          </g>
+        </svg>
+        <p>Organisations publish once, for themselves. Funders search a network of living profiles and reach out directly — no slot to squeeze through.</p>
+      </div>
+    </div>
+    <figcaption><strong>The application form was a filter for an information-scarce world.</strong> Open Org replaces the single gate with a network of profiles that are always there to be found.</figcaption>
+  </figure>
 
   <div class="grid-3">
     <div class="card accent-left">
@@ -771,6 +1077,79 @@ footer {
     └── <span class="file">vocabulary/themes.json</span> <span class="desc">— 30 canonical thematic tags</span>
   </div>
 
+  <!-- ══ OBJECT MODEL ══ -->
+  <figure class="diagram">
+    <div class="diagram-frame">
+      <svg class="dgm" viewBox="0 0 760 400" role="img" aria-labelledby="om-title om-desc">
+        <title id="om-title">How the four objects relate</title>
+        <desc id="om-desc">The profile is the hub. A strategy and an idea each name the organisation whose profile it is. Strategy priorities shape the ideas an organisation publishes. Ideas point back to evidence held in the profile. An access grant sits underneath both profile and strategy, controlling how much depth anyone else can see.</desc>
+        <defs>
+          <marker id="om-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M1.5 1.8 L9 5 L1.5 8.2" fill="none" stroke="#8BA4B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+          <marker id="om-ah-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M1.5 1.8 L9 5 L1.5 8.2" fill="none" stroke="#D4993D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+
+        <g aria-hidden="true">
+          <!-- links, beneath the nodes -->
+          <path class="d-link" stroke="#7B6BA5" d="M230 62 L 526 62" marker-end="url(#om-ah)"/>
+          <path class="d-link" stroke="#8BA4B8" d="M230 96 C 258 96, 260 156, 282 170" marker-end="url(#om-ah)"/>
+          <path class="d-link" stroke="#8BA4B8" d="M530 96 C 502 96, 500 156, 478 170" marker-end="url(#om-ah)"/>
+          <path class="d-link" stroke="#2D8B7A" d="M474 212 C 566 218, 644 192, 656 128" marker-end="url(#om-ah)"/>
+          <path class="d-link" stroke="#D4993D" d="M380 296 L 380 250" marker-end="url(#om-ah-gold)"/>
+          <path class="d-link" stroke="#D4993D" d="M135 296 L 135 126" marker-end="url(#om-ah-gold)"/>
+
+          <!-- access grant: a band under everything it governs -->
+          <rect class="d-node n-access" x="40" y="296" width="680" height="76" rx="12"/>
+          <text class="d-title" x="62" y="326">Access grant</text>
+          <text class="d-sub" x="62" y="346">who · what · until when — logged, expiring, revocable</text>
+          <text class="d-sub" x="698" y="326" text-anchor="end" fill="#D4993D">no expiry, no grant</text>
+          <text class="d-sub" x="698" y="346" text-anchor="end">the standard rejects indefinite access</text>
+
+          <!-- strategy -->
+          <rect class="d-node n-strategy" x="40" y="36" width="190" height="90" rx="12"/>
+          <text class="d-title" x="58" y="64">Strategy</text>
+          <text class="d-sub" x="58" y="82">priorities · tensions</text>
+          <text class="d-sub" x="58" y="98">learning · what we won't do</text>
+          <text class="d-sub" x="58" y="114" fill="#7B6BA5">how the org thinks</text>
+
+          <!-- idea -->
+          <rect class="d-node n-idea" x="530" y="36" width="190" height="90" rx="12"/>
+          <text class="d-title" x="548" y="64">Idea</text>
+          <text class="d-sub" x="548" y="82">themed · placed · costed</text>
+          <text class="d-sub" x="548" y="98">seed → developing → ready</text>
+          <text class="d-sub" x="548" y="114" fill="#2D8B7A">published before it's asked for</text>
+
+          <!-- profile (hub) -->
+          <rect class="d-node n-profile" x="282" y="150" width="196" height="100" rx="12"/>
+          <text class="d-title" x="380" y="180" text-anchor="middle">Profile</text>
+          <text class="d-sub" x="380" y="200" text-anchor="middle">identity · mission · evidence</text>
+          <text class="d-sub" x="380" y="216" text-anchor="middle">governance · culture</text>
+          <text class="d-sub" x="380" y="238" text-anchor="middle" fill="#2D8B7A">the living record</text>
+
+          <!-- edge labels, on opaque chips so the lines run behind them -->
+          <g class="d-chip">
+            <rect x="316" y="48" width="128" height="20" rx="5"/>
+            <text class="d-edge-label" x="380" y="62" text-anchor="middle" fill="#7B6BA5">priorities shape ideas</text>
+            <rect x="224" y="122" width="68" height="18" rx="5"/>
+            <text class="d-edge-label" x="258" y="135" text-anchor="middle">belongs to</text>
+            <rect x="468" y="122" width="68" height="18" rx="5"/>
+            <text class="d-edge-label" x="502" y="135" text-anchor="middle">belongs to</text>
+            <rect x="566" y="196" width="88" height="18" rx="5"/>
+            <text class="d-edge-label" x="610" y="209" text-anchor="middle">cites evidence</text>
+            <rect x="96" y="202" width="78" height="18" rx="5"/>
+            <text class="d-edge-label" x="135" y="215" text-anchor="middle" fill="#D4993D">gates depth</text>
+            <rect x="341" y="264" width="78" height="18" rx="5"/>
+            <text class="d-edge-label" x="380" y="277" text-anchor="middle" fill="#D4993D">gates depth</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <figcaption><strong>The profile is the hub; everything else points at it.</strong> Strategy and ideas are separate objects precisely so they can be published, versioned and read on their own — and so an access grant can open one without opening the others.</figcaption>
+  </figure>
+
   <div class="grid-2">
     <div class="card accent-left">
       <h3>Profile</h3>
@@ -848,6 +1227,215 @@ footer {
   <h2>It pulls, it assembles, it federates</h2>
   <p>The agent runs on or for each organisation. It connects to existing systems via MCP servers and APIs, structures data with LLM assistance, proposes drafts for human review, and federates the published profile across the network. It never publishes without human approval.</p>
 
+  <!-- ══ ANIMATED DATA FLOW MAP ══ -->
+  <figure class="diagram diagram-bleed">
+    <div class="diagram-frame diagram-scroll">
+      <svg class="fm" viewBox="0 78 1200 584" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labelledby="fm-title fm-desc">
+        <title id="fm-title">How information moves through Open Org</title>
+        <desc id="fm-desc">A map of data flow. The organisation's private systems (CRM, documents, finance, board minutes) and public registers feed into the organisation's own agent over MCP and public APIs. The agent drafts records; a human approves them; only then are they published as JSON on the organisation's own domain. From there the public subset flows out to the Murmurations index, to Hypercerts for evidence claims, and to federated peers over ActivityPub or AT Protocol. Funders query the index, read public fields, and must request a time-limited grant to see anything deeper. Conversation happens outside the system.</desc>
+
+        <defs>
+          <marker id="fm-ah-org" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M1.5 1.8 L9 5 L1.5 8.2" fill="none" stroke="#2D8B7A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+          <marker id="fm-ah-open" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M1.5 1.8 L9 5 L1.5 8.2" fill="none" stroke="#8BA4B8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+          <marker id="fm-ah-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M1.5 1.8 L9 5 L1.5 8.2" fill="none" stroke="#D4993D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+          <marker id="fm-ah-funder" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M1.5 1.8 L9 5 L1.5 8.2" fill="none" stroke="#7B6BA5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+          <marker id="fm-ah-quiet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M1.5 1.8 L9 5 L1.5 8.2" fill="none" stroke="#8BA4B8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+
+        <!-- ── ownership zones ── -->
+        <g aria-hidden="true">
+          <rect class="fm-zone-org" x="270" y="92" width="560" height="428" rx="14"/>
+          <rect class="fm-zone-open" x="918" y="92" width="274" height="290" rx="14"/>
+          <rect class="fm-zone-funder" x="918" y="420" width="274" height="160" rx="14"/>
+        </g>
+
+        <!-- ── edges (drawn beneath the nodes) ── -->
+        <g aria-hidden="true">
+          <!-- private systems → agent : MCP -->
+          <path id="fm-p1" class="fm-edge e-org" d="M190 127 C 232 127, 248 160, 290 165" marker-end="url(#fm-ah-org)"/>
+          <path class="fm-edge e-org" d="M190 179 C 232 179, 248 183, 290 185" marker-end="url(#fm-ah-org)"/>
+          <path class="fm-edge e-org" d="M190 231 C 232 231, 248 209, 290 205" marker-end="url(#fm-ah-org)"/>
+          <path class="fm-edge e-org" d="M190 283 C 236 283, 250 232, 290 225" marker-end="url(#fm-ah-org)"/>
+          <!-- public registers → agent : public API -->
+          <path class="fm-edge e-open" d="M190 379 C 246 379, 256 280, 290 258" marker-end="url(#fm-ah-open)"/>
+          <!-- agent ⇄ human approval -->
+          <path id="fm-p3" class="fm-edge e-org" d="M370 300 L 370 350" marker-end="url(#fm-ah-org)"/>
+          <path class="fm-edge e-gold" d="M440 350 L 440 300" marker-end="url(#fm-ah-gold)"/>
+          <!-- approved → published on own domain -->
+          <path id="fm-p4" class="fm-edge e-org" d="M500 390 L 600 390" marker-end="url(#fm-ah-org)"/>
+          <!-- published ⇄ hypercerts -->
+          <path class="fm-edge e-open" d="M810 330 C 862 322, 880 200, 930 157" marker-end="url(#fm-ah-open)" marker-start="url(#fm-ah-open)"/>
+          <!-- published → federated peers -->
+          <path class="fm-edge e-org" d="M810 380 C 866 372, 876 276, 930 239" marker-end="url(#fm-ah-org)"/>
+          <!-- published → murmurations index -->
+          <path id="fm-p7" class="fm-edge e-org" d="M810 430 C 866 424, 878 352, 930 325" marker-end="url(#fm-ah-org)"/>
+          <!-- murmurations ⇄ funder -->
+          <path id="fm-p8" class="fm-edge e-open" d="M1055 362 L 1055 452" marker-end="url(#fm-ah-open)" marker-start="url(#fm-ah-open)"/>
+          <!-- funder → access request (gated) -->
+          <path class="fm-edge-gated e-funder" d="M930 505 C 820 575, 600 606, 470 560 C 420 536, 400 482, 396 434" marker-end="url(#fm-ah-funder)"/>
+          <!-- published → funder : public fields -->
+          <path class="fm-edge e-org" d="M790 482 C 850 500, 890 494, 926 490" marker-end="url(#fm-ah-org)"/>
+          <!-- published → funder : time-limited grant (gated) -->
+          <path class="fm-edge-gated e-gold" d="M762 482 C 800 542, 862 548, 924 528" marker-end="url(#fm-ah-gold)"/>
+          <!-- dialogue, outside the system -->
+          <path class="fm-edge-quiet e-quiet" d="M1000 566 C 900 622, 800 644, 706 648" marker-end="url(#fm-ah-quiet)"/>
+        </g>
+
+        <!-- ── zone labels ── -->
+        <g aria-hidden="true">
+          <text class="fm-zone" x="20" y="96">PRIVATE · THE ORG'S OWN SYSTEMS</text>
+          <text class="fm-zone" x="20" y="336">OPEN DATA · THIRD PARTY</text>
+          <text class="fm-zone" x="286" y="114" fill="#2D8B7A">THE ORGANISATION'S NODE · NOTHING LEAVES WITHOUT APPROVAL</text>
+          <text class="fm-zone" x="930" y="114">OPEN INFRASTRUCTURE · NO SINGLE OWNER</text>
+          <text class="fm-zone" x="930" y="442" fill="#7B6BA5">THE FUNDER</text>
+        </g>
+
+        <!-- ── source systems ── -->
+        <g aria-hidden="true">
+          <rect class="fm-box" x="20" y="106" width="170" height="42" rx="8"/>
+          <text class="fm-item" x="105" y="132" text-anchor="middle">CRM</text>
+          <rect class="fm-box" x="20" y="158" width="170" height="42" rx="8"/>
+          <text class="fm-item" x="105" y="184" text-anchor="middle">Documents</text>
+          <rect class="fm-box" x="20" y="210" width="170" height="42" rx="8"/>
+          <text class="fm-item" x="105" y="236" text-anchor="middle">Finance</text>
+          <rect class="fm-box" x="20" y="262" width="170" height="42" rx="8"/>
+          <text class="fm-item" x="105" y="288" text-anchor="middle">Board minutes</text>
+
+          <rect class="fm-box-open" x="20" y="348" width="170" height="62" rx="8"/>
+          <text class="fm-title-sm" x="105" y="374" text-anchor="middle">Public registers</text>
+          <text class="fm-sub" x="105" y="391" text-anchor="middle">charity commission · CH</text>
+        </g>
+
+        <!-- ── the agent ── -->
+        <g aria-hidden="true">
+          <rect class="fm-box-agent" x="290" y="130" width="210" height="170" rx="10"/>
+          <text class="fm-title" x="306" y="158">The agent</text>
+          <text class="fm-sub" x="306" y="174">runs for the organisation</text>
+          <circle cx="310" cy="206" r="2.4" fill="#2D8B7A"/>
+          <text class="fm-item" x="322" y="210">pulls from your systems</text>
+          <circle cx="310" cy="234" r="2.4" fill="#2D8B7A"/>
+          <text class="fm-item" x="322" y="238">enriches from open data</text>
+          <circle cx="310" cy="262" r="2.4" fill="#2D8B7A"/>
+          <text class="fm-item" x="322" y="266">drafts structured records</text>
+        </g>
+
+        <!-- ── the human gate ── -->
+        <g aria-hidden="true">
+          <rect class="fm-box-gate" x="290" y="350" width="210" height="80" rx="10"/>
+          <circle cx="311" cy="378" r="3.2" fill="#D4993D"/>
+          <text class="fm-title-sm" x="324" y="382">Human approval</text>
+          <text class="fm-sub" x="306" y="404">nothing publishes without it</text>
+          <text class="fm-sub" x="306" y="419">requests decided here too</text>
+        </g>
+
+        <!-- ── published on the org's own domain ── -->
+        <g aria-hidden="true">
+          <rect class="fm-box-pub" x="600" y="300" width="210" height="180" rx="10"/>
+          <text class="fm-sub" x="612" y="322">ON YOUR OWN DOMAIN</text>
+          <text class="fm-code" x="612" y="342">.well-known/open-org/</text>
+          <rect class="fm-file-chip" x="612" y="352" width="186" height="22" rx="5"/>
+          <text class="fm-file" x="620" y="367">org-profile.json</text>
+          <rect class="fm-file-chip" x="612" y="378" width="186" height="22" rx="5"/>
+          <text class="fm-file" x="620" y="393">org-strategy.json</text>
+          <rect class="fm-file-chip" x="612" y="404" width="186" height="22" rx="5"/>
+          <text class="fm-file" x="620" y="419">org-idea.json</text>
+          <rect class="fm-file-chip" x="612" y="430" width="186" height="22" rx="5"/>
+          <text class="fm-file" x="620" y="445">org-access-grant.json</text>
+          <text class="fm-sub" x="612" y="468">you host it · you can revoke it</text>
+        </g>
+
+        <!-- ── open infrastructure ── -->
+        <g aria-hidden="true">
+          <rect class="fm-box-open" x="930" y="124" width="250" height="66" rx="10"/>
+          <text class="fm-title-sm" x="942" y="150">Hypercerts</text>
+          <text class="fm-sub" x="942" y="170">verifiable evidence claims</text>
+
+          <rect class="fm-box-open" x="930" y="206" width="250" height="66" rx="10"/>
+          <text class="fm-title-sm" x="942" y="232">Federated peers</text>
+          <text class="fm-sub" x="942" y="252">other orgs · followers</text>
+
+          <rect class="fm-box-open" x="930" y="288" width="250" height="74" rx="10"/>
+          <text class="fm-title-sm" x="942" y="312">Murmurations index</text>
+          <text class="fm-sub" x="942" y="331">distributed discovery</text>
+          <text class="fm-sub" x="942" y="347">no platform · no gatekeeper</text>
+        </g>
+
+        <!-- ── the funder ── -->
+        <g aria-hidden="true">
+          <rect class="fm-box-funder" x="930" y="452" width="250" height="112" rx="10"/>
+          <text class="fm-title-sm" x="942" y="478">Funder</text>
+          <circle cx="946" cy="499" r="2.2" fill="#7B6BA5"/>
+          <text class="fm-item" x="957" y="503">searches the index</text>
+          <circle cx="946" cy="521" r="2.2" fill="#7B6BA5"/>
+          <text class="fm-item" x="957" y="525">requests deeper access</text>
+          <circle cx="946" cy="543" r="2.2" fill="#D4993D"/>
+          <text class="fm-item" x="957" y="547">every view is logged</text>
+        </g>
+
+        <!-- ── travelling packets: sources → agent → approval → published → index → funder ── -->
+        <g class="fm-dots" aria-hidden="true">
+          <circle r="3.4" fill="#2D8B7A" opacity="0.9">
+            <animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#fm-p1" xlink:href="#fm-p1"/></animateMotion>
+          </circle>
+          <circle r="3.4" fill="#2D8B7A" opacity="0.9">
+            <animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#fm-p3" xlink:href="#fm-p3"/></animateMotion>
+          </circle>
+          <circle r="3.4" fill="#2D8B7A" opacity="0.9">
+            <animateMotion dur="3s" repeatCount="indefinite"><mpath href="#fm-p4" xlink:href="#fm-p4"/></animateMotion>
+          </circle>
+          <circle r="3.4" fill="#2D8B7A" opacity="0.9">
+            <animateMotion dur="3.4s" repeatCount="indefinite"><mpath href="#fm-p7" xlink:href="#fm-p7"/></animateMotion>
+          </circle>
+          <circle r="3.4" fill="#8BA4B8" opacity="0.9">
+            <animateMotion dur="2.8s" repeatCount="indefinite"><mpath href="#fm-p8" xlink:href="#fm-p8"/></animateMotion>
+          </circle>
+        </g>
+
+        <!-- ── protocol chips (on top of the edges) ── -->
+        <g class="fm-chips" aria-hidden="true">
+          <g class="fm-chip"><rect x="218" y="134" width="44" height="20" rx="5"/><text class="fm-chip-t" x="240" y="148" text-anchor="middle">MCP</text></g>
+          <g class="fm-chip"><rect x="211" y="317" width="74" height="20" rx="5"/><text class="fm-chip-t" x="248" y="331" text-anchor="middle">public API</text></g>
+          <g class="fm-chip on-tint"><rect x="344" y="315" width="52" height="20" rx="5"/><text class="fm-chip-t" x="370" y="329" text-anchor="middle">draft</text></g>
+          <g class="fm-chip on-tint"><rect x="409" y="315" width="62" height="20" rx="5"/><text class="fm-chip-t" x="440" y="329" text-anchor="middle" fill="#D4993D">approve</text></g>
+          <g class="fm-chip on-tint"><rect x="509" y="380" width="82" height="20" rx="5"/><text class="fm-chip-t" x="550" y="394" text-anchor="middle">HTTPS · JSON</text></g>
+          <g class="fm-chip"><rect x="826" y="235" width="94" height="20" rx="5"/><text class="fm-chip-t" x="873" y="249" text-anchor="middle">Hypercert claims</text></g>
+          <g class="fm-chip"><rect x="833" y="298" width="78" height="30" rx="5"/><text class="fm-chip-t" x="872" y="311" text-anchor="middle">ActivityPub</text><text class="fm-chip-t" x="872" y="323" text-anchor="middle">AT Protocol</text></g>
+          <g class="fm-chip"><rect x="822" y="367" width="100" height="30" rx="5"/><text class="fm-chip-t" x="872" y="380" text-anchor="middle">Murmurations</text><text class="fm-chip-t" x="872" y="392" text-anchor="middle" fill="#8BA4B8">public fields</text></g>
+          <g class="fm-chip"><rect x="1007" y="392" width="96" height="30" rx="5"/><text class="fm-chip-t" x="1055" y="405" text-anchor="middle">query</text><text class="fm-chip-t" x="1055" y="417" text-anchor="middle" fill="#8BA4B8">public results</text></g>
+          <g class="fm-chip"><rect x="819" y="480" width="78" height="18" rx="5"/><text class="fm-chip-t" x="858" y="493" text-anchor="middle" fill="#2D8B7A">public fields</text></g>
+          <g class="fm-chip"><rect x="793" y="534" width="106" height="18" rx="5"/><text class="fm-chip-t" x="846" y="547" text-anchor="middle" fill="#D4993D">time-limited grant</text></g>
+          <g class="fm-chip"><rect x="654" y="582" width="92" height="18" rx="5"/><text class="fm-chip-t" x="700" y="595" text-anchor="middle" fill="#7B6BA5">access request</text></g>
+          <text class="fm-sub" x="694" y="652" text-anchor="end">dialogue · outside the system</text>
+        </g>
+      </svg>
+    </div>
+    <div class="fm-legend">
+      <div class="fm-legend-group">
+        <span><i class="sw-org"></i> the organisation's</span>
+        <span><i class="sw-open"></i> open infrastructure</span>
+        <span><i class="sw-funder"></i> the funder's</span>
+        <span><i class="sw-gate"></i> human decision</span>
+      </div>
+      <div class="fm-legend-group">
+        <span><u class="ln-open"></u> open flow</span>
+        <span><u class="ln-gated"></u> needs a grant</span>
+        <span><u class="ln-off"></u> off-system</span>
+      </div>
+    </div>
+    <p class="scroll-hint">↔ scroll the map sideways</p>
+    <figcaption><strong>Read it left to right.</strong> Data only ever moves outward through one gate — a human approving a draft. Everything published sits on the organisation's own domain, as files it can change or delete. The open infrastructure in the middle is nobody's platform: the Murmurations index holds pointers, not the data. A funder can search and read public fields freely, but anything deeper requires a time-limited grant the organisation issues and can revoke — and the conversation that follows happens outside the system entirely.</figcaption>
+  </figure>
+
   <div class="grid-2">
     <div class="card">
       <h3>Pulls from what exists</h3>
@@ -881,6 +1469,85 @@ footer {
       <p style="font-size: 0.9rem;">An infrastructure body runs agents for multiple organisations. The equity solution.</p>
     </div>
   </div>
+
+</section>
+
+<hr class="divider">
+
+<!-- ACCESS -->
+<section id="access">
+  <span class="section-label">access and visibility</span>
+  <h2>What's visible, and to whom</h2>
+  <p>Not everything is public, and nothing is permanently open. Visibility works in bands: the outer world sees identity, mission and ideas; depth requires a grant that expires. The organisation sets the bands, and sees every view.</p>
+
+  <!-- ══ VISIBILITY TIERS ══ -->
+  <figure class="diagram">
+    <div class="diagram-frame">
+      <div class="rings-wrap">
+        <svg viewBox="0 0 320 320" role="img" aria-label="Four concentric bands of visibility. The public core holds identity, mission and ideas. Around it, summaries of evidence and strategy priorities. Outside that, a band that requires an access grant: tensions, learning, full evidence and governance. The outermost band is never shared.">
+          <g aria-hidden="true">
+            <circle cx="160" cy="160" r="150" fill="none" stroke="#8BA4B8" stroke-width="1.2" stroke-dasharray="1 4"/>
+            <circle cx="160" cy="160" r="118" fill="#FBF4E7" fill-opacity="0.8" stroke="#D4993D" stroke-width="1.3" stroke-dasharray="7 5"/>
+            <circle cx="160" cy="160" r="86" fill="#A8C5B8" fill-opacity="0.34" stroke="#2D8B7A" stroke-width="1" stroke-opacity="0.5"/>
+            <circle cx="160" cy="160" r="52" fill="#2D8B7A" fill-opacity="0.9" stroke="none"/>
+            <g font-family="'JetBrains Mono', Consolas, monospace" font-size="9.5" text-anchor="middle">
+              <text x="160" y="30" fill="#8BA4B8">never shared</text>
+              <text x="160" y="62" fill="#D4993D">needs a grant</text>
+              <text x="160" y="94" fill="#2D8B7A">summary</text>
+              <text x="160" y="164" fill="#F5F0E8">public</text>
+            </g>
+          </g>
+        </svg>
+        <div class="rings-key">
+          <div class="rings-key-item">
+            <i class="k-public"></i>
+            <span class="k-label"><strong>Public by default</strong>
+            identity, mission, themes, ideas <span>— the point is to be found</span></span>
+          </div>
+          <div class="rings-key-item">
+            <i class="k-summary"></i>
+            <span class="k-label"><strong>Summary public</strong>
+            evidence summaries, strategy priorities <span>— the shape, not the detail</span></span>
+          </div>
+          <div class="rings-key-item">
+            <i class="k-granted"></i>
+            <span class="k-label"><strong>Needs a grant</strong>
+            tensions, learning, failures, full evidence, governance <span>— logged, time-limited</span></span>
+          </div>
+          <div class="rings-key-item">
+            <i class="k-never"></i>
+            <span class="k-label"><strong>Never leaves</strong>
+            source systems, personal data, anything not approved <span>— stays behind the agent</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="track steps-4" style="margin-top: 2rem;">
+        <div class="track-step">
+          <div class="track-dot"></div>
+          <span class="track-name">requested</span>
+          <span class="track-note">a funder states who they are and why</span>
+        </div>
+        <div class="track-step">
+          <div class="track-dot"></div>
+          <span class="track-name">decided</span>
+          <span class="track-note">a named person grants, narrows or declines</span>
+        </div>
+        <div class="track-step is-key">
+          <div class="track-dot"></div>
+          <span class="track-name">granted</span>
+          <span class="track-note">scoped to sections, with an expiry date</span>
+        </div>
+        <div class="track-step is-end">
+          <div class="track-dot"></div>
+          <span class="track-name">expires · revoked</span>
+          <span class="track-note">closes on its own, or the moment you say so</span>
+        </div>
+      </div>
+      <p class="track-foot">every view in between is logged — the organisation always sees who is looking</p>
+    </div>
+    <figcaption><strong>An access grant without an expiry date is indefinite access,</strong> which the schema refuses to record. Permission is a thing that ends by default.</figcaption>
+  </figure>
 </section>
 
 <hr class="divider">
@@ -917,6 +1584,53 @@ footer {
       <p>Structured themes enable cross-org alignment detection. Funders see ecosystems, not individual bids.</p>
     </div>
   </div>
+
+  <!-- ══ ECOSYSTEM CLUSTERING ══ -->
+  <figure class="diagram">
+    <div class="diagram-frame">
+      <svg class="dgm" viewBox="0 0 760 340" role="img" aria-labelledby="cl-title cl-desc">
+        <title id="cl-title">Matching a funder priority to a cluster of organisations</title>
+        <desc id="cl-desc">A funder priority — reducing food insecurity in coastal Norfolk — matches no single organisation completely. The strategy matcher surfaces three organisations whose published strategies converge on it: one running community kitchens, one doing social prescribing referrals, one managing a volunteer network. Together they cover the whole priority. Other organisations in the network are not part of this cluster.</desc>
+        <defs>
+          <marker id="cl-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M1.5 1.8 L9 5 L1.5 8.2" fill="none" stroke="#7B6BA5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+        <g aria-hidden="true">
+          <!-- funder priority -->
+          <rect x="150" y="16" width="460" height="48" rx="10" fill="#FEFCF9" stroke="#7B6BA5" stroke-width="1.4"/>
+          <text class="d-sub" x="380" y="36" text-anchor="middle" fill="#7B6BA5">FUNDER PRIORITY</text>
+          <text class="d-item" x="380" y="54" text-anchor="middle">reducing food insecurity in coastal Norfolk</text>
+          <path class="d-link" stroke="#7B6BA5" d="M380 64 L 380 132" marker-end="url(#cl-ah)"/>
+
+          <!-- organisations outside the cluster -->
+          <g fill="none" stroke="#8BA4B8" stroke-width="1.2" opacity="0.55">
+            <circle cx="70" cy="120" r="7"/><circle cx="116" cy="238" r="7"/>
+            <circle cx="60" cy="292" r="7"/><circle cx="690" cy="132" r="7"/>
+            <circle cx="704" cy="248" r="7"/><circle cx="646" cy="304" r="7"/>
+          </g>
+
+          <!-- the cluster -->
+          <rect x="196" y="140" width="368" height="170" rx="70" fill="#2D8B7A" fill-opacity="0.05" stroke="#2D8B7A" stroke-width="1.2" stroke-dasharray="7 5"/>
+          <g class="d-link" stroke="#2D8B7A" fill="none">
+            <path d="M290 208 L 472 196"/>
+            <path d="M472 196 L 380 272"/>
+            <path d="M380 272 L 290 208"/>
+          </g>
+          <g fill="#E6F1EE" stroke="#2D8B7A" stroke-width="1.6">
+            <circle cx="290" cy="208" r="9"/><circle cx="472" cy="196" r="9"/><circle cx="380" cy="272" r="9"/>
+          </g>
+          <g fill="#D4993D"><circle cx="290" cy="208" r="2.6"/><circle cx="472" cy="196" r="2.6"/><circle cx="380" cy="272" r="2.6"/></g>
+          <text class="d-sub" x="290" y="190" text-anchor="middle">community kitchens</text>
+          <text class="d-sub" x="472" y="178" text-anchor="middle">social prescribing</text>
+          <text class="d-sub" x="380" y="294" text-anchor="middle">volunteer network</text>
+
+          <text class="d-edge-label" x="380" y="330" text-anchor="middle">individually a partial fit · together, the whole priority</text>
+        </g>
+      </svg>
+    </div>
+    <figcaption><strong>Structured strategy makes ecosystems visible.</strong> A funder looking for food insecurity work in coastal Norfolk may find no single organisation that covers it — but three whose strategies name it, and who already work alongside each other. The matcher surfaces the cluster. The funder funds the cluster, not a single bid.</figcaption>
+  </figure>
 
   <div class="callout">
     <strong>The sweet spot:</strong> Relational enough to centre human dialogue and trust. Structured enough that discoverability doesn't depend on privilege. The playing field doesn't level itself. You have to build the level into the system.
@@ -1101,6 +1815,40 @@ footer {
       </div>
       <p class="why">Beyond the auto-generated metadata, the human contributes <strong>title</strong>, <strong>summary</strong>, <strong>themes</strong>, <strong>place</strong>, and <strong>status</strong>. An idea without place can't be matched to local funders. An idea without status (<code>seed</code> · <code>developing</code> · <code>ready</code> · <code>funded</code>) can't be matched to readiness. These two fields are what turn a published thought into a connection point.</p>
 
+      <figure class="diagram" style="margin: 1.5rem 0;">
+        <div class="diagram-frame">
+          <div class="track steps-5">
+            <div class="track-step">
+              <div class="track-dot"></div>
+              <span class="track-name">seed</span>
+              <span class="track-note">a thought worth saying out loud</span>
+            </div>
+            <div class="track-step">
+              <div class="track-dot"></div>
+              <span class="track-name">developing</span>
+              <span class="track-note">being shaped, costed, tested</span>
+            </div>
+            <div class="track-step is-key">
+              <div class="track-dot"></div>
+              <span class="track-name">ready</span>
+              <span class="track-note">could start tomorrow with resource</span>
+            </div>
+            <div class="track-step">
+              <div class="track-dot"></div>
+              <span class="track-name">funded</span>
+              <span class="track-note">a Hypercert receipt opens the evidence trail</span>
+            </div>
+            <div class="track-step is-end">
+              <div class="track-dot"></div>
+              <span class="track-name">archived</span>
+              <span class="track-note">shelved, and honest about it</span>
+            </div>
+          </div>
+          <p class="track-foot">status is what lets a funder match on readiness, not just on theme</p>
+        </div>
+        <figcaption>Ideas are published at every stage, not just when they're fundable — a seed that stays a seed is still worth someone knowing about.</figcaption>
+      </figure>
+
       <div class="tree">
 {<br>
 &nbsp;&nbsp;<span class="file">"schema_version"</span>: <span class="desc">"open-org-idea/v0.1"</span>,<br>
@@ -1223,6 +1971,19 @@ footer {
         panels.forEach(p => p.classList.toggle('is-active', p.dataset.panel === target));
       });
     });
+  })();
+
+  // Reduced motion: CSS can't stop SMIL, so pause the SVG timelines directly
+  (function() {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const apply = () => {
+      document.querySelectorAll('svg').forEach(svg => {
+        if (typeof svg.pauseAnimations !== 'function') return;
+        if (mq.matches) svg.pauseAnimations(); else svg.unpauseAnimations();
+      });
+    };
+    apply();
+    mq.addEventListener('change', apply);
   })();
 
   // Sidebar TOC scrollspy
