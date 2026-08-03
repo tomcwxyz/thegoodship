@@ -1,9 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Open Org: A standard for organisational self-sovereignty</title>
+<meta name="description" content="Open Org is a data standard for self-sovereign organisational profiles, living strategies, published ideas and time-limited access grants. Organisations own their story; funders discover rather than gatekeep.">
+<meta name="theme-color" content="#1B2A4A">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="canonical" href="https://good-ship.co.uk/open-org/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://good-ship.co.uk/open-org/">
+<meta property="og:title" content="Open Org: A standard for organisational self-sovereignty">
+<meta property="og:description" content="A data standard for self-sovereign organisational profiles, living strategies and published ideas. Organisations own their story; funders discover rather than gatekeep.">
+<meta property="og:image" content="https://good-ship.co.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="The Good Ship">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Open Org: A standard for organisational self-sovereignty">
+<meta name="twitter:description" content="A data standard for self-sovereign organisational profiles, living strategies and published ideas.">
+<meta name="twitter:image" content="https://good-ship.co.uk/og-image.png">
+
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-badROEgITdp9x-bTX69Ls.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -235,6 +262,13 @@ p.lead { font-size: 1.15rem; color: var(--text-body); line-height: 1.8; }
   overflow-x: auto;
 }
 .tree .file { color: var(--green); font-weight: 500; }
+.tree a.file {
+  text-decoration: underline;
+  text-decoration-color: rgba(45, 139, 122, 0.35);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s;
+}
+.tree a.file:hover, .tree a.file:focus-visible { text-decoration-color: var(--green); }
 .tree .desc { color: var(--text-muted); }
 .tree .req { color: var(--gold); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; }
 
@@ -499,7 +533,7 @@ code {
 @media (min-width: 1180px) { .toc { display: block; } }
 
 /* ─────────────────────────────────────────────────────
-   DIAGRAMS — shared scaffolding
+   DIAGRAMS · shared scaffolding
    ───────────────────────────────────────────────────── */
 figure.diagram { margin: 2.25rem 0; }
 figure.diagram figcaption {
@@ -707,7 +741,7 @@ figure.diagram-bleed {
   .track-dot { position: absolute; left: 0; top: 0; margin: 0; }
 }
 
-/* Reduced motion — covers the hero pulse and every diagram animation */
+/* Reduced motion · covers the hero pulse and every diagram animation */
 @media (prefers-reduced-motion: reduce) {
   .hero-visual circle.node-ring,
   .hero-visual circle.node-ring-2,
@@ -859,14 +893,14 @@ footer {
   </svg>
   <span class="section-label">open org standard · v0.1 working draft</span>
   <h1>Own your truth.<br>Share it on your terms.</h1>
-  <p class="lead">Open Org is a data standard for self-sovereign organisational profiles, published ideas, living strategies, and transparent access control — designed for a world where organisations own their own story and funders discover rather than gatekeep.</p>
+  <p class="lead">Open Org is a data standard for self-sovereign organisational profiles, published ideas, living strategies, and transparent access control: designed for a world where organisations own their own story and funders discover rather than gatekeep.</p>
   <div class="hero-cta">
     <a href="#schema" class="btn btn-primary">Read the schema
       <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 7h8"/><path d="M8 4l3 3-3 3"/></svg>
     </a>
     <a href="mailto:tom@good-ship.co.uk?subject=Open%20Org" class="btn btn-secondary">Get involved</a>
   </div>
-  <p class="hero-subtitle">Version 0.1 — Working Draft · Licence: CC BY-SA 4.0</p>
+  <p class="hero-subtitle">Version 0.1 · Working Draft · Licence: CC BY-SA 4.0</p>
 </section>
 
 <hr class="divider">
@@ -876,7 +910,7 @@ footer {
   <span class="section-label">what it is</span>
   <h2>Your organisation is more than an application form</h2>
   <p>The grant application was a technology for a pre-digital information environment. LLMs broke the filter and friction it relied on. We need something different.</p>
-  <p>Open Org lets organisations maintain a living, structured, machine-readable profile of themselves — not written for any specific funder, but maintained for their own purposes. Funders become discoverers, not gatekeepers. The application form disappears. In its place: self-sovereign profiles, published ideas, and transparent relationships between resource and purpose.</p>
+  <p>Open Org lets organisations maintain a living, structured, machine-readable profile of themselves: not written for any specific funder, but maintained for their own purposes. Funders become discoverers, not gatekeepers. The application form disappears. In its place: self-sovereign profiles, published ideas, and transparent relationships between resource and purpose.</p>
 
   <!-- ══ THE SHIFT ══ -->
   <figure class="diagram">
@@ -1035,7 +1069,7 @@ footer {
         </svg>
       </div>
       <h3>Interoperable</h3>
-      <p>Builds on existing standards — org-id.guide, ONS codes, Open Referral, 360Giving, Hypercerts.</p>
+      <p>Builds on existing standards: org-id.guide, ONS codes, Open Referral, 360Giving, Hypercerts.</p>
     </div>
     <div class="card accent-left">
       <div class="feature-icon">
@@ -1064,17 +1098,18 @@ footer {
 <section id="schema">
   <span class="section-label">schema</span>
   <h2>Four objects, one vocabulary</h2>
-  <p>The standard defines four core object types. Each has a <em>minimum viable</em> shape — the smallest set of fields that makes the object actually useful, not just technically valid. The schema is loose so no one is locked out; the tooling guides every object toward the minimum that works. <a href="#" onclick="document.querySelector('.mvp-block').scrollIntoView({behavior:'smooth'}); return false;" style="color: var(--green); font-weight: 500;">See the minimums for each ↓</a></p>
+  <p>The standard defines four core object types. Each has a <em>minimum viable</em> shape: the smallest set of fields that makes the object actually useful, not just technically valid. The schema is loose so no one is locked out; the tooling guides every object toward the minimum that works. <a href="#getting-started" style="color: var(--green); font-weight: 500;">See the minimums for each ↓</a></p>
 
   <div class="tree">
     <span class="file">open-org/</span><br>
-    ├── <span class="file">org-profile.schema.json</span> <span class="req">core</span> <span class="desc">— The living organisational profile</span><br>
-    ├── <span class="file">org-strategy.schema.json</span> <span class="req">core</span> <span class="desc">— Strategy as a first-class object</span><br>
-    ├── <span class="file">org-idea.schema.json</span> <span class="req">core</span> <span class="desc">— Published ideas — seeds of intent</span><br>
-    ├── <span class="file">org-access-grant.schema.json</span> <span class="req">core</span> <span class="desc">— Permissions, scoping, and audit</span><br>
-    ├── <span class="file">murmurations-integration.md</span> <span class="desc">— Discovery layer mapping</span><br>
-    ├── <span class="file">system-architecture.md</span> <span class="desc">— Agent, interfaces, data governance</span><br>
-    └── <span class="file">vocabulary/themes.json</span> <span class="desc">— 30 canonical thematic tags</span>
+    ├── <a class="file" href="org-profile.schema.json">org-profile.schema.json</a> <span class="req">core</span> <span class="desc">· The living organisational profile</span><br>
+    ├── <a class="file" href="org-strategy.schema.json">org-strategy.schema.json</a> <span class="req">core</span> <span class="desc">· Strategy as a first-class object</span><br>
+    ├── <a class="file" href="org-idea.schema.json">org-idea.schema.json</a> <span class="req">core</span> <span class="desc">· Published ideas: seeds of intent</span><br>
+    ├── <a class="file" href="org-access-grant.schema.json">org-access-grant.schema.json</a> <span class="req">core</span> <span class="desc">· Permissions, scoping, and audit</span><br>
+    ├── <a class="file" href="README.md">README.md</a> <span class="desc">· The standard, written out in full</span><br>
+    ├── <a class="file" href="murmurations-integration.md">murmurations-integration.md</a> <span class="desc">· Discovery layer mapping</span><br>
+    ├── <a class="file" href="system-architecture.md">system-architecture.md</a> <span class="desc">· Agent, interfaces, data governance</span><br>
+    └── <span class="file">vocabulary/themes.json</span> <span class="desc">· 30 canonical thematic tags (not yet published)</span>
   </div>
 
   <!-- ══ OBJECT MODEL ══ -->
@@ -1104,7 +1139,7 @@ footer {
           <!-- access grant: a band under everything it governs -->
           <rect class="d-node n-access" x="40" y="296" width="680" height="76" rx="12"/>
           <text class="d-title" x="62" y="326">Access grant</text>
-          <text class="d-sub" x="62" y="346">who · what · until when — logged, expiring, revocable</text>
+          <text class="d-sub" x="62" y="346">who · what · until when: logged, expiring, revocable</text>
           <text class="d-sub" x="698" y="326" text-anchor="end" fill="#D4993D">no expiry, no grant</text>
           <text class="d-sub" x="698" y="346" text-anchor="end">the standard rejects indefinite access</text>
 
@@ -1180,10 +1215,10 @@ footer {
 <section id="layers">
   <span class="section-label">architecture</span>
   <h2>Tiered integrations, nothing rebuilt</h2>
-  <p>Open Org doesn't replace existing infrastructure. It sits in the middle of a stack, adding the things no one else covers — and connecting to the things others have already built. Two of those connections are <em>load-bearing</em> ; the system is weaker without them. The other two are enhancements: valuable, designed-for, but not required. </p>
+  <p>Open Org doesn't replace existing infrastructure. It sits in the middle of a stack, adding the things no one else covers, and connecting to the things others have already built. Two of those connections are <em>load-bearing</em>; the system is weaker without them. The other two are enhancements: valuable, designed-for, but not required.</p>
 
   <div class="stack-group">
-    <div class="stack-group-label"><span class="pill pill-core">core</span>load-bearing — design for these from day one</div>
+    <div class="stack-group-label"><span class="pill pill-core">core</span>load-bearing: design for these from day one</div>
     <div class="stack">
       <div class="stack-layer stack-ext">
         <span class="stack-label">Murmurations</span>
@@ -1201,7 +1236,7 @@ footer {
   </div>
 
   <div class="stack-group stack-future">
-    <div class="stack-group-label"><span class="pill pill-future">future</span>compatible by design — not required to ship</div>
+    <div class="stack-group-label"><span class="pill pill-future">future</span>compatible by design: not required to ship</div>
     <div class="stack">
       <div class="stack-layer">
         <span class="stack-label">.context</span>
@@ -1215,7 +1250,7 @@ footer {
   </div>
 
   <div class="callout">
-    <strong>Design principle:</strong> Design the data model first. Treat federation as a transport layer. Murmurations gives discovery without a platform; Hypercerts gives verifiable evidence without inventing an attestation layer. Without those two, Open Org can't do its job. <code>.context</code> and MDC make the system smarter and more sustainable — they earn their place by adding value. Note: There are other ways of doing this.
+    <strong>Design principle:</strong> Design the data model first. Treat federation as a transport layer. Murmurations gives discovery without a platform; Hypercerts gives verifiable evidence without inventing an attestation layer. Without those two, Open Org can't do its job. <code>.context</code> and MDC make the system smarter and more sustainable; they earn their place by adding value. Note: There are other ways of doing this.
   </div>
 </section>
 
@@ -1433,7 +1468,7 @@ footer {
       </div>
     </div>
     <p class="scroll-hint">↔ scroll the map sideways</p>
-    <figcaption><strong>Read it left to right.</strong> Data only ever moves outward through one gate — a human approving a draft. Everything published sits on the organisation's own domain, as files it can change or delete. The open infrastructure in the middle is nobody's platform: the Murmurations index holds pointers, not the data. A funder can search and read public fields freely, but anything deeper requires a time-limited grant the organisation issues and can revoke — and the conversation that follows happens outside the system entirely.</figcaption>
+    <figcaption><strong>Read it left to right.</strong> Data only ever moves outward through one gate: a human approving a draft. Everything published sits on the organisation's own domain, as files it can change or delete. The open infrastructure in the middle is nobody's platform: the Murmurations index holds pointers, not the data. A funder can search and read public fields freely, but anything deeper requires a time-limited grant the organisation issues and can revoke; the conversation that follows happens outside the system entirely.</figcaption>
   </figure>
 
   <div class="grid-2">
@@ -1447,7 +1482,7 @@ footer {
     </div>
     <div class="card">
       <h3>Structures with AI</h3>
-      <p>A strategy PDF becomes structured priorities and themes. Board minutes update governance. The agent proposes — humans decide.</p>
+      <p>A strategy PDF becomes structured priorities and themes. Board minutes update governance. The agent proposes; humans decide.</p>
     </div>
     <div class="card">
       <h3>Handles access</h3>
@@ -1502,22 +1537,22 @@ footer {
           <div class="rings-key-item">
             <i class="k-public"></i>
             <span class="k-label"><strong>Public by default</strong>
-            identity, mission, themes, ideas <span>— the point is to be found</span></span>
+            identity, mission, themes, ideas <span>· the point is to be found</span></span>
           </div>
           <div class="rings-key-item">
             <i class="k-summary"></i>
             <span class="k-label"><strong>Summary public</strong>
-            evidence summaries, strategy priorities <span>— the shape, not the detail</span></span>
+            evidence summaries, strategy priorities <span>· the shape, not the detail</span></span>
           </div>
           <div class="rings-key-item">
             <i class="k-granted"></i>
             <span class="k-label"><strong>Needs a grant</strong>
-            tensions, learning, failures, full evidence, governance <span>— logged, time-limited</span></span>
+            tensions, learning, failures, full evidence, governance <span>· logged, time-limited</span></span>
           </div>
           <div class="rings-key-item">
             <i class="k-never"></i>
             <span class="k-label"><strong>Never leaves</strong>
-            source systems, personal data, anything not approved <span>— stays behind the agent</span></span>
+            source systems, personal data, anything not approved <span>· stays behind the agent</span></span>
           </div>
         </div>
       </div>
@@ -1544,7 +1579,7 @@ footer {
           <span class="track-note">closes on its own, or the moment you say so</span>
         </div>
       </div>
-      <p class="track-foot">every view in between is logged — the organisation always sees who is looking</p>
+      <p class="track-foot">every view in between is logged; the organisation always sees who is looking</p>
     </div>
     <figcaption><strong>An access grant without an expiry date is indefinite access,</strong> which the schema refuses to record. Permission is a thing that ends by default.</figcaption>
   </figure>
@@ -1629,7 +1664,7 @@ footer {
         </g>
       </svg>
     </div>
-    <figcaption><strong>Structured strategy makes ecosystems visible.</strong> A funder looking for food insecurity work in coastal Norfolk may find no single organisation that covers it — but three whose strategies name it, and who already work alongside each other. The matcher surfaces the cluster. The funder funds the cluster, not a single bid.</figcaption>
+    <figcaption><strong>Structured strategy makes ecosystems visible.</strong> A funder looking for food insecurity work in coastal Norfolk may find no single organisation that covers it, but three whose strategies name it, and who already work alongside each other. The matcher surfaces the cluster. The funder funds the cluster, not a single bid.</figcaption>
   </figure>
 
   <div class="callout">
@@ -1671,7 +1706,7 @@ footer {
   <h2>Where things stand</h2>
 
   <div class="card accent-left" style="margin-bottom: 1.5rem;">
-    <h3>Version 0.1 — Working Draft</h3>
+    <h3>Version 0.1 · Working Draft</h3>
     <p>The schema is defined. The architecture is mapped. The integrations are identified. What comes next: define the schema with input from organisations and funders. Build a reference agent. Test it with real relationships.</p>
   </div>
 
@@ -1701,11 +1736,11 @@ footer {
 
 <hr class="divider">
 
-<!-- MINIMAL EXAMPLES — one per object -->
+<!-- MINIMAL EXAMPLES · one per object -->
 <section id="getting-started">
   <span class="section-label">getting started</span>
   <h2>Minimum viable for each object</h2>
-  <p>Each of the four objects has its own <em>minimum viable</em> shape — the smallest set of fields that makes it actually useful, not just technically valid. The schema validates loosely so no one is locked out; the tooling and documentation guide every object toward the minimum that works.</p>
+  <p>Each of the four objects has its own <em>minimum viable</em> shape: the smallest set of fields that makes it actually useful, not just technically valid. The schema validates loosely so no one is locked out; the tooling and documentation guide every object toward the minimum that works.</p>
 
   <div class="mvp-tabs">
     <div class="mvp-tab-nav" role="tablist">
@@ -1733,7 +1768,7 @@ footer {
         <h3>Profile</h3>
         <span class="panel-count">5 human-meaningful fields</span>
       </div>
-      <p class="why">The agent generates the metadata (<code>schema_version</code>, <code>updated</code>) automatically. The human-meaningful minimum viable profile is five fields — making the org <em>discoverable by place and theme</em> and <em>verifiable</em> against a public register. From a charity number alone, the agent can auto-populate four of the five.</p>
+      <p class="why">The agent generates the metadata (<code>schema_version</code>, <code>updated</code>) automatically. The human-meaningful minimum viable profile is five fields: enough to make the org <em>discoverable by place and theme</em> and <em>verifiable</em> against a public register. From a charity number alone, the agent can auto-populate four of the five.</p>
 
       <div class="grid-2" style="margin: 1rem 0;">
         <div class="card accent-gold">
@@ -1776,7 +1811,7 @@ footer {
         <h3>Strategy</h3>
         <span class="panel-count">human-meaningful · auto-bound to org</span>
       </div>
-      <p class="why">Beyond the auto-generated metadata, the human contributes a <strong>title</strong>, <strong>summary</strong>, <strong>period</strong>, at least one <strong>priority</strong> (themed), and at least one <strong>tension</strong>. A strategy with priorities only is just an application form by another name. <strong>Tensions</strong> — what the organisation is actively navigating — are the differentiator. Without them, you don't have strategy; you have an aspiration list.</p>
+      <p class="why">Beyond the auto-generated metadata, the human contributes a <strong>title</strong>, <strong>summary</strong>, <strong>period</strong>, at least one <strong>priority</strong> (themed), and at least one <strong>tension</strong>. A strategy with priorities only is just an application form by another name. <strong>Tensions</strong> (what the organisation is actively navigating) are the differentiator. Without them, you don't have strategy; you have an aspiration list.</p>
 
       <div class="tree">
 {<br>
@@ -1799,7 +1834,7 @@ footer {
 &nbsp;&nbsp;],<br>
 &nbsp;&nbsp;<span class="file">"tensions"</span>: [<br>
 &nbsp;&nbsp;&nbsp;&nbsp;{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="file">"description"</span>: <span class="desc">"Growth vs depth — more people reached, less time per person."</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="file">"description"</span>: <span class="desc">"Growth vs depth: more people reached, less time per person."</span>,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="file">"approach"</span>: <span class="desc">"Cap each volunteer's caseload at six. Refuse contracts that require higher throughput."</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
 &nbsp;&nbsp;]<br>
@@ -1846,7 +1881,7 @@ footer {
           </div>
           <p class="track-foot">status is what lets a funder match on readiness, not just on theme</p>
         </div>
-        <figcaption>Ideas are published at every stage, not just when they're fundable — a seed that stays a seed is still worth someone knowing about.</figcaption>
+        <figcaption>Ideas are published at every stage, not just when they're fundable; a seed that stays a seed is still worth someone knowing about.</figcaption>
       </figure>
 
       <div class="tree">
@@ -1873,7 +1908,7 @@ footer {
         <h3>Access Grant</h3>
         <span class="panel-count">request-and-decision record</span>
       </div>
-      <p class="why">A grant has two organisations (<code>granter</code> and <code>requester</code>) and a person inside the granter who authorised it (<code>granted_by</code>). When status becomes <code>granted</code>, the schema requires <code>decided_at</code>, <code>expires_at</code> and <code>granted_by</code>. <strong>An access grant without expiry is indefinite access — which the standard rejects.</strong> The audit trail is what makes this a grant rather than a permission.</p>
+      <p class="why">A grant has two organisations (<code>granter</code> and <code>requester</code>) and a person inside the granter who authorised it (<code>granted_by</code>). When status becomes <code>granted</code>, the schema requires <code>decided_at</code>, <code>expires_at</code> and <code>granted_by</code>. <strong>An access grant without expiry is indefinite access, which the standard rejects.</strong> The audit trail is what makes this a grant rather than a permission.</p>
 
       <div class="tree">
 {<br>
@@ -1907,7 +1942,7 @@ footer {
   <div class="footer-inner">
     <div class="footer-col">
       <h4 class="brand-col">Open Org</h4>
-      <p>A data standard for self-sovereign organisational profiles, living strategies, and published ideas — designed for a world where organisations own their own story.</p>
+      <p>A data standard for self-sovereign organisational profiles, living strategies, and published ideas: designed for a world where organisations own their own story.</p>
       <p style="font-family: var(--font-mono); font-size: 0.72rem; color: rgba(245,240,232,0.5);">v0.1 · working draft<br>last updated 2026-05-10</p>
     </div>
     <div class="footer-col">
