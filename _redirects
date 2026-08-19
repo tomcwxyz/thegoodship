@@ -1,0 +1,3 @@
+# Collapse malformed framework paths that may already be cached by crawlers.
+/frameworks/frameworks /frameworks/ 301
+/frameworks/frameworks/* /frameworks/:splat 301
