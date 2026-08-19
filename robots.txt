@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /frameworks/frameworks/
 
 Sitemap: https://good-ship.co.uk/sitemap.xml
