@@ -1,0 +1,51 @@
+name: Update collaboration framework card
+
+on:
+  push:
+    branches:
+      - update/collaboration-framework-card
+    paths:
+      - .github/workflows/update-collaboration-card.yml
+
+permissions:
+  contents: write
+
+jobs:
+  update-card:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Update framework card copy
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('index.html')
+          html = path.read_text()
+
+          old_title = '<h3>Collaboration Spectrum</h3>'
+          new_title = '<h3>Designing how we work together</h3>'
+          old_description = '<p>From networking to integrating &mdash; mapping how organisations work together.</p>'
+          new_description = '<p>Five modes for designing how we connect, coordinate, cooperate, collaborate and build commons.</p>'
+
+          if old_title not in html:
+              raise SystemExit('Expected Collaboration Spectrum title not found')
+          if old_description not in html:
+              raise SystemExit('Expected Collaboration Spectrum description not found')
+
+          html = html.replace(old_title, new_title, 1)
+          html = html.replace(old_description, new_description, 1)
+          path.write_text(html)
+          PY
+
+      - name: Commit change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Update collaboration framework card copy"
+          git push origin HEAD:${{ github.ref_name }}
