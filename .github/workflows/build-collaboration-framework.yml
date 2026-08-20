@@ -3,7 +3,7 @@ name: Build collaboration framework
 on:
   push:
     branches:
-      - publish/collaboration-framework
+      - main
     paths:
       - frameworks/build-collaboration-framework.js
   workflow_dispatch:
