@@ -16,6 +16,7 @@ The Good Ship is a consultancy founded by Tom Campbell Watson, based in North Ea
 
 ## Tools
 
+- Sets (good-ship.co.uk/sets/): Small, private browser tools for repeatable file, document and data work. Files are processed locally in the browser and are not uploaded to Good Ship or another server. Includes privacy inspection, redaction, PDF, CSV/data, accessibility, checksum and secure secret-generation tools.
 - TechFreedom (techfreedom.eu): Tech sovereignty programme for social purpose organisations
 - Glade (ourglade.app): Governance platform that treats every decision as a seed — traceable, reviewable institutional memory
 - Impact Path (impact-path.vercel.app): Build your impact strategy through guided conversation
