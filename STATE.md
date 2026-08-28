@@ -32,7 +32,7 @@ stateDiagram-v2
 | Navigation | ✅ Done | Anchor links, hamburger on mobile |
 | Sub-pages | ✅ Done | `/sets/`, `/shipyard/`, `/open-org/`, `/slow-post/`, `/responsible-ai/` |
 | SEO | ✅ Done | OG/Twitter cards, JSON-LD, sitemap, robots.txt, llms.txt |
-| Analytics | ✅ Done | Plausible (new tagged-script format) |
+| Analytics | ✅ Done | Plausible via shared `/analytics/browser.js`; intended for `good-ship.co.uk` + subdomains |
 | Accessibility | ⚠️ Needs attention | No formal audit done yet |
 
 ## Backend (Cloudflare Pages Functions + D1)
