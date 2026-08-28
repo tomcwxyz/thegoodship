@@ -1,4 +1,5 @@
 name: Sync Sets subpage
+# Source: tomcwxyz/good-ship-local-tools main
 
 on:
   workflow_dispatch:
