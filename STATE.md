@@ -1,6 +1,6 @@
 # State
 
-> Last updated: 2026-06-11
+> Last updated: 2026-08-28
 > Hosting: **Cloudflare Pages** (migrated from Netlify) — repo `dataforaction-tom/thegoodship`
 
 ## System State Diagram
@@ -22,7 +22,7 @@ stateDiagram-v2
 | HTML structure | ✅ Done | Single-file `index.html`, semantic HTML5 |
 | CSS / theming | ✅ Done | Custom properties, fluid typography, responsive breakpoints |
 | Hero / About / Services | ✅ Done | Inline SVGs, compass rose animation |
-| Tools section | ✅ Done | Featured strip + category filters; includes Drift, Bearing, Swells |
+| Tools section | ✅ Done | Featured strip + category filters; includes Sets, Drift, Bearing, Swells |
 | Frameworks section | ✅ Done | Downloadable PDFs in `frameworks/` (incl. responsible-ai-slides.pdf) |
 | Writing section | ✅ Done | Links to tomcw.xyz; `functions/feed.js` proxies the RSS feed |
 | Sponsor section | ✅ Done | Drift payment form embed + **open ledger** (see below) |
@@ -30,7 +30,7 @@ stateDiagram-v2
 | Newsletter signup | ✅ Live | D1-backed `/api/subscribe` (replaced inert Netlify Forms) |
 | Contact section | ✅ Done | Email, cal.com booking, newsletter form |
 | Navigation | ✅ Done | Anchor links, hamburger on mobile |
-| Sub-pages | ✅ Done | `/shipyard/`, `/open-org/`, `/slow-post/`, `/responsible-ai/` |
+| Sub-pages | ✅ Done | `/sets/`, `/shipyard/`, `/open-org/`, `/slow-post/`, `/responsible-ai/` |
 | SEO | ✅ Done | OG/Twitter cards, JSON-LD, sitemap, robots.txt, llms.txt |
 | Analytics | ✅ Done | Plausible (new tagged-script format) |
 | Accessibility | ⚠️ Needs attention | No formal audit done yet |

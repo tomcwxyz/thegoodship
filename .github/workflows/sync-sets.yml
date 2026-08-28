@@ -1,0 +1,70 @@
+name: Sync Sets subpage
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 4 * * *'
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/sync-sets.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-sets-subpage
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out Good Ship site
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clone Sets main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 --branch main https://github.com/tomcwxyz/good-ship-local-tools.git "$RUNNER_TEMP/sets-source"
+          echo "SETS_SHA=$(git -C "$RUNNER_TEMP/sets-source" rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Use Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verify and build Sets
+        working-directory: ${{ runner.temp }}/sets-source
+        run: |
+          npm ci
+          npm run check
+          npm test
+          npm run build:hosted
+          npm run verify:hosted
+
+      - name: Replace hosted Sets bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf sets
+          mkdir -p sets
+          cp -R "$RUNNER_TEMP/sets-source/dist-hosted/." sets/
+
+      - name: Commit when Sets changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add sets
+          if git diff --cached --quiet; then
+            echo "Sets is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Sync Sets from good-ship-local-tools@${SETS_SHA:0:7}"
+          git push
