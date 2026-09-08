@@ -1,51 +1,96 @@
 # The Good Ship
 
-> Strategy, technology & resilience for social purpose organisations.
+> An open technology and organisational practice for social purpose organisations.
 
-The Good Ship is a consultancy founded by Tom Campbell Watson, based in North East England. We help charities, social enterprises, B Corps, and mission-driven organisations navigate uncertainty through strategy, technology, data, and open tools.
+The Good Ship is a small consultancy, product studio and applied R&D practice founded by Tom Campbell Watson and based in North East England. We work with charities, social enterprises, foundations, B Corps and other mission-driven organisations.
+
+Our work is about helping organisations navigate uncertainty while retaining more agency over their strategy, technology, data, knowledge and ways of working. We do this through consultancy, learning, building useful tools, and developing open infrastructure for the social purpose sector.
+
+Good Ship is open by default. We share tools, frameworks, software, standards and learning where we can, and prefer approaches that build organisational capability rather than dependency.
+
+## How we work
+
+Our work has four connected parts:
+
+- **Practice:** Direct work with organisations on strategy, organisational resilience, technology, AI, data, teams and learning.
+- **Building:** Designing and making practical tools around real organisational problems, including bespoke software through Shipyard.
+- **Commons:** Turning useful learning into open frameworks, resources, datasets, standards and software that others can reuse.
+- **Infrastructure & R&D:** Experimenting with better digital infrastructure for civil society, including organisational data, AI-readable information, technology sovereignty, governance, sensemaking and shared sector tools.
+
+Many Good Ship tools begin with a problem encountered in real work. Making is part of how we learn: we explore a problem, build something useful, test it in practice, and share what can be shared.
+
+## Principles and themes
+
+Across the work, recurring themes include:
+
+- Uncertainty is unavoidable; organisations benefit from being able to sense, learn and adapt.
+- Technology should increase organisational capability and agency rather than create unnecessary dependency.
+- Organisations should understand and, where practical, own or control their technology, data, knowledge and strategic choices.
+- Open standards, open-source software and interoperable infrastructure can improve resilience and reduce lock-in.
+- AI should be adopted thoughtfully, with attention to usefulness, human judgement, power, privacy and organisational context.
+- Good tools should fit how people and organisations actually work.
 
 ## Services
 
-- AI & Technology Strategy: Helping organisations adopt AI and technology thoughtfully
-- Data Strategy, Architecture & Design: Building data foundations that serve mission
-- Organisational Resilience: Strengthening organisations to weather uncertainty
-- Product & Team Development: Building capable teams and useful products
-- Learning Partnerships & Coaching: Ongoing support and capability building
-- Open Infrastructure: Building shared tools and platforms for the sector
-- Shipyard (good-ship.co.uk/shipyard/): Bespoke tool-building for organisations — discovery, design, development, and deployment of tools you own, built around how you actually work. Built with open-source software and EU alternatives to improve tech and data sovereignty and resilience. Two modes: "Ship It" (we build, you get tools) or "Learn & Ship" (your team builds, we guide)
+- **AI & Technology Strategy:** Helping organisations understand, choose and adopt AI and technology thoughtfully.
+- **Data Strategy, Architecture & Design:** Building useful, sustainable data foundations around organisational questions and mission.
+- **Organisational Resilience:** Helping organisations understand strengths, vulnerabilities and capacity to adapt under uncertainty.
+- **Product & Team Development:** Building useful digital products and developing the teams and practices around them.
+- **Learning Partnerships & Coaching:** Ongoing support for experimentation, reflection, capability building and organisational learning.
+- **Open Infrastructure:** Building shared tools, standards and platforms for the social purpose sector.
+- **Shipyard:** Bespoke tool-building for organisations, from discovery and design through development and deployment. Tools are built around how organisations actually work, with a preference for open-source software and European alternatives where these improve sovereignty and resilience. Shipyard has two modes: "Ship It" (Good Ship builds the tool) and "Learn & Ship" (the organisation builds with Good Ship guidance). https://good-ship.co.uk/shipyard/
 
-## Tools
+## Tools and products
 
-- Sets (good-ship.co.uk/sets/): Small, private browser tools for repeatable file, document and data work. Files are processed locally in the browser and are not uploaded to Good Ship or another server. Includes privacy inspection, redaction, PDF, CSV/data, accessibility, checksum and secure secret-generation tools.
-- TechFreedom (techfreedom.eu): Tech sovereignty programme for social purpose organisations
-- Glade (ourglade.app): Governance platform that treats every decision as a seed — traceable, reviewable institutional memory
-- Impact Path (impact-path.vercel.app): Build your impact strategy through guided conversation
-- Swells (swells.app): Platform for observations, signals and reflections — sense what's emerging before it becomes obvious
-- Drift (driftforms.app): Intelligent forms that adapt to every respondent, as natural as conversation
-- Bearing (findbearing.org): AI model discovery and comparison tool
-- Tending (tending.network): Relationship and network management for social purpose organisations — log connections in plain language, map them as a living network
-- Open Org (good-ship.co.uk/open-org): Data standard for self-sovereign organisational profiles, living strategies and published ideas
-- Flowlance (flowlance.io): Finance and project management for freelancers
-- llmstxt.social: AI-readable documentation platform
-- Open Recommendations (openrecs.com): Analysis tool for social sector reports
-- Stackmap (stackmap.org): Open-source tool to document tech infrastructure — systems, costs, risks, responsibilities
-- The List (the-list.uk): UK funding database
-- Map My Patch (mapmypatch.co.uk): Neighbourhood mapping tool
-- Questions for Action (questionsforaction.com): Prioritisation tool
+- **Sets:** Small, private browser tools for repeatable file, document and data work. Files are processed locally in the browser rather than uploaded to Good Ship or another server. Includes privacy inspection, redaction, PDF, CSV/data, accessibility, checksum and secure secret-generation tools. https://good-ship.co.uk/sets/
+- **TechFreedom:** A programme helping social purpose organisations make more intentional technology choices and improve technology sovereignty. https://techfreedom.eu
+- **Glade:** Governance software that treats decisions as traceable, reviewable institutional memory. https://ourglade.app
+- **Impact Path:** A guided tool for developing impact strategy through conversation. https://impact-path.vercel.app
+- **Swells:** A platform for observations, signals and reflections, designed to help people and organisations sense what is emerging before it becomes obvious. https://swells.app
+- **Drift:** Intelligent forms that adapt to respondents and make structured data collection feel more like conversation. https://driftforms.app
+- **Bearing:** AI model discovery and comparison. https://findbearing.org
+- **Tending:** Relationship and network management for social purpose organisations; log connections in plain language and understand them as a living network. https://tending.network
+- **Open Org:** An open data standard for self-sovereign organisational profiles, living strategies and published ideas. It explores a model where organisations publish information once in reusable, machine-readable form rather than repeatedly supplying it through closed forms. https://good-ship.co.uk/open-org/
+- **Flowlance:** Finance and project management for freelancers. https://flowlance.io
+- **llmstxt.social:** Infrastructure for publishing AI-readable documentation and organisational information. https://llmstxt.social
+- **Open Recommendations:** Analysis and discovery for recommendations contained in social sector reports. https://openrecs.com
+- **Stackmap:** Open-source tooling for documenting organisational technology infrastructure, including systems, costs, risks and responsibilities. https://stackmap.org
+- **The List:** UK funding data and discovery. https://the-list.uk
+- **Map My Patch:** Neighbourhood and place-based mapping. https://mapmypatch.co.uk
+- **Questions for Action:** A tool for collecting and prioritising questions to support better decisions and action. https://questionsforaction.com
 
-## Frameworks & Resources
+## Open frameworks and resources
 
-- Garden of Ideas: Collaborative ideation framework
-- Theory of Change — Demystified: Simplified theory of change approach
-- Principles of Good Data: Data ethics and quality principles
-- Organisational Resilience Toolkit: Practical resilience tools
-- Collaboration Spectrum: Framework for partnership approaches
-- Simple Facilitation Tools for Teams: Meeting and workshop facilitation
-- Responsible AI for Food Systems (good-ship.co.uk/responsible-ai/): A provocation and curated resources for organisations working in food systems building an AI policy in the open — created for the Food Ethics Council
+Good Ship publishes practical frameworks and resources for organisations and practitioners. These include:
+
+- **Garden of Ideas:** A collaborative ideation framework.
+- **Theory of Change — Demystified:** A simplified approach to theory of change.
+- **Principles of Good Data:** Principles for useful, ethical and proportionate organisational data practice.
+- **Organisational Resilience Toolkit:** Practical tools for understanding and strengthening organisational resilience.
+- **Collaboration Spectrum:** A framework for thinking about different forms and depths of collaboration.
+- **Simple Facilitation Tools for Teams:** Practical meeting and workshop facilitation tools.
+- **Responsible AI for Food Systems:** A provocation and curated set of resources for organisations developing AI policy in the open, created for the Food Ethics Council. https://good-ship.co.uk/responsible-ai/
+
+Framework downloads and other open resources are available from https://good-ship.co.uk/ and https://resilience.good-ship.co.uk/
+
+## Good Ship in brief
+
+Good Ship sits at the intersection of:
+
+- organisational strategy and resilience
+- social purpose technology
+- data and AI practice
+- product and service design
+- open-source and interoperable infrastructure
+- technology sovereignty
+- organisational learning and sensemaking
+- practical experimentation and applied R&D
+
+It is best understood not as a conventional consultancy with a separate software portfolio, but as a practice where consulting, building, learning and publishing open work reinforce one another.
 
 ## Contact
 
+- Website: https://good-ship.co.uk
 - Email: hello@good-ship.co.uk
 - Book a call: https://cal.com/tomwatson
-- Website: https://good-ship.co.uk
 - Writing: https://tomcw.xyz
