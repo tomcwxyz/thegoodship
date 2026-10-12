@@ -28,7 +28,7 @@ stateDiagram-v2
 | Sponsor section | ✅ Done | Drift payment form embed + **open ledger** (see below) |
 | Open ledger | ✅ Live | Drift webhook → D1 → `/api/ledger` → rendered in sponsor section. Verified with a real £5 payment. |
 | Newsletter signup | ✅ Live | D1-backed `/api/subscribe` (replaced inert Netlify Forms) |
-| Contact section | ✅ Done | Email, cal.com booking, newsletter form |
+| Contact section | ✅ Done | Email, Drift booking, newsletter form |
 | Navigation | ✅ Done | Anchor links, hamburger on mobile |
 | Sub-pages | ✅ Done | `/sets/`, `/shipyard/`, `/open-org/`, `/slow-post/`, `/responsible-ai/` |
 | SEO | ✅ Done | OG/Twitter cards, JSON-LD, sitemap, robots.txt, llms.txt |
@@ -67,7 +67,7 @@ stateDiagram-v2
 | Stripe | Working | Processes sponsor payments (via Drift); PI stored for audit |
 | Google Fonts | Working | Fraunces, DM Sans, JetBrains Mono |
 | Plausible Analytics | Working | No cookies |
-| cal.com | Working | Book-a-call CTA |
+| Drift booking | Working | Book-a-call CTA |
 | tomcw.xyz | Working | Blog link + RSS proxy |
 
 <!--
