@@ -12,19 +12,30 @@ The Good Ship publishes **public site content in HTML and JSON**. Human-facing H
 - `/llms.txt` — narrative description intended for AI readers
 - `/open-org/*.schema.json` — existing Open Org schema documents (a different standard; left unchanged)
 
-Each JSON file is generated automatically from `index.html`, to avoid maintaining a second set of content. Collections preserve the current page descriptions, so labels such as "Launching soon" are not silently converted into claims about availability. No unpublished data, account details or backend database content is exposed.
+Homepage catalogue JSON is generated from `index.html`; individual page JSON is generated from each page's own HTML. No second catalogue or content store is maintained. Collections preserve the current page descriptions, so labels such as "Launching soon" are not silently converted into claims about availability. No unpublished data, account details or backend database content is exposed.
+
+## Individual editorial pages
+
+- `/shipyard/page.json` — service offer, delivery approaches and published content
+- `/open-org/page.json` — the standard's explanation, sections and links to its JSON schemas
+- `/responsible-ai/page.json` — workshop material and curated resources
+- `/slow-post/page.json` — participation options and the public sign-up form link
+
+The canonical HTML pages each advertise an `application/json` alternate. The root `/site.json` index links to all four. Machine-readable pages contain the published headings, paragraphs, lists and links, but omit navigation, scripts, decorative SVG and embedded form contents.
+
+Sets is a separate JavaScript application synced from another repository; it has no editorial HTML to extract. It remains listed in the tools catalogue without an invented page export.
 
 ## Updating content
 
-Edit the homepage as before. Then run:
+Edit the homepage or an editorial subpage as before. Then run:
 
 ```sh
-node --test test/site-json.test.mjs
+node --test test/site-json.test.mjs test/page-json.test.mjs
 node scripts/generate-site-json.mjs
 node scripts/generate-page-json.mjs
 ```
 
-The GitHub workflow regenerates and commits JSON on pushes to main or the `feat/machine-readable-site-json` branch. Pull requests also test the generator. The site remains static: no new framework, database, API keys or server-side request processing is needed.
+The GitHub workflow checks all exports on pull requests, and regenerates and commits the JSON when source pages change on main. Pull requests also test the generator. The site remains static: no new framework, database, API keys or server-side request processing is needed.
 
 ## Experiment / measurement
 
@@ -42,4 +53,4 @@ Do not store raw IPs or full user-agent identifiers longer than necessary. Do no
 
 This is **public, read-only content**, not an authenticated API. It does not expose dynamic sponsorship, subscriber, booking or financial data. Open Org remains an independent schema and should not be confused with the site catalogue JSON. URL stability is the goal; breaking changes should be versioned before expanding this experiment.
 
-Potential next steps: public articles and subpages, per-item tool JSON, Markdown representations and discovery from other organisations' Open Org profiles.
+Potential next steps: per-item tool JSON, Markdown representations, provenance metadata and discovery from other organisations' Open Org profiles.
