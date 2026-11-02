@@ -66,6 +66,8 @@ test('every relative link on the new pages resolves to a local file or anchor', 
       if (!href.startsWith('/')) continue;
       const path = href.split('#')[0].split('?')[0];
       const local = path.endsWith('/') ? path + 'index.html' : path;
+      // Generated page.json is produced after the tests in the publishing job.
+      if (path === '/' + slug + '/page.json') continue;
       assert.ok(existsSync(join(root, local.slice(1))), slug + ': missing local link ' + path);
     }
   }
