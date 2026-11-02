@@ -75,4 +75,8 @@ Review over 30, 60 and 90 days. Prioritise evidence of relevant visitors and con
 
 The homepage now states the consultancy/build/open research combination in visible copy and links to Shipyard and Open Org. The search description is shorter and more specific. Organisation, founder and website entities are connected in Schema.org, and site.json exposes richer positioning extracted from About and Services. The sitemap includes Slow Post and no longer contains misleading hard-coded modification dates.
 
-The following priorities — substantial individual service pages, original case studies, content targeting actual client questions and Search Console verification — are still **future work**, not claimed as delivered by this change.
+### Service-content implementation
+
+Three original service guides are now implemented: `/ai-technology-strategy/`, `/data-strategy/` and `/organisational-resilience/`. Shipyard now answers build-versus-buy and maintenance questions. Homepage service cards, sitemap, `llms.txt` and page-level JSON point to these pages. The guides include genuine FAQs and links to open products or frameworks; they do not claim unverified outcomes.
+
+**Still outstanding:** permissioned case studies and testimonials, real search-query research, relevant independent references, and Search Console/Bing performance baselines. See `docs/case-study-intake.md` for what to collect. Revisit pages when qualitative evidence arrives rather than fabricating 'social proof'.
