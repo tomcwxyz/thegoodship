@@ -3,14 +3,31 @@
   "type": "organisation_description",
   "name": "The Good Ship",
   "title": "About The Good Ship",
-  "description": "The Good Ship helps social purpose organisations navigate uncertainty with strategy, technology, data, and open tools. Founded by Tom Campbell Watson.",
+  "description": "Strategy, responsible AI, data, organisational resilience and bespoke digital tools for charities and social enterprises. The Good Ship builds openly.",
   "founder": "Tom Campbell Watson",
   "story": [
     "I'm Tom Campbell Watson. I work with social purpose organisations — charities, social enterprises, B Corps, community businesses, and mission-driven public bodies — helping them think clearly about strategy, technology, data architecture, and resilience.",
+    "The Good Ship combines consultancy, practical product development and open research for the social purpose sector. Sometimes that means helping a team make a better decision; sometimes it's building a bespoke tool through Shipyard , or developing open standards such as Open Org that others can use.",
     "I build things as well as advise on them. I believe the best way to understand a problem is to make something that tries to solve it. That's why I've built open tools and data infrastructure alongside my consulting work — each one born from a real need I kept seeing.",
     "I work in the open wherever I can. Frameworks are shared under Creative Commons. Data is open by default. Tools are built for use. Thinking happens in public on my blog .",
     "Alongside The Good Ship, I previously co-founded Data for Action in 2023 — exploring what infrastructure the social purpose sector really needed. We embraced uncertainty over false certainty, tested ideas in the open, and built tools that outlasted the partnership. Data for Action ended in January 2026; the work continues here, and through the open tools built during that time."
   ],
+  "summary": "I'm Tom Campbell Watson. I work with social purpose organisations — charities, social enterprises, B Corps, community businesses, and mission-driven public bodies — helping them think clearly about strategy, technology, data architecture, and resilience. The Good Ship combines consultancy, practical product development and open research for the social purpose sector. Sometimes that means helping a team make a better decision; sometimes it's building a bespoke tool through Shipyard , or developing open standards such as Open Org that others can use.",
+  "audiences": [
+    "charities",
+    "social enterprises",
+    "B Corps",
+    "community businesses",
+    "mission-driven public bodies"
+  ],
+  "geography": {
+    "based_in": "North East England",
+    "working": "Globally"
+  },
+  "links": {
+    "founder_blog": "https://tomcw.xyz",
+    "founder_linkedin": "https://linkedin.com/in/tomcampbellwatson"
+  },
   "facts": [
     {
       "label": "Based in",
