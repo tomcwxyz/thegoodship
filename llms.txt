@@ -12,7 +12,20 @@ A structured index is available at https://good-ship.co.uk/site.json. The follow
 Each tool and framework has an individual JSON resource. Follow each item’s `json_url` from https://good-ship.co.uk/tools.json or https://good-ship.co.uk/frameworks.json.
 For example: https://good-ship.co.uk/catalogue/tools/drift.json and https://good-ship.co.uk/catalogue/frameworks/garden-of-ideas.json
 
+Service guides for charities, social enterprises and other mission-driven organisations:
+
+- Responsible AI and technology strategy: https://good-ship.co.uk/ai-technology-strategy/
+- Data strategy and architecture: https://good-ship.co.uk/data-strategy/
+- Organisational resilience: https://good-ship.co.uk/organisational-resilience/
+- Bespoke software and capability-building through Shipyard: https://good-ship.co.uk/shipyard/
+
+Each guide explains questions, choices, approaches and related open resources. Work examples and testimonials will be published only with permission.
+
 Individual pages are also machine-readable:
+
+- Responsible AI and technology strategy: https://good-ship.co.uk/ai-technology-strategy/page.json
+- Data strategy and architecture: https://good-ship.co.uk/data-strategy/page.json
+- Organisational resilience: https://good-ship.co.uk/organisational-resilience/page.json
 
 - Shipyard: https://good-ship.co.uk/shipyard/page.json
 - Open Org explainer: https://good-ship.co.uk/open-org/page.json
