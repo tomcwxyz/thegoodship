@@ -2,8 +2,99 @@
   "id": "https://good-ship.co.uk/",
   "type": "website",
   "name": "The Good Ship",
-  "description": "The Good Ship helps social purpose organisations navigate uncertainty with strategy, technology, data, and open tools. Founded by Tom Campbell Watson.",
+  "description": "Strategy, responsible AI, data, organisational resilience and bespoke digital tools for charities and social enterprises. The Good Ship builds openly.",
   "title": "The Good Ship — Strategy, technology & resilience for social purpose organisations",
+  "summary": "I'm Tom Campbell Watson. I work with social purpose organisations — charities, social enterprises, B Corps, community businesses, and mission-driven public bodies — helping them think clearly about strategy, technology, data architecture, and resilience. The Good Ship combines consultancy, practical product development and open research for the social purpose sector. Sometimes that means helping a team make a better decision; sometimes it's building a bespoke tool through Shipyard , or developing open standards such as Open Org that others can use. I build things as well as advise on them. I believe the best way to understand a problem is to make something that tries to solve it. That's why I've built open tools and data infrastructure alongside my consulting work — each one born from a real need I kept seeing.",
+  "positioning": {
+    "overview": "I'm Tom Campbell Watson. I work with social purpose organisations — charities, social enterprises, B Corps, community businesses, and mission-driven public bodies — helping them think clearly about strategy, technology, data architecture, and resilience. The Good Ship combines consultancy, practical product development and open research for the social purpose sector. Sometimes that means helping a team make a better decision; sometimes it's building a bespoke tool through Shipyard , or developing open standards such as Open Org that others can use. I build things as well as advise on them. I believe the best way to understand a problem is to make something that tries to solve it. That's why I've built open tools and data infrastructure alongside my consulting work — each one born from a real need I kept seeing.",
+    "who_we_help": [
+      "charities",
+      "social enterprises",
+      "B Corps",
+      "community businesses",
+      "mission-driven public bodies"
+    ],
+    "what_we_do": [
+      {
+        "id": "ai-and-technology-strategy",
+        "name": "AI & Technology Strategy",
+        "description": "Responsible AI adoption, digital sovereignty, and helping organisations think strategically about technology — not just chase the latest trend.",
+        "source_page": "https://good-ship.co.uk/#services"
+      },
+      {
+        "id": "data-strategy-architecture-and-design",
+        "name": "Data Strategy, Architecture & Design",
+        "description": "Data strategy, data architecture, storytelling, and visualisation. From minimum viable standards to full data infrastructure — helping organisations see clearly and share openly.",
+        "source_page": "https://good-ship.co.uk/#services"
+      },
+      {
+        "id": "organisational-resilience",
+        "name": "Organisational Resilience",
+        "description": "Frameworks, assessment, and strategic planning for navigating uncertainty. Purpose, money, people — nine principles for staying flexible.",
+        "source_page": "https://good-ship.co.uk/#services"
+      },
+      {
+        "id": "product-and-team-development",
+        "name": "Product & Team Development",
+        "description": "Product management, facilitation, and team development. Helping teams ship better work through clearer priorities, participatory methods, and practical governance.",
+        "source_page": "https://good-ship.co.uk/#services"
+      },
+      {
+        "id": "learning-partnerships-and-coaching",
+        "name": "Learning Partnerships & Coaching",
+        "description": "One-to-one development, team learning, and long-term advisory relationships. A steady light to navigate by.",
+        "source_page": "https://good-ship.co.uk/#services"
+      },
+      {
+        "id": "open-infrastructure",
+        "name": "Open Infrastructure",
+        "description": "Building shared digital tools for the sector. Not just talking about what's needed — actually making it.",
+        "source_page": "https://good-ship.co.uk/#services"
+      }
+    ],
+    "how_we_work": [
+      "The Good Ship combines consultancy, practical product development and open research for the social purpose sector. Sometimes that means helping a team make a better decision; sometimes it's building a bespoke tool through Shipyard , or developing open standards such as Open Org that others can use.",
+      "I build things as well as advise on them. I believe the best way to understand a problem is to make something that tries to solve it. That's why I've built open tools and data infrastructure alongside my consulting work — each one born from a real need I kept seeing."
+    ],
+    "geography": {
+      "based_in": "North East England",
+      "working": "Globally"
+    },
+    "operating_model": "Solo consultancy",
+    "approach": "Open by default"
+  },
+  "organisation": {
+    "name": "The Good Ship",
+    "founder": "Tom Campbell Watson",
+    "contact": {
+      "website": "https://good-ship.co.uk/",
+      "email": "tom@good-ship.co.uk"
+    },
+    "profile_url": "https://good-ship.co.uk/about.json",
+    "external_profiles": {
+      "founder_blog": "https://tomcw.xyz",
+      "founder_linkedin": "https://linkedin.com/in/tomcampbellwatson"
+    }
+  },
+  "evidence": {
+    "named_organisations_worked_with": [
+      "Lloyds Bank Foundation",
+      "Joseph Rowntree Foundation",
+      "ClientEarth",
+      "Social Tech Trust",
+      "Power to Change",
+      "NPC",
+      "Wildlife Trusts",
+      "NHS England",
+      "NCSC",
+      "Cabinet Office",
+      "MHCLG"
+    ],
+    "tools_count": 16,
+    "frameworks_count": 9,
+    "tools_index": "https://good-ship.co.uk/tools.json",
+    "frameworks_index": "https://good-ship.co.uk/frameworks.json"
+  },
   "canonical_url": "https://good-ship.co.uk/",
   "language": "en-GB",
   "publisher": {

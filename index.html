@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Good Ship — Strategy, technology &amp; resilience for social purpose organisations</title>
-  <meta name="description" content="The Good Ship helps social purpose organisations navigate uncertainty with strategy, technology, data, and open tools. Founded by Tom Campbell Watson.">
+  <meta name="description" content="Strategy, responsible AI, data, organisational resilience and bespoke digital tools for charities and social enterprises. The Good Ship builds openly.">
   <meta name="theme-color" content="#1B2A4A">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
@@ -17,7 +17,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://good-ship.co.uk/">
   <meta property="og:title" content="The Good Ship — Strategy, technology & resilience for social purpose organisations">
-  <meta property="og:description" content="The Good Ship helps social purpose organisations navigate uncertainty with strategy, technology, data, and open tools. Founded by Tom Campbell Watson.">
+  <meta property="og:description" content="Strategy, responsible AI, data, organisational resilience and bespoke digital tools for charities and social enterprises. The Good Ship builds openly.">
   <meta property="og:image" content="https://good-ship.co.uk/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -27,7 +27,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Good Ship — Strategy, technology & resilience for social purpose organisations">
-  <meta name="twitter:description" content="The Good Ship helps social purpose organisations navigate uncertainty with strategy, technology, data, and open tools.">
+  <meta name="twitter:description" content="Strategy, responsible AI, data, organisational resilience and bespoke digital tools for charities and social enterprises.">
   <meta name="twitter:image" content="https://good-ship.co.uk/og-image.png">
 
   <!-- Additional SEO -->
@@ -1282,33 +1282,64 @@
     }
   </style>
 
-  <!-- Structured Data -->
+  <!-- Organisation, founder and website identity; align with visible public content. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "The Good Ship",
-    "url": "https://good-ship.co.uk",
-    "logo": "https://good-ship.co.uk/favicon.svg",
-    "description": "Strategy, technology & resilience for social purpose organisations",
-    "founder": {
-      "@type": "Person",
-      "name": "Tom Campbell Watson"
-    },
-    "email": "tom@good-ship.co.uk",
-    "areaServed": "GB",
-    "knowsAbout": [
-      "AI Strategy", "Data Strategy", "Organisational Resilience",
-      "Product Development", "Social Purpose Technology", "Open Infrastructure"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://good-ship.co.uk/#organisation",
+        "name": "The Good Ship",
+        "legalName": "The Good Ship Ltd",
+        "url": "https://good-ship.co.uk/",
+        "logo": "https://good-ship.co.uk/favicon.svg",
+        "description": "Strategy, responsible AI, data, organisational resilience and bespoke digital tools for charities and social enterprises. The Good Ship builds openly.",
+        "email": "tom@good-ship.co.uk",
+        "founder": {
+          "@id": "https://good-ship.co.uk/#founder"
+        },
+        "location": {
+          "@type": "Place",
+          "name": "North East England"
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": "Worldwide"
+        },
+        "knowsAbout": [
+          "AI & Technology Strategy",
+          "Data Strategy, Architecture & Design",
+          "Organisational Resilience",
+          "Product & Team Development",
+          "Learning Partnerships & Coaching",
+          "Open Infrastructure"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://good-ship.co.uk/#founder",
+        "name": "Tom Campbell Watson",
+        "url": "https://tomcw.xyz",
+        "sameAs": [
+          "https://linkedin.com/in/tomcampbellwatson"
+        ],
+        "worksFor": {
+          "@id": "https://good-ship.co.uk/#organisation"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://good-ship.co.uk/#website",
+        "name": "The Good Ship",
+        "url": "https://good-ship.co.uk/",
+        "inLanguage": "en-GB",
+        "description": "Strategy, responsible AI, data, organisational resilience and bespoke digital tools for charities and social enterprises. The Good Ship builds openly.",
+        "publisher": {
+          "@id": "https://good-ship.co.uk/#organisation"
+        }
+      }
     ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "The Good Ship",
-    "url": "https://good-ship.co.uk"
   }
   </script>
 </head>
@@ -1456,6 +1487,9 @@
             <div class="reveal reveal-delay-1">
               <p>
                 I'm Tom Campbell Watson. I work with social purpose organisations &mdash; charities, social enterprises, B Corps, community businesses, and mission-driven public bodies &mdash; helping them think clearly about strategy, technology, data architecture, and resilience.
+              </p>
+              <p>
+                The Good Ship combines <strong>consultancy, practical product development and open research</strong> for the social purpose sector. Sometimes that means helping a team make a better decision; sometimes it's building a bespoke tool through <a href="/shipyard/">Shipyard</a>, or developing open standards such as <a href="/open-org/">Open Org</a> that others can use.
               </p>
               <p>
                 I <strong>build things</strong> as well as advise on them. I believe the best way to understand a problem is to make something that tries to solve it. That's why I've built open tools and data infrastructure alongside my consulting work &mdash; each one born from a real need I kept seeing.

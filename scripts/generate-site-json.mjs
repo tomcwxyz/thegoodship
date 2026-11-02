@@ -100,6 +100,17 @@ export function generate(html) {
   const email = html.match(/href="mailto:([^"?]+)"/i)?.[1] ?? null;
   if (!intro.length || !facts.length || !organisations.length) throw new Error('Incomplete About content');
 
+  // Keep detailed discovery metadata tied to facts and copy visible on the site.
+  const audienceText = intro[0].match(/—\s*([^—]+?)\s*—/)?.[1] ?? '';
+  const audiences = audienceText.replace(/\s+and\s+/g, ', ')
+    .split(/\s*,\s*/).map(s => s.trim()).filter(Boolean);
+  const fact = label => facts.find(item => item.label === label)?.value ?? null;
+  const linkedIn = html.match(/href="(https:\/\/(?:www\.)?linkedin\.com\/in\/[^"]+)"/i)?.[1] ?? null;
+  const blog = html.match(/href="(https:\/\/tomcw\.xyz\/?)"/i)?.[1] ?? null;
+  if (audiences.length < 3 || !fact('Based in') || !fact('Working') || !blog) {
+    throw new Error('Missing public positioning facts; inspect About section');
+  }
+
   const about = {
     id: ORIGIN + '/#about',
     type: 'organisation_description',
@@ -108,6 +119,10 @@ export function generate(html) {
     description,
     founder: attr(html.match(/<meta\s+name="author"[^>]*>/i)?.[0] ?? '', 'content'),
     story: intro,
+    summary: intro.slice(0, 2).join(' '),
+    audiences,
+    geography: { based_in: fact('Based in'), working: fact('Working') },
+    links: { founder_blog: blog, founder_linkedin: linkedIn },
     facts,
     organisations_worked_with: organisations,
     contact: { website: ORIGIN + '/', email },
@@ -184,12 +199,47 @@ export function generate(html) {
     { type: 'frameworks', url: ORIGIN + '/frameworks.json', html: ORIGIN + '/#frameworks' },
   ];
 
+  const specialisms = services.map(({ id, name, description, url }) => ({
+    id, name, description, source_page: url,
+  }));
+  const positioning = {
+    overview: intro.slice(0, 3).join(' '),
+    who_we_help: audiences,
+    what_we_do: specialisms,
+    how_we_work: [
+      intro[1],
+      intro[2],
+    ],
+    geography: {
+      based_in: fact('Based in'),
+      working: fact('Working'),
+    },
+    operating_model: fact('By design'),
+    approach: fact('Approach'),
+  };
+
   const site = {
     id: ORIGIN + '/',
     type: 'website',
     name: 'The Good Ship',
     description,
     title,
+    summary: positioning.overview,
+    positioning,
+    organisation: {
+      name: about.name,
+      founder: about.founder,
+      contact: about.contact,
+      profile_url: ORIGIN + '/about.json',
+      external_profiles: { founder_blog: blog, founder_linkedin: linkedIn },
+    },
+    evidence: {
+      named_organisations_worked_with: organisations,
+      tools_count: tools.length,
+      frameworks_count: frameworks.length,
+      tools_index: ORIGIN + '/tools.json',
+      frameworks_index: ORIGIN + '/frameworks.json',
+    },
     canonical_url: ORIGIN + '/',
     language: 'en-GB',
     publisher: { name: 'The Good Ship', url: ORIGIN + '/' },
