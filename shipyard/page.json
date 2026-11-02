@@ -1,0 +1,369 @@
+{
+  "id": "https://good-ship.co.uk/shipyard/",
+  "type": "web_page",
+  "title": "Shipyard — The Good Ship",
+  "name": "Shipyard",
+  "description": "Shipyard: bespoke tools built around how your organisation actually works. Discovery, design, development, deployment — fully yours to keep.",
+  "language": "en-GB",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "canonical_url": "https://good-ship.co.uk/shipyard/",
+  "source_page": "https://good-ship.co.uk/shipyard/",
+  "json_url": "https://good-ship.co.uk/shipyard/page.json",
+  "version": "0.1",
+  "introduction": [
+    {
+      "type": "paragraph",
+      "text": "Your organisation has problems that software could solve. Shipyard is how we discover them, design the right tools, build them properly, and ship them — fully deployed, documented, and yours to keep."
+    }
+  ],
+  "introduction_links": [],
+  "sections": [
+    {
+      "id": "tools-you-own-built-around-how-you-actually-work",
+      "heading": "Tools you own, built around how you actually work",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "You know the feeling. The spreadsheet that started as a quick fix and now runs half your operations. The process that falls apart when one person is on holiday. The report that takes someone a full day to pull together every quarter. The platform you're paying for that nobody really uses."
+        },
+        {
+          "type": "paragraph",
+          "text": "These aren't technology problems. They're design problems. The tools you have weren't built around how your team actually works — so your team works around the tools instead."
+        },
+        {
+          "type": "paragraph",
+          "text": "Shipyard fixes this. We come in, figure out where the real problems are, design tools that fit how your team actually operates, and build them using modern, AI-assisted approaches. We favour open-source software and EU-based alternatives that strengthen your tech and data sovereignty — reducing dependency on big vendors and improving resilience, but we are pragmatic, building what you need, how you need it. No bloated platforms. No eye-watering licence fees. Tools you own, that do the job, and that your people can actually use."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "organisations-with-real-problems-to-solve",
+      "heading": "Organisations with real problems to solve",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Shipyard works best with teams who know something isn't working but aren't sure what to build — or how. If you recognise your organisation below, we should talk."
+        },
+        {
+          "type": "list_item",
+          "text": "Charities"
+        },
+        {
+          "type": "list_item",
+          "text": "Social enterprises"
+        },
+        {
+          "type": "list_item",
+          "text": "B Corps"
+        },
+        {
+          "type": "list_item",
+          "text": "SMEs"
+        },
+        {
+          "type": "list_item",
+          "text": "Mission-driven organisations"
+        },
+        {
+          "type": "list_item",
+          "text": "Non-profits"
+        },
+        {
+          "type": "list_item",
+          "text": "Community organisations"
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "pick-how-you-want-to-work",
+      "heading": "Pick how you want to work",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Every organisation is different. Some want the thing built and shipped. Others want to build the muscle to do it themselves. Shipyard works either way."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Ship It"
+        },
+        {
+          "type": "paragraph",
+          "text": "i build. you get the tools."
+        },
+        {
+          "type": "paragraph",
+          "text": "Think of me as your in-house technologist. I handle everything: discovery, design, development, deployment, documentation, and ongoing maintenance. You stay focused on your work. I ship fast, effectively, and to a standard that lasts."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is the right choice when you need to move quickly, don't have spare capacity, or want someone who's done this before to just get it done."
+        },
+        {
+          "type": "paragraph",
+          "text": "Speed: Fast. Weeks, not months."
+        },
+        {
+          "type": "paragraph",
+          "text": "Your involvement: Discovery conversations and feedback loops."
+        },
+        {
+          "type": "paragraph",
+          "text": "You get: Deployed tools, full documentation, maintenance plan."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Learn & Ship"
+        },
+        {
+          "type": "paragraph",
+          "text": "your team builds. i guide."
+        },
+        {
+          "type": "paragraph",
+          "text": "I work alongside a small team of your staff, advising and coaching them through the entire process. They do the discovery, the building, the deployment — with me there to steer, unblock, and teach. It takes a bit longer, but your team comes out the other end understanding what they built and how to maintain it."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is the right choice when building internal capability matters as much as the tools themselves."
+        },
+        {
+          "type": "paragraph",
+          "text": "Speed: Steady. Longer, but your team learns deeply."
+        },
+        {
+          "type": "paragraph",
+          "text": "Your involvement: A small dedicated team throughout."
+        },
+        {
+          "type": "paragraph",
+          "text": "You get: Deployed tools, internal skills, independence."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "the-work-draws-on-everything-i-know",
+      "heading": "The work draws on everything I know",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Shipyard isn't just development. It's the combination of skills that means the tools we build actually fit."
+        },
+        {
+          "type": "subheading",
+          "level": 4,
+          "text": "AI"
+        },
+        {
+          "type": "paragraph",
+          "text": "Modern AI-assisted approaches to design and build faster"
+        },
+        {
+          "type": "subheading",
+          "level": 4,
+          "text": "Data"
+        },
+        {
+          "type": "paragraph",
+          "text": "Making your data work for you, not the other way round"
+        },
+        {
+          "type": "subheading",
+          "level": 4,
+          "text": "Design"
+        },
+        {
+          "type": "paragraph",
+          "text": "Tools shaped around how your team actually works"
+        },
+        {
+          "type": "subheading",
+          "level": 4,
+          "text": "Skills"
+        },
+        {
+          "type": "paragraph",
+          "text": "Building your team's confidence and capability"
+        },
+        {
+          "type": "subheading",
+          "level": 4,
+          "text": "Automation"
+        },
+        {
+          "type": "paragraph",
+          "text": "Understanding what should be automated and what shouldn't"
+        },
+        {
+          "type": "subheading",
+          "level": 4,
+          "text": "Open Source"
+        },
+        {
+          "type": "paragraph",
+          "text": "EU and open-source alternatives for tech and data sovereignty"
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "the-kind-of-tools-we-make",
+      "heading": "The kind of tools we make",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Every project is different, but here are the sorts of things Shipyard produces."
+        },
+        {
+          "type": "subheading",
+          "level": 4,
+          "text": "Referral tracker"
+        },
+        {
+          "type": "paragraph",
+          "text": "A housing charity replacing a shared spreadsheet with a proper system for logging, tracking, and reporting on client referrals."
+        },
+        {
+          "type": "subheading",
+          "level": 4,
+          "text": "Grant reporting dashboard"
+        },
+        {
+          "type": "paragraph",
+          "text": "An automated dashboard pulling data from multiple sources so a social enterprise can report to funders without the monthly scramble."
+        },
+        {
+          "type": "subheading",
+          "level": 4,
+          "text": "AI-powered MCP servers"
+        },
+        {
+          "type": "paragraph",
+          "text": "Custom Model Context Protocol servers that let AI assistants securely connect to your organisation's data — databases, CRMs, internal APIs — so your team can query and act on live information through natural conversation."
+        },
+        {
+          "type": "subheading",
+          "level": 4,
+          "text": "AI skills & agents"
+        },
+        {
+          "type": "paragraph",
+          "text": "Purpose-built AI skills and agents tailored to your workflows — drafting funding applications, triaging enquiries, summarising case notes, or generating reports from raw data."
+        },
+        {
+          "type": "subheading",
+          "level": 4,
+          "text": "Impact data pipeline"
+        },
+        {
+          "type": "paragraph",
+          "text": "Connecting fragmented data sources into a single, clean pipeline — with AI-assisted transformation and validation — that feeds reporting and decision-making."
+        },
+        {
+          "type": "subheading",
+          "level": 4,
+          "text": "Intelligent workflow automation"
+        },
+        {
+          "type": "paragraph",
+          "text": "Automating manual processes with AI where it adds value — classifying incoming data, extracting information from documents, routing requests — and simple reliable logic where it doesn't."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "discover-assess-build-ship",
+      "heading": "Discover, assess, build, ship",
+      "blocks": [
+        {
+          "type": "subheading",
+          "level": 4,
+          "text": "Discover"
+        },
+        {
+          "type": "paragraph",
+          "text": "Find the real problems worth solving"
+        },
+        {
+          "type": "subheading",
+          "level": 4,
+          "text": "Assess"
+        },
+        {
+          "type": "paragraph",
+          "text": "Work out what to build and how"
+        },
+        {
+          "type": "subheading",
+          "level": 4,
+          "text": "Build"
+        },
+        {
+          "type": "paragraph",
+          "text": "Design and develop the right tools"
+        },
+        {
+          "type": "subheading",
+          "level": 4,
+          "text": "Ship"
+        },
+        {
+          "type": "paragraph",
+          "text": "Deploy, document, and maintain"
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "A note on technology choices"
+        },
+        {
+          "type": "paragraph",
+          "text": "We don't build on Microsoft. Not SharePoint, not Power Platform, not Dynamics. The development cycles are too long, the licensing costs are too high, the integration headaches are too frequent, and the results rarely justify the pain."
+        },
+        {
+          "type": "paragraph",
+          "text": "Instead, we use open-source software and EU-based alternatives wherever possible. This isn't just a technical preference — it's about sovereignty. Your data stays under your control, hosted where you choose, governed by regulations that protect you. You're not locked into a vendor's roadmap, pricing changes, or terms of service. Open tools are faster to build with, cheaper to run, more transparent, and genuinely resilient. Your organisation will be stronger for it."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "let-s-build-something-useful",
+      "heading": "Let's build something useful",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "If you've got problems that the right tool could solve, let's talk about how Shipyard can help."
+        },
+        {
+          "type": "paragraph",
+          "text": "Book a free 30-minute call. We'll talk through what's not working, explore whether Shipyard is the right fit, and outline what an engagement could look like. No pitch deck, no pressure."
+        },
+        {
+          "type": "paragraph",
+          "text": "Engagements are scoped and quoted after discovery. We'll always agree costs before any work begins."
+        }
+      ],
+      "links": [
+        {
+          "label": "book a call",
+          "url": "https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "book a call",
+      "url": "https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k"
+    }
+  ],
+  "embeds": []
+}

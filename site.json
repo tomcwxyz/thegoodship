@@ -46,15 +46,18 @@
   "other_pages": [
     {
       "name": "Shipyard",
-      "url": "https://good-ship.co.uk/shipyard/"
+      "url": "https://good-ship.co.uk/shipyard/",
+      "json": "https://good-ship.co.uk/shipyard/page.json"
     },
     {
       "name": "Open Org",
-      "url": "https://good-ship.co.uk/open-org/"
+      "url": "https://good-ship.co.uk/open-org/",
+      "json": "https://good-ship.co.uk/open-org/page.json"
     },
     {
       "name": "Responsible AI",
-      "url": "https://good-ship.co.uk/responsible-ai/"
+      "url": "https://good-ship.co.uk/responsible-ai/",
+      "json": "https://good-ship.co.uk/responsible-ai/page.json"
     },
     {
       "name": "Sets",
@@ -62,7 +65,8 @@
     },
     {
       "name": "Slow Post",
-      "url": "https://good-ship.co.uk/slow-post/"
+      "url": "https://good-ship.co.uk/slow-post/",
+      "json": "https://good-ship.co.uk/slow-post/page.json"
     }
   ],
   "standards": [

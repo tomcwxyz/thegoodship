@@ -1,0 +1,112 @@
+{
+  "id": "https://good-ship.co.uk/slow-post/",
+  "type": "web_page",
+  "title": "The Slow Post — Switch off, go outside, write something",
+  "name": "The Slow Post",
+  "description": "On Wednesday 10 June, during Environment Day, switch off, go outside with a pen and a card, and write something. Then post it to someone — via The Slow Post.",
+  "language": "en-GB",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "canonical_url": "https://good-ship.co.uk/slow-post/",
+  "source_page": "https://good-ship.co.uk/slow-post/",
+  "json_url": "https://good-ship.co.uk/slow-post/page.json",
+  "version": "0.1",
+  "introduction": [
+    {
+      "type": "paragraph",
+      "text": "Switch off. Go outside. Write something by hand. Then post it to someone."
+    }
+  ],
+  "introduction_links": [],
+  "sections": [
+    {
+      "id": "how-it-started",
+      "heading": "How it started",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "I've been at a screen a lot. I am now. It's the nature of what I do."
+        },
+        {
+          "type": "paragraph",
+          "text": "But I've been thinking about the tangibility of things — slowing down, switching off. And I wondered if anyone else felt the same."
+        },
+        {
+          "type": "paragraph",
+          "text": "So on Wednesday 10 June, during Great Big Green Week, I'm going to switch off, go outside with a pen and a card, and write something. And I wondered if anyone wanted to do the same and and then we post each other the card. Via The Slow Post."
+        },
+        {
+          "type": "paragraph",
+          "text": "A few of people also thought this sounded like a good idea, so I thought I better follow through. So here we are."
+        },
+        {
+          "type": "paragraph",
+          "text": "It's a small experiment. A pause. A moment to step away from the screen and do something with your hands. To connect with someone else in a simple, tangible way."
+        },
+        {
+          "type": "paragraph",
+          "text": "You can take part in a few ways, in spirit, actually posting physical cards, or sharing photos of your creations."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "three-ways-in",
+      "heading": "Three ways in",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "No wrong choice. Pick whatever fits. You can tell us when you sign up."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "In spirit"
+        },
+        {
+          "type": "paragraph",
+          "text": "Just join the pause. Switch off, go outside, write something — keep it for yourself. No matching, no posting required."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Match & post"
+        },
+        {
+          "type": "paragraph",
+          "text": "Get paired with someone and send them your card through the actual post. You'll receive one back."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Virtually"
+        },
+        {
+          "type": "paragraph",
+          "text": "Anywhere in the world — take part by sharing a photo of what you made instead of a physical card."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "sign-up",
+      "heading": "Sign up",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Tell us your name, how you'd like to take part, and — if you're posting — a mailing address. That's all."
+        }
+      ],
+      "links": []
+    }
+  ],
+  "links": [],
+  "embeds": [
+    {
+      "title": "The Slow Post sign-up form",
+      "url": "https://driftforms.app/f/the-slow-post-Kqiwgb"
+    }
+  ]
+}
