@@ -195,11 +195,11 @@ export function generate(html) {
     representations: ['text/html', 'application/json', 'text/plain'],
     resources,
     other_pages: [
-      { name: 'Shipyard', url: ORIGIN + '/shipyard/' },
-      { name: 'Open Org', url: ORIGIN + '/open-org/' },
-      { name: 'Responsible AI', url: ORIGIN + '/responsible-ai/' },
+      { name: 'Shipyard', url: ORIGIN + '/shipyard/', json: ORIGIN + '/shipyard/page.json' },
+      { name: 'Open Org', url: ORIGIN + '/open-org/', json: ORIGIN + '/open-org/page.json' },
+      { name: 'Responsible AI', url: ORIGIN + '/responsible-ai/', json: ORIGIN + '/responsible-ai/page.json' },
       { name: 'Sets', url: ORIGIN + '/sets/' },
-      { name: 'Slow Post', url: ORIGIN + '/slow-post/' },
+      { name: 'Slow Post', url: ORIGIN + '/slow-post/', json: ORIGIN + '/slow-post/page.json' },
     ],
     standards: [
       { name: 'Open Org profile', url: ORIGIN + '/open-org/org-profile.schema.json' },
