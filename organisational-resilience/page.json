@@ -1,0 +1,286 @@
+{
+  "id": "https://good-ship.co.uk/organisational-resilience/",
+  "type": "web_page",
+  "title": "Organisational Resilience & Strategy for Charities | The Good Ship",
+  "name": "Stronger when things change.",
+  "description": "Practical organisational resilience, strategy and facilitation for charities and social enterprises. Explore purpose, money, people and the ability to adapt.",
+  "language": "en-GB",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "canonical_url": "https://good-ship.co.uk/organisational-resilience/",
+  "source_page": "https://good-ship.co.uk/organisational-resilience/",
+  "json_url": "https://good-ship.co.uk/organisational-resilience/page.json",
+  "version": "0.1",
+  "introduction": [
+    {
+      "type": "paragraph",
+      "text": "Resilience is not a plan for pretending uncertainty will go away. It is the ability to notice change, make choices together and keep moving without losing your purpose."
+    },
+    {
+      "type": "paragraph",
+      "text": "For charities, community organisations and social enterprises dealing with pressure on resources, shifting expectations or decisions that do not have one neat answer."
+    }
+  ],
+  "introduction_links": [
+    {
+      "label": "Talk through your challenge",
+      "url": "https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k"
+    }
+  ],
+  "sections": [
+    {
+      "id": "a-resilient-organisation-can-adapt",
+      "heading": "A resilient organisation can adapt",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Funding changes. Good people leave. Demand grows. A partnership stops working as expected. A strategy written in calmer circumstances becomes harder to follow. None of those things automatically means the organisation has failed."
+        },
+        {
+          "type": "paragraph",
+          "text": "Resilience is about looking honestly at what gives an organisation strength and where it might be exposed. Purpose, money, people, relationships, governance and the capacity to learn all matter. So do the assumptions nobody has had time to question."
+        },
+        {
+          "type": "paragraph",
+          "text": "The work is not about producing another document for a shelf. It is about a clearer shared picture and better ways to decide, respond and work together."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "make-space-to-think-and-act",
+      "heading": "Make space to think and act",
+      "blocks": [
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Resilience assessment"
+        },
+        {
+          "type": "paragraph",
+          "text": "Explore the organisation through a structured but conversational lens, identifying strengths, tensions and risks without reducing them to a single score."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Strategy under uncertainty"
+        },
+        {
+          "type": "paragraph",
+          "text": "Clarify purpose and priorities, test assumptions and make explicit choices about what you will not pursue."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Purpose, money and people"
+        },
+        {
+          "type": "paragraph",
+          "text": "Connect ambition with income, skills, time, governance and the actual capacity to do the work."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Facilitation"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bring staff, trustees and partners into difficult conversations with enough structure to make progress and enough space to hear difference."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Collective resilience"
+        },
+        {
+          "type": "paragraph",
+          "text": "Look at the relationships and shared infrastructure organisations rely on, and where collaboration might strengthen rather than dilute their work."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Learning and follow-through"
+        },
+        {
+          "type": "paragraph",
+          "text": "Translate the discussion into choices, responsibilities and practical review points so it stays alive after the workshop."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "explore-choose-revisit",
+      "heading": "Explore, choose, revisit",
+      "blocks": [
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Understand the picture"
+        },
+        {
+          "type": "paragraph",
+          "text": "Hear from the right mix of people and explore what is working, what feels fragile and what might change."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Test the difficult choices"
+        },
+        {
+          "type": "paragraph",
+          "text": "Use practical frameworks, exercises and conversation to examine trade-offs, alternative futures and priorities."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Make learning possible"
+        },
+        {
+          "type": "paragraph",
+          "text": "Agree what happens next, who will do it and what signals might tell you it is time to adapt again."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "take-a-look-at-the-tools",
+      "heading": "Take a look at the tools",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "I share frameworks because they should be useful beyond a single engagement. They are starting points for better conversations, not a substitute for knowing your context."
+        }
+      ],
+      "links": [
+        {
+          "label": "Organisational Resilience Toolkit An open toolkit to help organisations explore their resilience in practice.",
+          "url": "https://resilience.good-ship.co.uk/"
+        },
+        {
+          "label": "Garden of Ideas A practical way to think about ideas worth developing, tending or letting go.",
+          "url": "https://good-ship.co.uk/frameworks/garden-of-ideas.pdf"
+        },
+        {
+          "label": "Collaboration Spectrum A resource for thinking about different ways organisations can work together.",
+          "url": "https://good-ship.co.uk/frameworks/collaboration-spectrum-slides.pdf"
+        },
+        {
+          "label": "Tending A tool exploring the relationships and networks organisations depend on.",
+          "url": "https://tending.network/"
+        }
+      ]
+    },
+    {
+      "id": "is-this-really-different-from-strategic-planning",
+      "heading": "Is this really different from strategic planning?",
+      "blocks": [
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Do we need a new strategy?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Not always. You may need to challenge one assumption, rework a priority or establish better ways to respond. A new document is only worthwhile if it helps people decide and act."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "How do you measure resilience?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Start with meaningful signals, not a false claim of precision: can you make decisions, retain important knowledge, sustain relationships, understand your finances and adapt when evidence changes? Some will be quantitative; much is necessarily qualitative."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Can this work across several organisations?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Yes. Collective resilience asks what organisations can do together, which dependencies they share and where they need to preserve their own autonomy. It requires a different conversation from an internal review."
+        },
+        {
+          "type": "paragraph",
+          "text": "Related work: using evidence well and making responsible technology choices ."
+        }
+      ],
+      "links": [
+        {
+          "label": "using evidence well",
+          "url": "https://good-ship.co.uk/data-strategy/"
+        },
+        {
+          "label": "making responsible technology choices",
+          "url": "https://good-ship.co.uk/ai-technology-strategy/"
+        }
+      ]
+    },
+    {
+      "id": "start-with-the-problem-not-a-pitch",
+      "heading": "Start with the problem, not a pitch",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Have something you are working through, or just a question forming? We can talk through what is happening, what you have tried and whether working together would be useful."
+        },
+        {
+          "type": "paragraph",
+          "text": "Prefer email? tom@good-ship.co.uk . Based in North East England, working with organisations elsewhere too."
+        }
+      ],
+      "links": [
+        {
+          "label": "Book an introductory call",
+          "url": "https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k"
+        },
+        {
+          "label": "tom@good-ship.co.uk",
+          "url": "mailto:tom@good-ship.co.uk"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "Talk through your challenge",
+      "url": "https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k"
+    },
+    {
+      "label": "Organisational Resilience Toolkit An open toolkit to help organisations explore their resilience in practice.",
+      "url": "https://resilience.good-ship.co.uk/"
+    },
+    {
+      "label": "Garden of Ideas A practical way to think about ideas worth developing, tending or letting go.",
+      "url": "https://good-ship.co.uk/frameworks/garden-of-ideas.pdf"
+    },
+    {
+      "label": "Collaboration Spectrum A resource for thinking about different ways organisations can work together.",
+      "url": "https://good-ship.co.uk/frameworks/collaboration-spectrum-slides.pdf"
+    },
+    {
+      "label": "Tending A tool exploring the relationships and networks organisations depend on.",
+      "url": "https://tending.network/"
+    },
+    {
+      "label": "using evidence well",
+      "url": "https://good-ship.co.uk/data-strategy/"
+    },
+    {
+      "label": "making responsible technology choices",
+      "url": "https://good-ship.co.uk/ai-technology-strategy/"
+    },
+    {
+      "label": "Book an introductory call",
+      "url": "https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k"
+    },
+    {
+      "label": "tom@good-ship.co.uk",
+      "url": "mailto:tom@good-ship.co.uk"
+    }
+  ],
+  "embeds": []
+}
