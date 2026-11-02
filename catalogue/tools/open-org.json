@@ -1,0 +1,18 @@
+{
+  "id": "open-org",
+  "name": "Open Org",
+  "description": "A data standard for self-sovereign organisational profiles, living strategies and published ideas. Funders discover, organisations stay in control.",
+  "category": "resources",
+  "label": "Working draft",
+  "featured": false,
+  "url": "https://good-ship.co.uk/open-org/",
+  "source_page": "https://good-ship.co.uk/#tools",
+  "json_url": "https://good-ship.co.uk/catalogue/tools/open-org.json",
+  "type": "tool",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "collection_url": "https://good-ship.co.uk/tools.json",
+  "language": "en-GB"
+}

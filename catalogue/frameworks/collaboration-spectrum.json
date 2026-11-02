@@ -1,0 +1,26 @@
+{
+  "id": "collaboration-spectrum",
+  "name": "Collaboration Spectrum",
+  "description": "From networking to integrating — mapping how organisations work together.",
+  "resources": [
+    {
+      "label": "PDF",
+      "url": "https://good-ship.co.uk/frameworks/collaboration-spectrum-slides.pdf",
+      "format": "pdf"
+    },
+    {
+      "label": "Slides",
+      "url": "https://good-ship.co.uk/frameworks/collaboration-spectrum-slides.pptx",
+      "format": "slides"
+    }
+  ],
+  "source_page": "https://good-ship.co.uk/#frameworks",
+  "json_url": "https://good-ship.co.uk/catalogue/frameworks/collaboration-spectrum.json",
+  "type": "framework",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "collection_url": "https://good-ship.co.uk/frameworks.json",
+  "language": "en-GB"
+}

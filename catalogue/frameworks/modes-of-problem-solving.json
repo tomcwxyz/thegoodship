@@ -1,0 +1,26 @@
+{
+  "id": "modes-of-problem-solving",
+  "name": "Modes of Problem Solving",
+  "description": "From “what’s the real problem?” through options to action — with learning throughout.",
+  "resources": [
+    {
+      "label": "PDF",
+      "url": "https://good-ship.co.uk/frameworks/modes-of-problem-solving.pdf",
+      "format": "pdf"
+    },
+    {
+      "label": "SVG",
+      "url": "https://good-ship.co.uk/frameworks/modes-of-problem-solving.svg",
+      "format": "svg"
+    }
+  ],
+  "source_page": "https://good-ship.co.uk/#frameworks",
+  "json_url": "https://good-ship.co.uk/catalogue/frameworks/modes-of-problem-solving.json",
+  "type": "framework",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "collection_url": "https://good-ship.co.uk/frameworks.json",
+  "language": "en-GB"
+}

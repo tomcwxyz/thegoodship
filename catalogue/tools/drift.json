@@ -1,0 +1,18 @@
+{
+  "id": "drift",
+  "name": "Drift",
+  "description": "Create intelligent forms that adapt to every respondent. An experience designed to feel as natural as conversation.",
+  "category": "forms",
+  "label": "Newly launched",
+  "featured": true,
+  "url": "https://driftforms.app/",
+  "source_page": "https://good-ship.co.uk/#tools",
+  "json_url": "https://good-ship.co.uk/catalogue/tools/drift.json",
+  "type": "tool",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "collection_url": "https://good-ship.co.uk/tools.json",
+  "language": "en-GB"
+}

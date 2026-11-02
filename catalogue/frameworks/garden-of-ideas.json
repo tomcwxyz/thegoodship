@@ -1,0 +1,26 @@
+{
+  "id": "garden-of-ideas",
+  "name": "Garden of Ideas",
+  "description": "A facilitation device using organic metaphors. Plant, compost, save seeds.",
+  "resources": [
+    {
+      "label": "PDF",
+      "url": "https://good-ship.co.uk/frameworks/garden-of-ideas.pdf",
+      "format": "pdf"
+    },
+    {
+      "label": "Slides",
+      "url": "https://good-ship.co.uk/frameworks/garden-of-ideas-slides.pptx",
+      "format": "slides"
+    }
+  ],
+  "source_page": "https://good-ship.co.uk/#frameworks",
+  "json_url": "https://good-ship.co.uk/catalogue/frameworks/garden-of-ideas.json",
+  "type": "framework",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "collection_url": "https://good-ship.co.uk/frameworks.json",
+  "language": "en-GB"
+}

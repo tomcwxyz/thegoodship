@@ -13,7 +13,8 @@
       "label": "Newly launched",
       "featured": true,
       "url": "https://good-ship.co.uk/sets/",
-      "source_page": "https://good-ship.co.uk/#tools"
+      "source_page": "https://good-ship.co.uk/#tools",
+      "json_url": "https://good-ship.co.uk/catalogue/tools/sets.json"
     },
     {
       "id": "techfreedom",
@@ -23,7 +24,8 @@
       "label": "Launching soon",
       "featured": false,
       "url": "https://techfreedom.eu/",
-      "source_page": "https://good-ship.co.uk/#tools"
+      "source_page": "https://good-ship.co.uk/#tools",
+      "json_url": "https://good-ship.co.uk/catalogue/tools/techfreedom.json"
     },
     {
       "id": "glade",
@@ -33,7 +35,8 @@
       "label": "Newly launched",
       "featured": false,
       "url": "https://ourglade.app/",
-      "source_page": "https://good-ship.co.uk/#tools"
+      "source_page": "https://good-ship.co.uk/#tools",
+      "json_url": "https://good-ship.co.uk/catalogue/tools/glade.json"
     },
     {
       "id": "impact-path",
@@ -43,7 +46,8 @@
       "label": "Newly launched",
       "featured": false,
       "url": "https://impact-path.vercel.app/",
-      "source_page": "https://good-ship.co.uk/#tools"
+      "source_page": "https://good-ship.co.uk/#tools",
+      "json_url": "https://good-ship.co.uk/catalogue/tools/impact-path.json"
     },
     {
       "id": "swells",
@@ -53,7 +57,8 @@
       "label": "Newly launched",
       "featured": false,
       "url": "https://swells.app/",
-      "source_page": "https://good-ship.co.uk/#tools"
+      "source_page": "https://good-ship.co.uk/#tools",
+      "json_url": "https://good-ship.co.uk/catalogue/tools/swells.json"
     },
     {
       "id": "drift",
@@ -63,7 +68,8 @@
       "label": "Newly launched",
       "featured": true,
       "url": "https://driftforms.app/",
-      "source_page": "https://good-ship.co.uk/#tools"
+      "source_page": "https://good-ship.co.uk/#tools",
+      "json_url": "https://good-ship.co.uk/catalogue/tools/drift.json"
     },
     {
       "id": "bearing",
@@ -73,7 +79,8 @@
       "label": "Newly Updated",
       "featured": true,
       "url": "https://www.findbearing.org/",
-      "source_page": "https://good-ship.co.uk/#tools"
+      "source_page": "https://good-ship.co.uk/#tools",
+      "json_url": "https://good-ship.co.uk/catalogue/tools/bearing.json"
     },
     {
       "id": "tending",
@@ -83,7 +90,8 @@
       "label": "Newly launched",
       "featured": true,
       "url": "https://tending.network/",
-      "source_page": "https://good-ship.co.uk/#tools"
+      "source_page": "https://good-ship.co.uk/#tools",
+      "json_url": "https://good-ship.co.uk/catalogue/tools/tending.json"
     },
     {
       "id": "open-org",
@@ -93,7 +101,8 @@
       "label": "Working draft",
       "featured": false,
       "url": "https://good-ship.co.uk/open-org/",
-      "source_page": "https://good-ship.co.uk/#tools"
+      "source_page": "https://good-ship.co.uk/#tools",
+      "json_url": "https://good-ship.co.uk/catalogue/tools/open-org.json"
     },
     {
       "id": "flowlance",
@@ -103,7 +112,8 @@
       "label": "Newly Updated",
       "featured": false,
       "url": "https://flowlance.io/",
-      "source_page": "https://good-ship.co.uk/#tools"
+      "source_page": "https://good-ship.co.uk/#tools",
+      "json_url": "https://good-ship.co.uk/catalogue/tools/flowlance.json"
     },
     {
       "id": "llmstxt-social",
@@ -113,7 +123,8 @@
       "label": null,
       "featured": false,
       "url": "https://llmstxt.social/",
-      "source_page": "https://good-ship.co.uk/#tools"
+      "source_page": "https://good-ship.co.uk/#tools",
+      "json_url": "https://good-ship.co.uk/catalogue/tools/llmstxt-social.json"
     },
     {
       "id": "open-recommendations",
@@ -123,7 +134,8 @@
       "label": null,
       "featured": false,
       "url": "https://www.openrecommendations.com/",
-      "source_page": "https://good-ship.co.uk/#tools"
+      "source_page": "https://good-ship.co.uk/#tools",
+      "json_url": "https://good-ship.co.uk/catalogue/tools/open-recommendations.json"
     },
     {
       "id": "stackmap",
@@ -133,7 +145,8 @@
       "label": null,
       "featured": false,
       "url": "https://stackmap.org/",
-      "source_page": "https://good-ship.co.uk/#tools"
+      "source_page": "https://good-ship.co.uk/#tools",
+      "json_url": "https://good-ship.co.uk/catalogue/tools/stackmap.json"
     },
     {
       "id": "the-list",
@@ -143,7 +156,8 @@
       "label": null,
       "featured": false,
       "url": "https://the-list.uk/",
-      "source_page": "https://good-ship.co.uk/#tools"
+      "source_page": "https://good-ship.co.uk/#tools",
+      "json_url": "https://good-ship.co.uk/catalogue/tools/the-list.json"
     },
     {
       "id": "map-my-patch",
@@ -153,7 +167,8 @@
       "label": null,
       "featured": false,
       "url": "https://mapmypatch.co.uk/",
-      "source_page": "https://good-ship.co.uk/#tools"
+      "source_page": "https://good-ship.co.uk/#tools",
+      "json_url": "https://good-ship.co.uk/catalogue/tools/map-my-patch.json"
     },
     {
       "id": "questions-for-action",
@@ -163,7 +178,8 @@
       "label": null,
       "featured": false,
       "url": "https://questionsforaction.com/",
-      "source_page": "https://good-ship.co.uk/#tools"
+      "source_page": "https://good-ship.co.uk/#tools",
+      "json_url": "https://good-ship.co.uk/catalogue/tools/questions-for-action.json"
     }
   ]
 }

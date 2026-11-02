@@ -1,0 +1,18 @@
+{
+  "id": "tending",
+  "name": "Tending",
+  "description": "Not a CRM — a garden. Log the people, trust and connections your organisation depends on in plain language, and watch your network grow as a living thing.",
+  "category": "data",
+  "label": "Newly launched",
+  "featured": true,
+  "url": "https://tending.network/",
+  "source_page": "https://good-ship.co.uk/#tools",
+  "json_url": "https://good-ship.co.uk/catalogue/tools/tending.json",
+  "type": "tool",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "collection_url": "https://good-ship.co.uk/tools.json",
+  "language": "en-GB"
+}

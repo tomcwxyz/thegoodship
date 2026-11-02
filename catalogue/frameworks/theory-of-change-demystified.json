@@ -1,0 +1,26 @@
+{
+  "id": "theory-of-change-demystified",
+  "name": "Theory of Change — Demystified",
+  "description": "Simple metaphors (journey, ripple, seed) to make theory of change accessible.",
+  "resources": [
+    {
+      "label": "PDF",
+      "url": "https://good-ship.co.uk/frameworks/TOC_in_10_mins.pdf",
+      "format": "pdf"
+    },
+    {
+      "label": "Slides",
+      "url": "https://good-ship.co.uk/frameworks/TOC_in_10_mins.pptx",
+      "format": "slides"
+    }
+  ],
+  "source_page": "https://good-ship.co.uk/#frameworks",
+  "json_url": "https://good-ship.co.uk/catalogue/frameworks/theory-of-change-demystified.json",
+  "type": "framework",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "collection_url": "https://good-ship.co.uk/frameworks.json",
+  "language": "en-GB"
+}

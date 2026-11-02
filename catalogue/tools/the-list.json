@@ -1,0 +1,18 @@
+{
+  "id": "the-list",
+  "name": "The List",
+  "description": "UK funding changes. By fundraisers, for fundraisers. Built with Jo Jeffery.",
+  "category": "funding",
+  "label": null,
+  "featured": false,
+  "url": "https://the-list.uk/",
+  "source_page": "https://good-ship.co.uk/#tools",
+  "json_url": "https://good-ship.co.uk/catalogue/tools/the-list.json",
+  "type": "tool",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "collection_url": "https://good-ship.co.uk/tools.json",
+  "language": "en-GB"
+}
