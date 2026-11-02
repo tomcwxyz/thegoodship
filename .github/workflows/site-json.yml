@@ -4,9 +4,10 @@ on:
   push:
     branches:
       - main
-      - feat/individual-resource-json
+      - feat/seo-geo-visibility-foundation
     paths:
       - index.html
+      - sitemap.xml
       - shipyard/index.html
       - open-org/index.html
       - responsible-ai/index.html
@@ -15,12 +16,14 @@ on:
       - scripts/generate-item-json.mjs
       - scripts/generate-page-json.mjs
       - test/site-json.test.mjs
+      - test/visibility.test.mjs
       - test/item-json.test.mjs
       - test/page-json.test.mjs
       - .github/workflows/site-json.yml
   pull_request:
     paths:
       - index.html
+      - sitemap.xml
       - shipyard/index.html
       - open-org/index.html
       - responsible-ai/index.html
@@ -29,6 +32,7 @@ on:
       - scripts/generate-item-json.mjs
       - scripts/generate-page-json.mjs
       - test/site-json.test.mjs
+      - test/visibility.test.mjs
       - test/item-json.test.mjs
       - test/page-json.test.mjs
       - .github/workflows/site-json.yml
@@ -52,7 +56,7 @@ jobs:
         with:
           node-version: '22'
       - name: Verify public content extraction
-        run: node --test test/site-json.test.mjs test/page-json.test.mjs test/item-json.test.mjs
+        run: node --test test/site-json.test.mjs test/page-json.test.mjs test/item-json.test.mjs test/visibility.test.mjs
       - name: Generate static JSON
         run: |
           node scripts/generate-site-json.mjs
