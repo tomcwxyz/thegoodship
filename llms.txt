@@ -9,6 +9,13 @@ A structured index is available at https://good-ship.co.uk/site.json. The follow
 - Products and tools: https://good-ship.co.uk/tools.json
 - Open frameworks and resources: https://good-ship.co.uk/frameworks.json
 
+Individual pages are also machine-readable:
+
+- Shipyard: https://good-ship.co.uk/shipyard/page.json
+- Open Org explainer: https://good-ship.co.uk/open-org/page.json
+- Responsible AI resources: https://good-ship.co.uk/responsible-ai/page.json
+- The Slow Post: https://good-ship.co.uk/slow-post/page.json
+
 These are read-only public content representations, separate from the Open Org schemas. The human-facing pages remain canonical.
 
 > An open technology and organisational practice for social purpose organisations.

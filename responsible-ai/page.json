@@ -1,0 +1,562 @@
+{
+  "id": "https://good-ship.co.uk/responsible-ai/",
+  "type": "web_page",
+  "title": "Responsible AI for food systems work — FEC workshop, 9 June 2026",
+  "name": "Responsible AI for food systems work",
+  "description": "Slides and curated resources from The Good Ship",
+  "language": "en-GB",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "canonical_url": "https://good-ship.co.uk/responsible-ai/",
+  "source_page": "https://good-ship.co.uk/responsible-ai/",
+  "json_url": "https://good-ship.co.uk/responsible-ai/page.json",
+  "version": "0.1",
+  "introduction": [
+    {
+      "type": "paragraph",
+      "text": "The slides from the workshop and a curated set of resources to take away."
+    }
+  ],
+  "introduction_links": [],
+  "sections": [
+    {
+      "id": "slides-from-the-workshop",
+      "heading": "Slides from the workshop",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A 10–15 minute expert provocation for the Food Ethics Council, 9 June 2026. Delivered by Tom Watson, The Good Ship."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Responsible AI for organisations working in food systems"
+        },
+        {
+          "type": "paragraph",
+          "text": "Food Ethics Council · developing in the open · 9 June 2026"
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Not consumers at the end of the chain"
+        },
+        {
+          "type": "paragraph",
+          "text": "Food citizenship says people are participants in the whole system, not just the last link."
+        },
+        {
+          "type": "paragraph",
+          "text": "Bring that same instinct to AI: don't receive it as a finished product — shape it, question it, help build it."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Give the hours back"
+        },
+        {
+          "type": "paragraph",
+          "text": "The grant report, the meeting notes, the funder spreadsheet — the work that drains the people who joined to change the food system, not to feed a CRM."
+        },
+        {
+          "type": "paragraph",
+          "text": "Example · Caddy , built by Citizens Advice, drafts the groundwork so advisers spend their time with people, not paperwork."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "See what was always hidden"
+        },
+        {
+          "type": "paragraph",
+          "text": "Provenance, supply chains, who really benefits — patterns buried in data nobody had time to read. Surfacing them is an ethics tool, not just an efficiency one."
+        },
+        {
+          "type": "paragraph",
+          "text": "Example · Open Recommendations"
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "More voices at the table"
+        },
+        {
+          "type": "paragraph",
+          "text": "A right to food means living well, not just surviving. The people a food system most affects are often the least resourced to engage with it."
+        },
+        {
+          "type": "paragraph",
+          "text": "Translation, plain-language, read-aloud — things AI can perhaps help with, if we point it there in the right way."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Move fast and break things?"
+        },
+        {
+          "type": "paragraph",
+          "text": "When we break things, it's trust and the communities most affected that break."
+        },
+        {
+          "type": "paragraph",
+          "text": "How fast, and who gets to set the pace?"
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "FOMO is not a strategy"
+        },
+        {
+          "type": "paragraph",
+          "text": "Adopt because it helps your mission, not because you're afraid of being left behind."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "\"Efficiency is a trap\""
+        },
+        {
+          "type": "paragraph",
+          "text": "Doing the wrong thing faster is still the wrong thing. Chase effectiveness — the right outcome, not just speed."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Beware the shadows"
+        },
+        {
+          "type": "paragraph",
+          "text": "The tools people use unofficially, off the radar — unseen, unassessed, ungoverned."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Human in the loop — or human in the lead?"
+        },
+        {
+          "type": "paragraph",
+          "text": "checking the machine's work"
+        },
+        {
+          "type": "paragraph",
+          "text": "setting the direction"
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Principles outlive tools"
+        },
+        {
+          "type": "paragraph",
+          "text": "Tools will change — the ones you choose will look dated within a year. Anchor the policy to principles that hold underneath, and don't write a policy for a single product."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Guardrails, not brakes"
+        },
+        {
+          "type": "list_item",
+          "text": "Disclosure say when AI shaped the work"
+        },
+        {
+          "type": "list_item",
+          "text": "Human review a named person owns what you produce"
+        },
+        {
+          "type": "list_item",
+          "text": "Data boundaries what do you put in, where and how?"
+        },
+        {
+          "type": "list_item",
+          "text": "Pace of trust adopt at the speed of the people affected"
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Others have already begun"
+        },
+        {
+          "type": "paragraph",
+          "text": "Learn from others. Keep discussing it. The resources below are a place to start."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Seven bearings"
+        },
+        {
+          "type": "paragraph",
+          "text": "Hold any AI use up to these seven before you commit. They're the lenses behind Bearing , the tool built for choosing models."
+        },
+        {
+          "type": "paragraph",
+          "text": "Note · open weights ≠ transparent. A model can be free to download and still tell you nothing about how it was built."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Or assess it as a dependency"
+        },
+        {
+          "type": "paragraph",
+          "text": "Bearing asks whether a model is 'good'. TechFreedom asks what depending on it costs you. Five lenses for any tool — AI included."
+        },
+        {
+          "type": "list_item",
+          "text": "Jurisdiction Whose laws govern it, and where does your data actually live?"
+        },
+        {
+          "type": "list_item",
+          "text": "Business continuity If it changed or vanished overnight, what of yours breaks?"
+        },
+        {
+          "type": "list_item",
+          "text": "Surveillance What does it see, log, or learn about the people you serve?"
+        },
+        {
+          "type": "list_item",
+          "text": "Lock-in How hard would it be to leave and take your work with you?"
+        },
+        {
+          "type": "list_item",
+          "text": "Cost exposure Who sets the price, and can they raise it whenever they like?"
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "If your policy were a food label would you buy it?"
+        }
+      ],
+      "links": [
+        {
+          "label": "Caddy",
+          "url": "https://casort.org/"
+        },
+        {
+          "label": "Open Recommendations",
+          "url": "https://www.openrecommendations.com/"
+        },
+        {
+          "label": "Bearing",
+          "url": "https://findbearing.org/"
+        }
+      ]
+    },
+    {
+      "id": "building-a-responsible-ai-policy-resources-to-borrow",
+      "heading": "Building a responsible AI policy: resources to borrow",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "You don't need to start from a blank page. These are strong current examples, most explicitly designed to be adapted."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "SCVO — AI guidelines, and how they made them"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Scottish Council for Voluntary Organisations published its AI guidelines (v1.0, October 2025) and, unusually, a companion piece explaining how it produced them — the process, the debates, the choices. Useful both as a model and as a worked example of developing a policy in the open, which is exactly what FEC is doing here."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Council for Agricultural Science and Technology — AI use policies"
+        },
+        {
+          "type": "paragraph",
+          "text": "Released March 2026 — directly relevant to a food-systems room. Built on human accountability (AI can't be an author), mandatory disclosure of tool, model and version, rigorous fact-checking, and a ban on AI-generated figures."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "AI Playbook for Charities (2026) — Make Sense Of It"
+        },
+        {
+          "type": "paragraph",
+          "text": "A thorough, current guide: where AI genuinely helps by function, the organisational questions (risk, disclosure, data, governance, environmental footprint), and dozens of real examples."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Fast Forward — Nonprofit AI Policy Builder"
+        },
+        {
+          "type": "paragraph",
+          "text": "A free, guided tool that walks you through a short Q&A and drafts a custom AI policy covering governance, privacy, risk and ethics. Not a set-and-forget approach, but useful for thinking things through."
+        }
+      ],
+      "links": [
+        {
+          "label": "SCVO AI guidelines (PDF)",
+          "url": "https://files.scvo.scot/2025/10/SCVO-AI-guidelines-v1.0.pdf"
+        },
+        {
+          "label": "How we produced SCVO's AI policy",
+          "url": "https://scvo.scot/p/101267/2025/10/01/how-we-produced-scvos-ai-policy"
+        },
+        {
+          "label": "CAST releases new AI use policies",
+          "url": "https://cast-science.org/cast-releases-new-ai-use-policies-for-task-force-members/"
+        },
+        {
+          "label": "aiplaybookforcharities.com/2026",
+          "url": "https://www.aiplaybookforcharities.com/2026"
+        },
+        {
+          "label": "ffwd.org/nonprofit-ai-policy-builder",
+          "url": "https://www.ffwd.org/nonprofit-ai-policy-builder"
+        }
+      ]
+    },
+    {
+      "id": "a-cautionary-example-tools-date-faster-than-principles",
+      "heading": "A cautionary example: tools date faster than principles",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Why naming tools in documents doesn't age well — and what to anchor your policy to instead."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "LOTI — Generative AI guidance for council officers (2023)"
+        },
+        {
+          "type": "paragraph",
+          "text": "The London Office of Technology & Innovation's staff one-pager names Bard (since renamed), \"Windows 365 Copilot — soon,\" Dall-E and Stable Diffusion. Two years on, much of that is out of date. But its six rules — never upload residents' private data, reference AI use, don't let it make decisions, stay accountable for everything it produces — are actually solid."
+        },
+        {
+          "type": "paragraph",
+          "text": "Anchor it to principles, not products. A list of tools is out of date the moment you publish it; a list of principles is not."
+        }
+      ],
+      "links": [
+        {
+          "label": "LOTI Gen AI one-pager (PDF, 2023)",
+          "url": "https://loti.london/wp-content/uploads/2023/09/LOTI-Gen-AI-One-Pager-Staff-FA-1.pdf"
+        }
+      ]
+    },
+    {
+      "id": "lenses-and-open-tools",
+      "heading": "Lenses and open tools",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Ways to hold AI choices to account — and some open infrastructure worth knowing about."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Bearing — seven lenses for choosing AI"
+        },
+        {
+          "type": "paragraph",
+          "text": "A tool for weighing AI models against seven lenses: quality, capability, speed, cost, sustainability, transparency and privacy. A ready-made set of questions to hold any AI choice up to, in a policy or a breakout. Built by The Good Ship."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Open Recommendations — freeing knowledge from PDFs"
+        },
+        {
+          "type": "paragraph",
+          "text": "An open-source project (from Data for Action) that uses AI to parse reports and pull their recommendations into one searchable place, so the sector builds on past work instead of starting from scratch."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "The Frugal AI Switchboard"
+        },
+        {
+          "type": "paragraph",
+          "text": "How to #QuitBigAI for smaller, local, open models. Another way to explore different models and their functions if Bearing doesn't hit the spot."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "EcoLogits — environmental footprint of GenAI models"
+        },
+        {
+          "type": "paragraph",
+          "text": "An open-source tool developed by CodeCarbon for estimating the energy consumption and environmental footprint when using generative AI models. Includes a calculator to explore the impact evaluation methodology."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "GreenPT — an AI platform with sustainability in mind"
+        },
+        {
+          "type": "paragraph",
+          "text": "A European AI platform that runs on renewable energy, keeps your data in the EU, and shows you exactly what every conversation costs."
+        }
+      ],
+      "links": [
+        {
+          "label": "findbearing.org",
+          "url": "https://www.findbearing.org/"
+        },
+        {
+          "label": "openrecommendations.com",
+          "url": "https://www.openrecommendations.com/"
+        },
+        {
+          "label": "FrugalAI Switchboard",
+          "url": "https://bettertech.blog/frugal-ai-switchboard/"
+        },
+        {
+          "label": "EcoLogits calculator",
+          "url": "https://huggingface.co/spaces/genai-impact/ecologits-calculator"
+        },
+        {
+          "label": "greenpt.com",
+          "url": "https://greenpt.com/"
+        }
+      ]
+    },
+    {
+      "id": "ai-in-nature-and-conservation",
+      "heading": "AI in nature & conservation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A provocation works better with proof. These are real uses of AI in nature and conservation — several from Wildlife Trusts — that show the upside while, at their best, modelling care."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Scottish Wildlife Trust × Space Intelligence — mapping the wild from space"
+        },
+        {
+          "type": "paragraph",
+          "text": "Through Nesta's AI for Good programme, with NatureScot, the Scottish Wildlife Trust worked with Edinburgh firm Space Intelligence to interpret large volumes of satellite radar and optical data — mapping the remaining fragments of natural woodland along rivers to plan wildlife corridors and nature recovery."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Orkney — AI cameras against an invasive predator"
+        },
+        {
+          "type": "paragraph",
+          "text": "Conservationists are using AI-powered cameras to detect invasive stoats, which prey on the eggs and chicks of native ground-nesting birds, as part of efforts to eradicate them and protect those species."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Surrey Wildlife Trust — Space4Nature"
+        },
+        {
+          "type": "paragraph",
+          "text": "A project combining very high-resolution satellite imagery, machine learning and citizen science to produce some of the most detailed habitat maps of their kind — accurate enough for ecologists and DEFRA to rely on. Local volunteers' field surveys train the model: people aren't at the end of the chain, they're teaching it."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "The wider field"
+        },
+        {
+          "type": "paragraph",
+          "text": "Open-source SpeciesNet identifies wildlife across millions of camera-trap images. Bioacoustic models pick out species from soundscapes. AI teams predict deforestation before it happens."
+        }
+      ],
+      "links": [
+        {
+          "label": "Mapping the wild from space",
+          "url": "https://www.nesta.org.uk/feature/ai-good-meet-grantees/space-intelligence-and-scottish-wildlife-trust-riverwoods-satellite-mapping/"
+        },
+        {
+          "label": "AI cameras and invasive species (video)",
+          "url": "https://www.youtube.com/watch?v=wVf4FANpnAc"
+        },
+        {
+          "label": "Space4Nature project",
+          "url": "https://www.surreywildlifetrust.org/what-we-do/projects/space4nature"
+        },
+        {
+          "label": "SpeciesNet on WildLabs",
+          "url": "https://wildlabs.net/en/discussion/we-are-releasing-speciesnet?language_content_entity=en"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "Caddy",
+      "url": "https://casort.org/"
+    },
+    {
+      "label": "Open Recommendations",
+      "url": "https://www.openrecommendations.com/"
+    },
+    {
+      "label": "Bearing",
+      "url": "https://findbearing.org/"
+    },
+    {
+      "label": "SCVO AI guidelines (PDF)",
+      "url": "https://files.scvo.scot/2025/10/SCVO-AI-guidelines-v1.0.pdf"
+    },
+    {
+      "label": "How we produced SCVO's AI policy",
+      "url": "https://scvo.scot/p/101267/2025/10/01/how-we-produced-scvos-ai-policy"
+    },
+    {
+      "label": "CAST releases new AI use policies",
+      "url": "https://cast-science.org/cast-releases-new-ai-use-policies-for-task-force-members/"
+    },
+    {
+      "label": "aiplaybookforcharities.com/2026",
+      "url": "https://www.aiplaybookforcharities.com/2026"
+    },
+    {
+      "label": "ffwd.org/nonprofit-ai-policy-builder",
+      "url": "https://www.ffwd.org/nonprofit-ai-policy-builder"
+    },
+    {
+      "label": "LOTI Gen AI one-pager (PDF, 2023)",
+      "url": "https://loti.london/wp-content/uploads/2023/09/LOTI-Gen-AI-One-Pager-Staff-FA-1.pdf"
+    },
+    {
+      "label": "findbearing.org",
+      "url": "https://www.findbearing.org/"
+    },
+    {
+      "label": "openrecommendations.com",
+      "url": "https://www.openrecommendations.com/"
+    },
+    {
+      "label": "FrugalAI Switchboard",
+      "url": "https://bettertech.blog/frugal-ai-switchboard/"
+    },
+    {
+      "label": "EcoLogits calculator",
+      "url": "https://huggingface.co/spaces/genai-impact/ecologits-calculator"
+    },
+    {
+      "label": "greenpt.com",
+      "url": "https://greenpt.com/"
+    },
+    {
+      "label": "Mapping the wild from space",
+      "url": "https://www.nesta.org.uk/feature/ai-good-meet-grantees/space-intelligence-and-scottish-wildlife-trust-riverwoods-satellite-mapping/"
+    },
+    {
+      "label": "AI cameras and invasive species (video)",
+      "url": "https://www.youtube.com/watch?v=wVf4FANpnAc"
+    },
+    {
+      "label": "Space4Nature project",
+      "url": "https://www.surreywildlifetrust.org/what-we-do/projects/space4nature"
+    },
+    {
+      "label": "SpeciesNet on WildLabs",
+      "url": "https://wildlabs.net/en/discussion/we-are-releasing-speciesnet?language_content_entity=en"
+    }
+  ],
+  "embeds": []
+}

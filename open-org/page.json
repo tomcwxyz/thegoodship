@@ -1,0 +1,555 @@
+{
+  "id": "https://good-ship.co.uk/open-org/",
+  "type": "web_page",
+  "title": "Open Org: A standard for organisational self-sovereignty",
+  "name": "Own your truth. Share it on your terms.",
+  "description": "Open Org is a data standard for self-sovereign organisational profiles, living strategies, published ideas and time-limited access grants. Organisations own their story; funders discover rather than gatekeep.",
+  "language": "en-GB",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "canonical_url": "https://good-ship.co.uk/open-org/",
+  "source_page": "https://good-ship.co.uk/open-org/",
+  "json_url": "https://good-ship.co.uk/open-org/page.json",
+  "version": "0.1",
+  "introduction": [
+    {
+      "type": "paragraph",
+      "text": "Open Org is a data standard for self-sovereign organisational profiles, published ideas, living strategies, and transparent access control: designed for a world where organisations own their own story and funders discover rather than gatekeep."
+    },
+    {
+      "type": "paragraph",
+      "text": "Version 0.1 · Working Draft · Licence: CC BY-SA 4.0"
+    }
+  ],
+  "introduction_links": [
+    {
+      "label": "Get involved",
+      "url": "mailto:tom@good-ship.co.uk?subject=Open%20Org"
+    }
+  ],
+  "sections": [
+    {
+      "id": "your-organisation-is-more-than-an-application-form",
+      "heading": "Your organisation is more than an application form",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The grant application was a technology for a pre-digital information environment. LLMs broke the filter and friction it relied on. We need something different."
+        },
+        {
+          "type": "paragraph",
+          "text": "Open Org lets organisations maintain a living, structured, machine-readable profile of themselves: not written for any specific funder, but maintained for their own purposes. Funders become discoverers, not gatekeepers. The application form disappears. In its place: self-sovereign profiles, published ideas, and transparent relationships between resource and purpose."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "One narrow slot"
+        },
+        {
+          "type": "paragraph",
+          "text": "The filter was scarcity of information. LLMs removed it. The form no longer serves the right purpose."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Many open doors"
+        },
+        {
+          "type": "paragraph",
+          "text": "Organisations publish once, for themselves. Funders search a network of living profiles and reach out directly."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Self-sovereign"
+        },
+        {
+          "type": "paragraph",
+          "text": "Organisations own and host their profiles. No central platform decides who's visible."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Living"
+        },
+        {
+          "type": "paragraph",
+          "text": "Profiles update continuously, fed by existing systems. Evidence accumulates. Ideas evolve."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Tiered access"
+        },
+        {
+          "type": "paragraph",
+          "text": "Organisations control what's visible and to whom. Access is logged, time-limited, and revocable."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Federated"
+        },
+        {
+          "type": "paragraph",
+          "text": "No central platform. Profiles communicate via open protocols. The organisation is its own node."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Interoperable"
+        },
+        {
+          "type": "paragraph",
+          "text": "Builds on existing standards: org-id.guide, ONS codes, Open Referral, 360Giving, Hypercerts."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Ideas-first"
+        },
+        {
+          "type": "paragraph",
+          "text": "Organisations publish what they want to do before being asked. Ideas are visible, connectable, and persistent."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "four-objects-one-vocabulary",
+      "heading": "Four objects, one vocabulary",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The standard defines four core object types. Each has a minimum viable shape: the smallest set of fields that makes the object actually useful, not just technically valid. The schema is loose so no one is locked out; the tooling guides every object toward the minimum that works. See the minimums for each ↓"
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Profile"
+        },
+        {
+          "type": "paragraph",
+          "text": "Identity, mission, evidence, governance, culture, services. The living representation of an organisation: who they are, what they've done, how they work."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Strategy"
+        },
+        {
+          "type": "paragraph",
+          "text": "Priorities, tensions, learning, relationships, resource model. How the organisation thinks about its future and what it's chosen not to do."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Idea"
+        },
+        {
+          "type": "paragraph",
+          "text": "Seeds of intent: themed, placed, loosely costed, linked to evidence and to other organisations' ideas. Published before anyone asks."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Access grant"
+        },
+        {
+          "type": "paragraph",
+          "text": "Who can see what, when it expires, and a full audit trail. No indefinite access. The organisation always sees who's looking."
+        }
+      ],
+      "links": [
+        {
+          "label": "org-profile.schema.json",
+          "url": "https://good-ship.co.uk/open-org/org-profile.schema.json"
+        },
+        {
+          "label": "org-strategy.schema.json",
+          "url": "https://good-ship.co.uk/open-org/org-strategy.schema.json"
+        },
+        {
+          "label": "org-idea.schema.json",
+          "url": "https://good-ship.co.uk/open-org/org-idea.schema.json"
+        },
+        {
+          "label": "org-access-grant.schema.json",
+          "url": "https://good-ship.co.uk/open-org/org-access-grant.schema.json"
+        },
+        {
+          "label": "README.md",
+          "url": "https://good-ship.co.uk/open-org/README.md"
+        },
+        {
+          "label": "murmurations-integration.md",
+          "url": "https://good-ship.co.uk/open-org/murmurations-integration.md"
+        },
+        {
+          "label": "system-architecture.md",
+          "url": "https://good-ship.co.uk/open-org/system-architecture.md"
+        }
+      ]
+    },
+    {
+      "id": "tiered-integrations-nothing-rebuilt",
+      "heading": "Tiered integrations, nothing rebuilt",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Open Org doesn't replace existing infrastructure. It sits in the middle of a stack, adding the things no one else covers, and connecting to the things others have already built. Two of those connections are load-bearing ; the system is weaker without them. The other two are enhancements: valuable, designed-for, but not required."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "it-pulls-it-assembles-it-federates",
+      "heading": "It pulls, it assembles, it federates",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The agent runs on or for each organisation. It connects to existing systems via MCP servers and APIs, structures data with LLM assistance, proposes drafts for human review, and federates the published profile across the network. It never publishes without human approval."
+        },
+        {
+          "type": "paragraph",
+          "text": "↔ scroll the map sideways"
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Pulls from what exists"
+        },
+        {
+          "type": "paragraph",
+          "text": "CRM, documents, finance, regulatory data. The agent connects to what the organisation already uses. No new systems to maintain."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Enriches from public data"
+        },
+        {
+          "type": "paragraph",
+          "text": "Charity Commission, Companies House, llms.txt profiles. Baseline identity auto-populated without manual input."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Structures with AI"
+        },
+        {
+          "type": "paragraph",
+          "text": "A strategy PDF becomes structured priorities and themes. Board minutes update governance. The agent proposes; humans decide."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Handles access"
+        },
+        {
+          "type": "paragraph",
+          "text": "Funder requests arrive, route to the management interface, and are granted or denied with full audit logging."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Self-hosted"
+        },
+        {
+          "type": "paragraph",
+          "text": "Full control. Own infrastructure. For organisations with technical capacity."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Managed"
+        },
+        {
+          "type": "paragraph",
+          "text": "A trusted provider runs it. The organisation controls the data. The default for most."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Shared"
+        },
+        {
+          "type": "paragraph",
+          "text": "An infrastructure body runs agents for multiple organisations. The equity solution."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "what-s-visible-and-to-whom",
+      "heading": "What's visible, and to whom",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Not everything is public, and nothing is permanently open. Visibility works in bands: the outer world sees identity, mission and ideas; depth requires a grant that expires. The organisation sets the bands, and sees every view."
+        },
+        {
+          "type": "paragraph",
+          "text": "every view in between is logged; the organisation always sees who is looking"
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "what-funders-never-really-see-and-should",
+      "heading": "What funders never really see and should",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Almost every organisation has a strategy. Funders almost never ask for it. But strategy reveals how an organisation thinks . What trade-offs it's made. What it's decided not to do. How it sees the next three to five years and how this strategy and another over there might connect."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Priorities"
+        },
+        {
+          "type": "paragraph",
+          "text": "Ordered strategic priorities with themes, outcomes, dependencies, evidence links, and maturity level."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Not doing"
+        },
+        {
+          "type": "paragraph",
+          "text": "What was considered and rejected and why. Often more revealing than what they will do."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Tensions"
+        },
+        {
+          "type": "paragraph",
+          "text": "Growth vs depth. Earned income vs mission. Organisations that name their tensions are usually managing them well."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Learning"
+        },
+        {
+          "type": "paragraph",
+          "text": "What failed. What changed. How the organisation responds when things go wrong. The opposite of what applications reward."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Relationships"
+        },
+        {
+          "type": "paragraph",
+          "text": "Who trusts them. Who they trust. Ecosystem position. Community mandate. The social capital that never makes it into a form."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Strategy matching"
+        },
+        {
+          "type": "paragraph",
+          "text": "Structured themes enable cross-org alignment detection. Funders see ecosystems, not individual bids."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "between-relational-and-transactional",
+      "heading": "Between relational and transactional",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Purely relational funding risks reverting to the boys' club where privilege decides who gets the relationships. Traditional applications created an LLM arms race. Open Org sits in between: structured discovery that makes the room possible for everyone."
+        },
+        {
+          "type": "subheading",
+          "level": 4,
+          "text": "Purely relational"
+        },
+        {
+          "type": "paragraph",
+          "text": "Trust grows in rooms most organisations never get into. The boys' club reverts."
+        },
+        {
+          "type": "subheading",
+          "level": 4,
+          "text": "Traditional applications"
+        },
+        {
+          "type": "paragraph",
+          "text": "Forms are filled by the best generators, not the best organisations. The filter breaks."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "where-things-stand",
+      "heading": "Where things stand",
+      "blocks": [
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Version 0.1 · Working Draft"
+        },
+        {
+          "type": "paragraph",
+          "text": "The schema is defined. The architecture is mapped. The integrations are identified. What comes next: define the schema with input from organisations and funders. Build a reference agent. Test it with real relationships."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Prove the concept"
+        },
+        {
+          "type": "paragraph",
+          "text": "Static profile generator. Manual strategy and idea creation. Submit to Murmurations. Basic funder search."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Add the agent"
+        },
+        {
+          "type": "paragraph",
+          "text": "MCP integrations. LLM-assisted structuring. Management interface. Access request flow."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Add the matching"
+        },
+        {
+          "type": "paragraph",
+          "text": "Strategy matcher. Cluster detection. Idea connections. Funder profiles and mutual visibility."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Federation and verification"
+        },
+        {
+          "type": "paragraph",
+          "text": "ActivityPub. Hypercerts integration. Funding receipts. Full audit trail."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "minimum-viable-for-each-object",
+      "heading": "Minimum viable for each object",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Each of the four objects has its own minimum viable shape: the smallest set of fields that makes it actually useful, not just technically valid. The schema validates loosely so no one is locked out; the tooling and documentation guide every object toward the minimum that works."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Profile"
+        },
+        {
+          "type": "paragraph",
+          "text": "The agent generates the metadata ( schema_version , updated ) automatically. The human-meaningful minimum viable profile is five fields: enough to make the org discoverable by place and theme and verifiable against a public register. From a charity number alone, the agent can auto-populate four of the five."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "2 fields"
+        },
+        {
+          "type": "paragraph",
+          "text": "Just identity.name and mission.summary . The schema accepts it. But you can't be found by place, matched by theme, or verified. A business card without a phone number."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "5 fields"
+        },
+        {
+          "type": "paragraph",
+          "text": "Name , registration , geography , mission summary , at least one theme . Now the system can do its job."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Strategy"
+        },
+        {
+          "type": "paragraph",
+          "text": "Beyond the auto-generated metadata, the human contributes a title , summary , period , at least one priority (themed), and at least one tension . A strategy with priorities only is just an application form by another name. Tensions (what the organisation is actively navigating) are the differentiator. Without them, you don't have strategy; you have an aspiration list."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Idea"
+        },
+        {
+          "type": "paragraph",
+          "text": "Beyond the auto-generated metadata, the human contributes title , summary , themes , place , and status . An idea without place can't be matched to local funders. An idea without status ( seed · developing · ready · funded ) can't be matched to readiness. These two fields are what turn a published thought into a connection point."
+        },
+        {
+          "type": "paragraph",
+          "text": "status is what lets a funder match on readiness, not just on theme"
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Access Grant"
+        },
+        {
+          "type": "paragraph",
+          "text": "A grant has two organisations ( granter and requester ) and a person inside the granter who authorised it ( granted_by ). When status becomes granted , the schema requires decided_at , expires_at and granted_by . An access grant without expiry is indefinite access, which the standard rejects. The audit trail is what makes this a grant rather than a permission."
+        },
+        {
+          "type": "paragraph",
+          "text": "Across all four objects, the principle is the same: technically valid is not the same as useful . The schema is forgiving so no one is locked out; the minimum viable is what makes the system actually do its job."
+        }
+      ],
+      "links": []
+    }
+  ],
+  "links": [
+    {
+      "label": "Get involved",
+      "url": "mailto:tom@good-ship.co.uk?subject=Open%20Org"
+    },
+    {
+      "label": "org-profile.schema.json",
+      "url": "https://good-ship.co.uk/open-org/org-profile.schema.json"
+    },
+    {
+      "label": "org-strategy.schema.json",
+      "url": "https://good-ship.co.uk/open-org/org-strategy.schema.json"
+    },
+    {
+      "label": "org-idea.schema.json",
+      "url": "https://good-ship.co.uk/open-org/org-idea.schema.json"
+    },
+    {
+      "label": "org-access-grant.schema.json",
+      "url": "https://good-ship.co.uk/open-org/org-access-grant.schema.json"
+    },
+    {
+      "label": "README.md",
+      "url": "https://good-ship.co.uk/open-org/README.md"
+    },
+    {
+      "label": "murmurations-integration.md",
+      "url": "https://good-ship.co.uk/open-org/murmurations-integration.md"
+    },
+    {
+      "label": "system-architecture.md",
+      "url": "https://good-ship.co.uk/open-org/system-architecture.md"
+    }
+  ],
+  "embeds": []
+}
