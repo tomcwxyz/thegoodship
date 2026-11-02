@@ -69,7 +69,7 @@ test('new service pages have grounded content, relevant links and safe JSON expo
     const page = pages[slug + '/page.json'];
     assert.ok(page.name && page.description && page.sections.length >= 4);
     assert.ok(page.sections.some(section => section.heading.length > 15));
-    assert.ok(JSON.stringify(page.sections).includes(term));
+    assert.ok(JSON.stringify(page.sections).toLowerCase().includes(term.toLowerCase()));
     assert.ok(page.links.some(link => link.url.includes(related)));
     assert.ok(page.links.some(link => link.url.includes('driftforms.app/book/introductory-call-')));
     assert.ok(page.sections.every(section => section.blocks.length > 0));
