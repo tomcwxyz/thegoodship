@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - feat/page-json-representations
+      - feat/individual-resource-json
     paths:
       - index.html
       - shipyard/index.html
@@ -12,8 +12,10 @@ on:
       - responsible-ai/index.html
       - slow-post/index.html
       - scripts/generate-site-json.mjs
+      - scripts/generate-item-json.mjs
       - scripts/generate-page-json.mjs
       - test/site-json.test.mjs
+      - test/item-json.test.mjs
       - test/page-json.test.mjs
       - .github/workflows/site-json.yml
   pull_request:
@@ -24,8 +26,10 @@ on:
       - responsible-ai/index.html
       - slow-post/index.html
       - scripts/generate-site-json.mjs
+      - scripts/generate-item-json.mjs
       - scripts/generate-page-json.mjs
       - test/site-json.test.mjs
+      - test/item-json.test.mjs
       - test/page-json.test.mjs
       - .github/workflows/site-json.yml
   workflow_dispatch:
@@ -48,22 +52,24 @@ jobs:
         with:
           node-version: '22'
       - name: Verify public content extraction
-        run: node --test test/site-json.test.mjs test/page-json.test.mjs
+        run: node --test test/site-json.test.mjs test/page-json.test.mjs test/item-json.test.mjs
       - name: Generate static JSON
         run: |
           node scripts/generate-site-json.mjs
           node scripts/generate-page-json.mjs
+          node scripts/generate-item-json.mjs
       - name: Commit refreshed JSON on repository pushes
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         shell: bash
         run: |
           set -euo pipefail
           git add site.json about.json services.json tools.json frameworks.json shipyard/page.json open-org/page.json responsible-ai/page.json slow-post/page.json
+          git add -A -- catalogue/tools catalogue/frameworks
           if git diff --cached --quiet; then
             echo "Site JSON is already up to date."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Refresh public site JSON from homepage"
+          git commit -m "Refresh public site and item JSON from HTML"
           git push
