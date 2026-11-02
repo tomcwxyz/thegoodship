@@ -136,7 +136,10 @@ export function generate(html) {
       id: slug(name),
       name,
       description: tagText(card.body.slice(card.body.indexOf('</h3>') + 5), 'p'),
-      url: ORIGIN + '/#services',
+      url: (card.body.match(/<a\b[^>]*class="[^"]*\bservice-card__link\b[^"]*"[^>]*href="([^"]+)"/i)?.[1])
+        ? absolute(card.body.match(/<a\b[^>]*class="[^"]*\bservice-card__link\b[^"]*"[^>]*href="([^"]+)"/i)[1])
+        : ORIGIN + '/#services',
+      source_page: ORIGIN + '/#services',
     };
   }), 'service');
   if (services.length !== 6 || services.some(x => !x.name || !x.description)) {
@@ -247,6 +250,9 @@ export function generate(html) {
     representations: ['text/html', 'application/json', 'text/plain'],
     resources,
     other_pages: [
+      { name: 'AI & Technology Strategy', url: ORIGIN + '/ai-technology-strategy/', json: ORIGIN + '/ai-technology-strategy/page.json' },
+      { name: 'Data Strategy', url: ORIGIN + '/data-strategy/', json: ORIGIN + '/data-strategy/page.json' },
+      { name: 'Organisational Resilience', url: ORIGIN + '/organisational-resilience/', json: ORIGIN + '/organisational-resilience/page.json' },
       { name: 'Shipyard', url: ORIGIN + '/shipyard/', json: ORIGIN + '/shipyard/page.json' },
       { name: 'Open Org', url: ORIGIN + '/open-org/', json: ORIGIN + '/open-org/page.json' },
       { name: 'Responsible AI', url: ORIGIN + '/responsible-ai/', json: ORIGIN + '/responsible-ai/page.json' },
