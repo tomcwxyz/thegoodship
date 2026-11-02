@@ -6,7 +6,7 @@
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 
 export const ORIGIN = 'https://good-ship.co.uk';
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -92,11 +92,9 @@ export function generate(html) {
   const aboutHtml = section(html, 'about');
   const story = aboutHtml.split(/<div class="about__sidebar\b/)[0];
   const intro = [...story.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)].map(m => plain(m[1]));
-  const facts = [...aboutHtml.matchAll(/<div class="about__fact">([\s\S]*?)<\/div>/gi)]
-    .map(m => ({
-      label: classText(m[1], 'about__fact-label', 'div'),
-      value: classText(m[1], 'about__fact-value', 'div'),
-    })).filter(f => f.label && f.value);
+  const facts = [...aboutHtml.matchAll(/<div class="about__fact-label">([\s\S]*?)<\/div>\s*<div class="about__fact-value">([\s\S]*?)<\/div>/gi)]
+    .map(m => ({ label: plain(m[1]), value: plain(m[2]) }))
+    .filter(f => f.label && f.value);
   const organisations = [...aboutHtml.matchAll(/<li>([\s\S]*?)<\/li>/gi)]
     .map(m => plain(m[1]));
   const email = html.match(/href="mailto:([^"?]+)"/i)?.[1] ?? null;
@@ -229,7 +227,7 @@ export function writeAll(html = readFileSync(join(root, 'index.html'), 'utf8')) 
   return files;
 }
 
-if (process.argv[1] && fileURLToPath(import.meta.url) === fileURLToPath(new URL('file://' + process.argv[1]))) {
+if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) {
   const files = writeAll();
   console.log('Generated ' + Object.entries(files).map(([p, data]) => p + (data.count ? ' (' + data.count + ')' : '')).join(', '));
 }
