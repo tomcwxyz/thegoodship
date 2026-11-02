@@ -21,6 +21,7 @@ Edit the homepage as before. Then run:
 ```sh
 node --test test/site-json.test.mjs
 node scripts/generate-site-json.mjs
+node scripts/generate-page-json.mjs
 ```
 
 The GitHub workflow regenerates and commits JSON on pushes to main or the `feat/machine-readable-site-json` branch. Pull requests also test the generator. The site remains static: no new framework, database, API keys or server-side request processing is needed.
