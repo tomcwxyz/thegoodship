@@ -4,13 +4,15 @@ The Good Ship publishes **public site content in HTML and JSON**. Human-facing H
 
 ## Endpoints
 
-- `/site.json` — discovery index, other pages, schemas and resource URLs
+- `/site.json` — discovery index, longer positioning summary drawn from homepage copy, audiences, service descriptions, geography, work evidence, other pages, schemas and resource URLs
 - `/about.json` — story, location and principles, organisations worked with, contact details
 - `/services.json` — six service descriptions
 - `/tools.json` — all public tool cards, categories, labels and live URLs
 - `/frameworks.json` — open frameworks and their download links
 - `/llms.txt` — narrative description intended for AI readers
 - `/open-org/*.schema.json` — existing Open Org schema documents (a different standard; left unchanged)
+
+The concise HTML meta description is for search presentation; it deliberately differs from the richer generated `summary` and `positioning` fields used by machine readers. All public claims are backed by the About, Services and work descriptions in the visible homepage. HTML Schema.org Organisation, Person and WebSite entities are linked using stable IDs; this helps clarity but does not guarantee ranking improvements.
 
 Homepage catalogue JSON is generated from `index.html`; individual page JSON is generated from each page's own HTML. No second catalogue or content store is maintained. Collections preserve the current page descriptions, so labels such as "Launching soon" are not silently converted into claims about availability. No unpublished data, account details or backend database content is exposed.
 
@@ -38,12 +40,14 @@ These records preserve the original text, category or resource links, published 
 
 The discovery path is `/site.json` → `/tools.json` or `/frameworks.json` → `json_url`. No additional API endpoint is required.
 
+See [`docs/visibility-strategy.md`](visibility-strategy.md) for the distinct priorities of original service pages, proof, measurement and conventional SEO.
+
 ## Updating content
 
 Edit the homepage or an editorial subpage as before. Then run:
 
 ```sh
-node --test test/site-json.test.mjs test/page-json.test.mjs test/item-json.test.mjs
+node --test test/site-json.test.mjs test/page-json.test.mjs test/item-json.test.mjs test/visibility.test.mjs
 node scripts/generate-site-json.mjs
 node scripts/generate-page-json.mjs
 node scripts/generate-item-json.mjs
