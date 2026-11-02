@@ -4,17 +4,29 @@ on:
   push:
     branches:
       - main
-      - feat/machine-readable-site-json
+      - feat/page-json-representations
     paths:
       - index.html
+      - shipyard/index.html
+      - open-org/index.html
+      - responsible-ai/index.html
+      - slow-post/index.html
       - scripts/generate-site-json.mjs
+      - scripts/generate-page-json.mjs
       - test/site-json.test.mjs
+      - test/page-json.test.mjs
       - .github/workflows/site-json.yml
   pull_request:
     paths:
       - index.html
+      - shipyard/index.html
+      - open-org/index.html
+      - responsible-ai/index.html
+      - slow-post/index.html
       - scripts/generate-site-json.mjs
+      - scripts/generate-page-json.mjs
       - test/site-json.test.mjs
+      - test/page-json.test.mjs
       - .github/workflows/site-json.yml
   workflow_dispatch:
 
@@ -36,15 +48,17 @@ jobs:
         with:
           node-version: '22'
       - name: Verify public content extraction
-        run: node --test test/site-json.test.mjs
+        run: node --test test/site-json.test.mjs test/page-json.test.mjs
       - name: Generate static JSON
-        run: node scripts/generate-site-json.mjs
+        run: |
+          node scripts/generate-site-json.mjs
+          node scripts/generate-page-json.mjs
       - name: Commit refreshed JSON on repository pushes
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         shell: bash
         run: |
           set -euo pipefail
-          git add site.json about.json services.json tools.json frameworks.json
+          git add site.json about.json services.json tools.json frameworks.json shipyard/page.json open-org/page.json responsible-ai/page.json slow-post/page.json
           if git diff --cached --quiet; then
             echo "Site JSON is already up to date."
             exit 0
