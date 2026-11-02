@@ -4,11 +4,15 @@ on:
   push:
     branches:
       - main
-      - feat/seo-geo-visibility-foundation
+      - feat/service-landing-pages
     paths:
       - index.html
       - sitemap.xml
       - shipyard/index.html
+      - ai-technology-strategy/index.html
+      - data-strategy/index.html
+      - organisational-resilience/index.html
+      - assets/service-pages.css
       - open-org/index.html
       - responsible-ai/index.html
       - slow-post/index.html
@@ -19,12 +23,17 @@ on:
       - test/visibility.test.mjs
       - test/item-json.test.mjs
       - test/page-json.test.mjs
+      - test/service-pages.test.mjs
       - .github/workflows/site-json.yml
   pull_request:
     paths:
       - index.html
       - sitemap.xml
       - shipyard/index.html
+      - ai-technology-strategy/index.html
+      - data-strategy/index.html
+      - organisational-resilience/index.html
+      - assets/service-pages.css
       - open-org/index.html
       - responsible-ai/index.html
       - slow-post/index.html
@@ -35,6 +44,7 @@ on:
       - test/visibility.test.mjs
       - test/item-json.test.mjs
       - test/page-json.test.mjs
+      - test/service-pages.test.mjs
       - .github/workflows/site-json.yml
   workflow_dispatch:
 
@@ -56,7 +66,7 @@ jobs:
         with:
           node-version: '22'
       - name: Verify public content extraction
-        run: node --test test/site-json.test.mjs test/page-json.test.mjs test/item-json.test.mjs test/visibility.test.mjs
+        run: node --test test/site-json.test.mjs test/page-json.test.mjs test/item-json.test.mjs test/visibility.test.mjs test/service-pages.test.mjs
       - name: Generate static JSON
         run: |
           node scripts/generate-site-json.mjs
@@ -67,7 +77,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          git add site.json about.json services.json tools.json frameworks.json shipyard/page.json open-org/page.json responsible-ai/page.json slow-post/page.json
+          git add site.json about.json services.json tools.json frameworks.json shipyard/page.json ai-technology-strategy/page.json data-strategy/page.json organisational-resilience/page.json open-org/page.json responsible-ai/page.json slow-post/page.json
           git add -A -- catalogue/tools catalogue/frameworks
           if git diff --cached --quiet; then
             echo "Site JSON is already up to date."
