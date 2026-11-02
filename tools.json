@@ -1,0 +1,169 @@
+{
+  "type": "collection",
+  "name": "Tools and products",
+  "description": "Public information from The Good Ship website. Generated from its HTML, not maintained separately.",
+  "source_page": "https://good-ship.co.uk/#tools",
+  "count": 16,
+  "items": [
+    {
+      "id": "sets",
+      "name": "Sets",
+      "description": "Small, private browser tools for repeatable file, document and data jobs. Your files stay on your device — no uploads, accounts or server processing.",
+      "category": "resources",
+      "label": "Newly launched",
+      "featured": true,
+      "url": "https://good-ship.co.uk/sets/",
+      "source_page": "https://good-ship.co.uk/#tools"
+    },
+    {
+      "id": "techfreedom",
+      "name": "TechFreedom",
+      "description": "A programme helping social purpose organisations take control of their technology. Details soon.",
+      "category": "programmes",
+      "label": "Launching soon",
+      "featured": false,
+      "url": "https://techfreedom.eu/",
+      "source_page": "https://good-ship.co.uk/#tools"
+    },
+    {
+      "id": "glade",
+      "name": "Glade",
+      "description": "A governance platform that treats every decision as a seed. Watch your organisation's institutional memory grow — traceable, reviewable, alive.",
+      "category": "governance",
+      "label": "Newly launched",
+      "featured": false,
+      "url": "https://ourglade.app/",
+      "source_page": "https://good-ship.co.uk/#tools"
+    },
+    {
+      "id": "impact-path",
+      "name": "Impact Path",
+      "description": "Build your impact strategy through guided conversation, not blank templates. For charities and social purpose organisations.",
+      "category": "strategy",
+      "label": "Newly launched",
+      "featured": false,
+      "url": "https://impact-path.vercel.app/",
+      "source_page": "https://good-ship.co.uk/#tools"
+    },
+    {
+      "id": "swells",
+      "name": "Swells",
+      "description": "A platform for observations, signals, and reflections. Helping people and organisations sense what's emerging — before it becomes obvious.",
+      "category": "learning",
+      "label": "Newly launched",
+      "featured": false,
+      "url": "https://swells.app/",
+      "source_page": "https://good-ship.co.uk/#tools"
+    },
+    {
+      "id": "drift",
+      "name": "Drift",
+      "description": "Create intelligent forms that adapt to every respondent. An experience designed to feel as natural as conversation.",
+      "category": "forms",
+      "label": "Newly launched",
+      "featured": true,
+      "url": "https://driftforms.app/",
+      "source_page": "https://good-ship.co.uk/#tools"
+    },
+    {
+      "id": "bearing",
+      "name": "Bearing",
+      "description": "Chart your course to the right AI model. A discovery and comparison tool to help you find the model that fits your need.",
+      "category": "ai",
+      "label": "Newly Updated",
+      "featured": true,
+      "url": "https://www.findbearing.org/",
+      "source_page": "https://good-ship.co.uk/#tools"
+    },
+    {
+      "id": "tending",
+      "name": "Tending",
+      "description": "Not a CRM — a garden. Log the people, trust and connections your organisation depends on in plain language, and watch your network grow as a living thing.",
+      "category": "data",
+      "label": "Newly launched",
+      "featured": true,
+      "url": "https://tending.network/",
+      "source_page": "https://good-ship.co.uk/#tools"
+    },
+    {
+      "id": "open-org",
+      "name": "Open Org",
+      "description": "A data standard for self-sovereign organisational profiles, living strategies and published ideas. Funders discover, organisations stay in control.",
+      "category": "resources",
+      "label": "Working draft",
+      "featured": false,
+      "url": "https://good-ship.co.uk/open-org/",
+      "source_page": "https://good-ship.co.uk/#tools"
+    },
+    {
+      "id": "flowlance",
+      "name": "Flowlance",
+      "description": "AI-powered finance, project and proposal management for freelancers. Keep the cash flowing.",
+      "category": "ai",
+      "label": "Newly Updated",
+      "featured": false,
+      "url": "https://flowlance.io/",
+      "source_page": "https://good-ship.co.uk/#tools"
+    },
+    {
+      "id": "llmstxt-social",
+      "name": "llmstxt.social",
+      "description": "AI-readable documentation for social purpose organisations. Be seen by AI, on your own terms.",
+      "category": "ai",
+      "label": null,
+      "featured": false,
+      "url": "https://llmstxt.social/",
+      "source_page": "https://good-ship.co.uk/#tools"
+    },
+    {
+      "id": "open-recommendations",
+      "name": "Open Recommendations",
+      "description": "Upload, analyse and track reports across the social purpose sector. Making recommendations actionable.",
+      "category": "strategy",
+      "label": null,
+      "featured": false,
+      "url": "https://www.openrecommendations.com/",
+      "source_page": "https://good-ship.co.uk/#tools"
+    },
+    {
+      "id": "stackmap",
+      "name": "Stackmap",
+      "description": "A free, open-source tool to help organisations document their tech infrastructure — systems, costs, risks and responsibilities.",
+      "category": "data",
+      "label": null,
+      "featured": false,
+      "url": "https://stackmap.org/",
+      "source_page": "https://good-ship.co.uk/#tools"
+    },
+    {
+      "id": "the-list",
+      "name": "The List",
+      "description": "UK funding changes. By fundraisers, for fundraisers. Built with Jo Jeffery.",
+      "category": "funding",
+      "label": null,
+      "featured": false,
+      "url": "https://the-list.uk/",
+      "source_page": "https://good-ship.co.uk/#tools"
+    },
+    {
+      "id": "map-my-patch",
+      "name": "Map My Patch",
+      "description": "Combine maps and questions to understand your neighbourhoods. Place-based insight made simple.",
+      "category": "data",
+      "label": null,
+      "featured": false,
+      "url": "https://mapmypatch.co.uk/",
+      "source_page": "https://good-ship.co.uk/#tools"
+    },
+    {
+      "id": "questions-for-action",
+      "name": "Questions for Action",
+      "description": "Prioritise your most important questions, individually or collaboratively. Focus on what matters most.",
+      "category": "strategy",
+      "label": null,
+      "featured": false,
+      "url": "https://questionsforaction.com/",
+      "source_page": "https://good-ship.co.uk/#tools"
+    }
+  ]
+}

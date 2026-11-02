@@ -1,0 +1,90 @@
+{
+  "id": "https://good-ship.co.uk/",
+  "type": "website",
+  "name": "The Good Ship",
+  "description": "The Good Ship helps social purpose organisations navigate uncertainty with strategy, technology, data, and open tools. Founded by Tom Campbell Watson.",
+  "title": "The Good Ship — Strategy, technology & resilience for social purpose organisations",
+  "canonical_url": "https://good-ship.co.uk/",
+  "language": "en-GB",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "version": "0.1",
+  "representations": [
+    "text/html",
+    "application/json",
+    "text/plain"
+  ],
+  "resources": [
+    {
+      "type": "site",
+      "url": "https://good-ship.co.uk/site.json",
+      "html": "https://good-ship.co.uk/"
+    },
+    {
+      "type": "organisation",
+      "url": "https://good-ship.co.uk/about.json",
+      "html": "https://good-ship.co.uk/#about"
+    },
+    {
+      "type": "services",
+      "url": "https://good-ship.co.uk/services.json",
+      "html": "https://good-ship.co.uk/#services"
+    },
+    {
+      "type": "tools",
+      "url": "https://good-ship.co.uk/tools.json",
+      "html": "https://good-ship.co.uk/#tools"
+    },
+    {
+      "type": "frameworks",
+      "url": "https://good-ship.co.uk/frameworks.json",
+      "html": "https://good-ship.co.uk/#frameworks"
+    }
+  ],
+  "other_pages": [
+    {
+      "name": "Shipyard",
+      "url": "https://good-ship.co.uk/shipyard/"
+    },
+    {
+      "name": "Open Org",
+      "url": "https://good-ship.co.uk/open-org/"
+    },
+    {
+      "name": "Responsible AI",
+      "url": "https://good-ship.co.uk/responsible-ai/"
+    },
+    {
+      "name": "Sets",
+      "url": "https://good-ship.co.uk/sets/"
+    },
+    {
+      "name": "Slow Post",
+      "url": "https://good-ship.co.uk/slow-post/"
+    }
+  ],
+  "standards": [
+    {
+      "name": "Open Org profile",
+      "url": "https://good-ship.co.uk/open-org/org-profile.schema.json"
+    },
+    {
+      "name": "Open Org strategy",
+      "url": "https://good-ship.co.uk/open-org/org-strategy.schema.json"
+    },
+    {
+      "name": "Open Org idea",
+      "url": "https://good-ship.co.uk/open-org/org-idea.schema.json"
+    },
+    {
+      "name": "Open Org access grant",
+      "url": "https://good-ship.co.uk/open-org/org-access-grant.schema.json"
+    }
+  ],
+  "discovery": {
+    "llms": "https://good-ship.co.uk/llms.txt",
+    "sitemap": "https://good-ship.co.uk/sitemap.xml"
+  }
+}

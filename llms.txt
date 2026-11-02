@@ -1,5 +1,16 @@
 # The Good Ship
 
+## Machine-readable information
+
+A structured index is available at https://good-ship.co.uk/site.json. The following JSON resources are generated directly from the public website and kept in sync with the HTML:
+
+- Organisation and background: https://good-ship.co.uk/about.json
+- Services: https://good-ship.co.uk/services.json
+- Products and tools: https://good-ship.co.uk/tools.json
+- Open frameworks and resources: https://good-ship.co.uk/frameworks.json
+
+These are read-only public content representations, separate from the Open Org schemas. The human-facing pages remain canonical.
+
 > An open technology and organisational practice for social purpose organisations.
 
 The Good Ship is a small consultancy, product studio and applied R&D practice founded by Tom Campbell Watson and based in North East England. We work with charities, social enterprises, foundations, B Corps and other mission-driven organisations.
