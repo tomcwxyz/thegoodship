@@ -1,0 +1,18 @@
+{
+  "id": "open-recommendations",
+  "name": "Open Recommendations",
+  "description": "Upload, analyse and track reports across the social purpose sector. Making recommendations actionable.",
+  "category": "strategy",
+  "label": null,
+  "featured": false,
+  "url": "https://www.openrecommendations.com/",
+  "source_page": "https://good-ship.co.uk/#tools",
+  "json_url": "https://good-ship.co.uk/catalogue/tools/open-recommendations.json",
+  "type": "tool",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "collection_url": "https://good-ship.co.uk/tools.json",
+  "language": "en-GB"
+}

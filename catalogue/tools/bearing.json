@@ -1,0 +1,18 @@
+{
+  "id": "bearing",
+  "name": "Bearing",
+  "description": "Chart your course to the right AI model. A discovery and comparison tool to help you find the model that fits your need.",
+  "category": "ai",
+  "label": "Newly Updated",
+  "featured": true,
+  "url": "https://www.findbearing.org/",
+  "source_page": "https://good-ship.co.uk/#tools",
+  "json_url": "https://good-ship.co.uk/catalogue/tools/bearing.json",
+  "type": "tool",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "collection_url": "https://good-ship.co.uk/tools.json",
+  "language": "en-GB"
+}

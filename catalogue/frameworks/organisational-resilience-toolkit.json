@@ -1,0 +1,21 @@
+{
+  "id": "organisational-resilience-toolkit",
+  "name": "Organisational Resilience Toolkit",
+  "description": "Purpose, money, people — nine principles for navigating uncertainty.",
+  "resources": [
+    {
+      "label": "Open toolkit",
+      "url": "https://resilience.good-ship.co.uk/",
+      "format": "open toolkit"
+    }
+  ],
+  "source_page": "https://good-ship.co.uk/#frameworks",
+  "json_url": "https://good-ship.co.uk/catalogue/frameworks/organisational-resilience-toolkit.json",
+  "type": "framework",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "collection_url": "https://good-ship.co.uk/frameworks.json",
+  "language": "en-GB"
+}

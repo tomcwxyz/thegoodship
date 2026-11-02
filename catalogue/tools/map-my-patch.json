@@ -1,0 +1,18 @@
+{
+  "id": "map-my-patch",
+  "name": "Map My Patch",
+  "description": "Combine maps and questions to understand your neighbourhoods. Place-based insight made simple.",
+  "category": "data",
+  "label": null,
+  "featured": false,
+  "url": "https://mapmypatch.co.uk/",
+  "source_page": "https://good-ship.co.uk/#tools",
+  "json_url": "https://good-ship.co.uk/catalogue/tools/map-my-patch.json",
+  "type": "tool",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "collection_url": "https://good-ship.co.uk/tools.json",
+  "language": "en-GB"
+}

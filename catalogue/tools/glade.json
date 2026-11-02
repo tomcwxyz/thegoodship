@@ -1,0 +1,18 @@
+{
+  "id": "glade",
+  "name": "Glade",
+  "description": "A governance platform that treats every decision as a seed. Watch your organisation's institutional memory grow — traceable, reviewable, alive.",
+  "category": "governance",
+  "label": "Newly launched",
+  "featured": false,
+  "url": "https://ourglade.app/",
+  "source_page": "https://good-ship.co.uk/#tools",
+  "json_url": "https://good-ship.co.uk/catalogue/tools/glade.json",
+  "type": "tool",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "collection_url": "https://good-ship.co.uk/tools.json",
+  "language": "en-GB"
+}

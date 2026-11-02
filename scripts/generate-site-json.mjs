@@ -139,6 +139,7 @@ export function generate(html) {
       featured: attr(card.opening, 'data-featured') === 'true',
       url: absolute(attr(card.opening, 'href')),
       source_page: ORIGIN + '/#tools',
+      json_url: ORIGIN + '/catalogue/tools/' + slug(name) + '.json',
     };
   }), 'tool');
   if (tools.length < 10 || tools.some(x => !x.name || !x.description || !x.category)) {
@@ -159,6 +160,7 @@ export function generate(html) {
       description: tagText(card.body.slice(card.body.indexOf('</h3>') + 5), 'p'),
       resources: links,
       source_page: ORIGIN + '/#frameworks',
+      json_url: ORIGIN + '/catalogue/frameworks/' + slug(name) + '.json',
     };
   }), 'framework');
   if (frameworks.length < 7 || frameworks.some(x => !x.name || !x.description || !x.resources.length)) {

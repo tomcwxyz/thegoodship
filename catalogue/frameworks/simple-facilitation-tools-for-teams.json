@@ -1,0 +1,21 @@
+{
+  "id": "simple-facilitation-tools-for-teams",
+  "name": "Simple Facilitation Tools for Teams",
+  "description": "Practical exercises and methods for running better meetings and workshops.",
+  "resources": [
+    {
+      "label": "PDF",
+      "url": "https://good-ship.co.uk/frameworks/simple-facilitation-tools-for-teams.pdf",
+      "format": "pdf"
+    }
+  ],
+  "source_page": "https://good-ship.co.uk/#frameworks",
+  "json_url": "https://good-ship.co.uk/catalogue/frameworks/simple-facilitation-tools-for-teams.json",
+  "type": "framework",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "collection_url": "https://good-ship.co.uk/frameworks.json",
+  "language": "en-GB"
+}

@@ -21,7 +21,8 @@
           "format": "slides"
         }
       ],
-      "source_page": "https://good-ship.co.uk/#frameworks"
+      "source_page": "https://good-ship.co.uk/#frameworks",
+      "json_url": "https://good-ship.co.uk/catalogue/frameworks/garden-of-ideas.json"
     },
     {
       "id": "theory-of-change-demystified",
@@ -39,7 +40,8 @@
           "format": "slides"
         }
       ],
-      "source_page": "https://good-ship.co.uk/#frameworks"
+      "source_page": "https://good-ship.co.uk/#frameworks",
+      "json_url": "https://good-ship.co.uk/catalogue/frameworks/theory-of-change-demystified.json"
     },
     {
       "id": "principles-of-good-data",
@@ -52,7 +54,8 @@
           "format": "pdf"
         }
       ],
-      "source_page": "https://good-ship.co.uk/#frameworks"
+      "source_page": "https://good-ship.co.uk/#frameworks",
+      "json_url": "https://good-ship.co.uk/catalogue/frameworks/principles-of-good-data.json"
     },
     {
       "id": "organisational-resilience-toolkit",
@@ -65,7 +68,8 @@
           "format": "open toolkit"
         }
       ],
-      "source_page": "https://good-ship.co.uk/#frameworks"
+      "source_page": "https://good-ship.co.uk/#frameworks",
+      "json_url": "https://good-ship.co.uk/catalogue/frameworks/organisational-resilience-toolkit.json"
     },
     {
       "id": "collaboration-spectrum",
@@ -83,7 +87,8 @@
           "format": "slides"
         }
       ],
-      "source_page": "https://good-ship.co.uk/#frameworks"
+      "source_page": "https://good-ship.co.uk/#frameworks",
+      "json_url": "https://good-ship.co.uk/catalogue/frameworks/collaboration-spectrum.json"
     },
     {
       "id": "simple-facilitation-tools-for-teams",
@@ -96,7 +101,8 @@
           "format": "pdf"
         }
       ],
-      "source_page": "https://good-ship.co.uk/#frameworks"
+      "source_page": "https://good-ship.co.uk/#frameworks",
+      "json_url": "https://good-ship.co.uk/catalogue/frameworks/simple-facilitation-tools-for-teams.json"
     },
     {
       "id": "five-modes-of-thinking",
@@ -114,7 +120,8 @@
           "format": "slides"
         }
       ],
-      "source_page": "https://good-ship.co.uk/#frameworks"
+      "source_page": "https://good-ship.co.uk/#frameworks",
+      "json_url": "https://good-ship.co.uk/catalogue/frameworks/five-modes-of-thinking.json"
     },
     {
       "id": "modes-of-problem-solving",
@@ -132,7 +139,8 @@
           "format": "svg"
         }
       ],
-      "source_page": "https://good-ship.co.uk/#frameworks"
+      "source_page": "https://good-ship.co.uk/#frameworks",
+      "json_url": "https://good-ship.co.uk/catalogue/frameworks/modes-of-problem-solving.json"
     },
     {
       "id": "responsible-ai-for-food-systems",
@@ -150,7 +158,8 @@
           "format": "slides"
         }
       ],
-      "source_page": "https://good-ship.co.uk/#frameworks"
+      "source_page": "https://good-ship.co.uk/#frameworks",
+      "json_url": "https://good-ship.co.uk/catalogue/frameworks/responsible-ai-for-food-systems.json"
     }
   ]
 }

@@ -1,0 +1,18 @@
+{
+  "id": "sets",
+  "name": "Sets",
+  "description": "Small, private browser tools for repeatable file, document and data jobs. Your files stay on your device — no uploads, accounts or server processing.",
+  "category": "resources",
+  "label": "Newly launched",
+  "featured": true,
+  "url": "https://good-ship.co.uk/sets/",
+  "source_page": "https://good-ship.co.uk/#tools",
+  "json_url": "https://good-ship.co.uk/catalogue/tools/sets.json",
+  "type": "tool",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "collection_url": "https://good-ship.co.uk/tools.json",
+  "language": "en-GB"
+}

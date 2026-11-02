@@ -1,0 +1,26 @@
+{
+  "id": "responsible-ai-for-food-systems",
+  "name": "Responsible AI for Food Systems",
+  "description": "A provocation for the Food Ethics Council, plus curated resources for organisations building an AI policy in the open.",
+  "resources": [
+    {
+      "label": "Open",
+      "url": "https://good-ship.co.uk/responsible-ai/",
+      "format": "open"
+    },
+    {
+      "label": "Slides",
+      "url": "https://good-ship.co.uk/frameworks/responsible-ai-slides.pdf",
+      "format": "slides"
+    }
+  ],
+  "source_page": "https://good-ship.co.uk/#frameworks",
+  "json_url": "https://good-ship.co.uk/catalogue/frameworks/responsible-ai-for-food-systems.json",
+  "type": "framework",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "collection_url": "https://good-ship.co.uk/frameworks.json",
+  "language": "en-GB"
+}

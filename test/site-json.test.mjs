@@ -13,8 +13,8 @@ test('entity decoding is readable and safe', () => {
 
 test('homepage is authoritative for catalogue and service cards', () => {
   assert.equal(outputs['services.json'].count, 6);
-  assert.equal(outputs['tools.json'].count, 16);
-  assert.equal(outputs['frameworks.json'].count, 9);
+  assert.equal(outputs['tools.json'].count, [...html.matchAll(/class="tool-card\b/g)].length);
+  assert.equal(outputs['frameworks.json'].count, [...html.matchAll(/class="framework-card\b/g)].length);
   const tools = outputs['tools.json'].items;
   assert.equal(tools.find(item => item.name === 'Drift')?.url, 'https://driftforms.app/');
   assert.equal(tools.find(item => item.name === 'Open Org')?.url, ORIGIN + '/open-org/');

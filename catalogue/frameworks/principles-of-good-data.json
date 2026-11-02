@@ -1,0 +1,21 @@
+{
+  "id": "principles-of-good-data",
+  "name": "Principles of Good Data",
+  "description": "A framework for thinking about data in social purpose organisations.",
+  "resources": [
+    {
+      "label": "PDF",
+      "url": "https://good-ship.co.uk/frameworks/principles-of-good-data.pdf",
+      "format": "pdf"
+    }
+  ],
+  "source_page": "https://good-ship.co.uk/#frameworks",
+  "json_url": "https://good-ship.co.uk/catalogue/frameworks/principles-of-good-data.json",
+  "type": "framework",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "collection_url": "https://good-ship.co.uk/frameworks.json",
+  "language": "en-GB"
+}
