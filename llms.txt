@@ -9,6 +9,9 @@ A structured index is available at https://good-ship.co.uk/site.json. The follow
 - Products and tools: https://good-ship.co.uk/tools.json
 - Open frameworks and resources: https://good-ship.co.uk/frameworks.json
 
+Each tool and framework has an individual JSON resource. Follow each item’s `json_url` from https://good-ship.co.uk/tools.json or https://good-ship.co.uk/frameworks.json.
+For example: https://good-ship.co.uk/catalogue/tools/drift.json and https://good-ship.co.uk/catalogue/frameworks/garden-of-ideas.json
+
 Individual pages are also machine-readable:
 
 - Shipyard: https://good-ship.co.uk/shipyard/page.json
