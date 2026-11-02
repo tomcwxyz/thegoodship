@@ -8,6 +8,9 @@ import { fileURLToPath } from 'node:url';
 import { plain, ORIGIN } from './generate-site-json.mjs';
 
 export const PAGE_ROUTES = Object.freeze([
+  { slug: 'ai-technology-strategy', name: 'AI & Technology Strategy' },
+  { slug: 'data-strategy', name: 'Data Strategy, Architecture & Design' },
+  { slug: 'organisational-resilience', name: 'Organisational Resilience' },
   { slug: 'shipyard', name: 'Shipyard' },
   { slug: 'open-org', name: 'Open Org' },
   { slug: 'responsible-ai', name: 'Responsible AI' },
