@@ -1,0 +1,286 @@
+{
+  "id": "https://good-ship.co.uk/data-strategy/",
+  "type": "web_page",
+  "title": "Data Strategy & Architecture for Charities | The Good Ship",
+  "name": "Better questions. Better data.",
+  "description": "Practical data strategy, architecture, standards and visualisation for charities and foundations. Make data useful, understandable, portable and proportionate.",
+  "language": "en-GB",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "canonical_url": "https://good-ship.co.uk/data-strategy/",
+  "source_page": "https://good-ship.co.uk/data-strategy/",
+  "json_url": "https://good-ship.co.uk/data-strategy/page.json",
+  "version": "0.1",
+  "introduction": [
+    {
+      "type": "paragraph",
+      "text": "Collecting more information is not the same as understanding more. Good data work begins with what your organisation needs to know, decide or change."
+    },
+    {
+      "type": "paragraph",
+      "text": "For charities, foundations, social enterprises and public-interest teams dealing with disconnected systems, reporting burdens and knowledge that is hard to put to work."
+    }
+  ],
+  "introduction_links": [
+    {
+      "label": "Talk through your challenge",
+      "url": "https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k"
+    }
+  ],
+  "sections": [
+    {
+      "id": "your-data-is-not-a-strategy-by-itself",
+      "heading": "Your data is not a strategy by itself",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A reporting deadline arrives. Someone exports three spreadsheets, cleans the same fields again and builds a chart. Everybody hopes they can repeat the exercise next quarter. Meanwhile the information that could help people make decisions remains scattered across forms, emails and documents."
+        },
+        {
+          "type": "paragraph",
+          "text": "Often the right starting point is a clear question and a shared vocabulary, not a larger platform. What are you trying to understand? Who needs to act on it? Where did a figure come from? What does the data fail to tell us?"
+        },
+        {
+          "type": "paragraph",
+          "text": "I work across the human and technical parts of this problem: purpose, data design, standards, workflows, analysis, visualisation and the decisions made with the results."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "from-messy-systems-to-usable-knowledge",
+      "heading": "From messy systems to usable knowledge",
+      "blocks": [
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Data strategy"
+        },
+        {
+          "type": "paragraph",
+          "text": "Agree the questions worth answering, the decisions they support and the smallest set of information that can help."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Architecture and flows"
+        },
+        {
+          "type": "paragraph",
+          "text": "Map where information begins, where it moves, who maintains it and how systems should connect."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Shared definitions"
+        },
+        {
+          "type": "paragraph",
+          "text": "Design proportionate data models, naming conventions and reusable standards so information means the same thing in different places."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Visualisation and mapping"
+        },
+        {
+          "type": "paragraph",
+          "text": "Make patterns and uncertainty understandable through reports, maps and clear explanations — including what the data cannot support."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Open and interoperable tools"
+        },
+        {
+          "type": "paragraph",
+          "text": "Look for portable formats and practical ways to exchange data without creating another locked-in system."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Responsible data practice"
+        },
+        {
+          "type": "paragraph",
+          "text": "Consider permissions, minimisation, safeguarding, governance and the difference between useful sharing and unnecessary exposure."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "start-small-enough-to-learn",
+      "heading": "Start small enough to learn",
+      "blocks": [
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Frame the questions"
+        },
+        {
+          "type": "paragraph",
+          "text": "Speak with the people who collect, interpret and rely on information. Identify real decisions, constraints and existing workarounds."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Make one flow useful"
+        },
+        {
+          "type": "paragraph",
+          "text": "Test a manageable slice — a clearer form, a common definition, a joined dataset or a report someone can actually use."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Leave a maintainable system"
+        },
+        {
+          "type": "paragraph",
+          "text": "Document the model, responsibilities and assumptions. Build the team's ability to challenge and adapt it when things change."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "some-things-built-around-these-problems",
+      "heading": "Some things built around these problems",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "These are public projects illustrating the approach; they are not substitutes for a tailored plan or evidence of a particular client's results."
+        }
+      ],
+      "links": [
+        {
+          "label": "Map My Patch Exploring location-based data and place through a public mapping tool.",
+          "url": "https://mapmypatch.co.uk/"
+        },
+        {
+          "label": "Drift Forms and structured collection designed to feel more human.",
+          "url": "https://driftforms.app/"
+        },
+        {
+          "label": "Open Org Exploring organisation-owned profiles, shared vocabularies and controlled access.",
+          "url": "https://good-ship.co.uk/open-org/"
+        },
+        {
+          "label": "Open Recommendations An experiment in making knowledge from reports easier to find and reuse.",
+          "url": "https://www.openrecommendations.com/"
+        }
+      ]
+    },
+    {
+      "id": "what-does-useful-data-work-look-like",
+      "heading": "What does useful data work look like?",
+      "blocks": [
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Do we need to replace our existing systems?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Not necessarily. Before buying anything, map what you already have and see whether a better process, export, shared definition or small integration would make it useful."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "How do we make funder reporting less painful?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Start with which information needs to be collected once, how it is defined and whether the same evidence can support several genuine learning needs. Less duplication is often a better goal than more automation."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Does open data mean making all our information public?"
+        },
+        {
+          "type": "paragraph",
+          "text": "No. Open formats, open standards and accessible public information can coexist with strong privacy, consent and restrictions on sensitive records. The right boundary depends on the information and the people affected."
+        },
+        {
+          "type": "paragraph",
+          "text": "Related work: AI and technology choices and building a tool around your process ."
+        }
+      ],
+      "links": [
+        {
+          "label": "AI and technology choices",
+          "url": "https://good-ship.co.uk/ai-technology-strategy/"
+        },
+        {
+          "label": "building a tool around your process",
+          "url": "https://good-ship.co.uk/shipyard/"
+        }
+      ]
+    },
+    {
+      "id": "start-with-the-problem-not-a-pitch",
+      "heading": "Start with the problem, not a pitch",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Have something you are working through, or just a question forming? We can talk through what is happening, what you have tried and whether working together would be useful."
+        },
+        {
+          "type": "paragraph",
+          "text": "Prefer email? tom@good-ship.co.uk . Based in North East England, working with organisations elsewhere too."
+        }
+      ],
+      "links": [
+        {
+          "label": "Book an introductory call",
+          "url": "https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k"
+        },
+        {
+          "label": "tom@good-ship.co.uk",
+          "url": "mailto:tom@good-ship.co.uk"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "Talk through your challenge",
+      "url": "https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k"
+    },
+    {
+      "label": "Map My Patch Exploring location-based data and place through a public mapping tool.",
+      "url": "https://mapmypatch.co.uk/"
+    },
+    {
+      "label": "Drift Forms and structured collection designed to feel more human.",
+      "url": "https://driftforms.app/"
+    },
+    {
+      "label": "Open Org Exploring organisation-owned profiles, shared vocabularies and controlled access.",
+      "url": "https://good-ship.co.uk/open-org/"
+    },
+    {
+      "label": "Open Recommendations An experiment in making knowledge from reports easier to find and reuse.",
+      "url": "https://www.openrecommendations.com/"
+    },
+    {
+      "label": "AI and technology choices",
+      "url": "https://good-ship.co.uk/ai-technology-strategy/"
+    },
+    {
+      "label": "building a tool around your process",
+      "url": "https://good-ship.co.uk/shipyard/"
+    },
+    {
+      "label": "Book an introductory call",
+      "url": "https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k"
+    },
+    {
+      "label": "tom@good-ship.co.uk",
+      "url": "mailto:tom@good-ship.co.uk"
+    }
+  ],
+  "embeds": []
+}

@@ -18,6 +18,10 @@ Homepage catalogue JSON is generated from `index.html`; individual page JSON is 
 
 ## Individual editorial pages
 
+- `/ai-technology-strategy/page.json` — responsible AI, organisational choice and digital sovereignty
+- `/data-strategy/page.json` — useful data, architecture, standards and reporting
+- `/organisational-resilience/page.json` — resilient organisational practice and learning
+
 - `/shipyard/page.json` — service offer, delivery approaches and published content
 - `/open-org/page.json` — the standard's explanation, sections and links to its JSON schemas
 - `/responsible-ai/page.json` — workshop material and curated resources

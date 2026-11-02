@@ -1,9 +1,9 @@
 {
   "id": "https://good-ship.co.uk/shipyard/",
   "type": "web_page",
-  "title": "Shipyard — The Good Ship",
+  "title": "Bespoke Software for Charities & Social Enterprises | Shipyard",
   "name": "Shipyard",
-  "description": "Shipyard: bespoke tools built around how your organisation actually works. Discovery, design, development, deployment — fully yours to keep.",
+  "description": "Bespoke software for charities and social enterprises. Discover what to build, decide when to buy, and create tools your organisation can maintain.",
   "language": "en-GB",
   "publisher": {
     "name": "The Good Ship",
@@ -335,6 +335,89 @@
       "links": []
     },
     {
+      "id": "should-you-build-software-or-buy-something",
+      "heading": "Should you build software or buy something?",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The first answer is often: neither, yet. Sometimes a better process, a clearer spreadsheet, or a small change to an existing tool solves the problem. Sometimes an off-the-shelf product is good enough, and buying it is the sensible decision."
+        },
+        {
+          "type": "paragraph",
+          "text": "Bespoke development makes more sense when your process is genuinely distinctive, when several tools need to work together, or when control over data, portability and how the software evolves matters. But the cost is more than the first build: somebody must understand, maintain and improve it."
+        },
+        {
+          "type": "paragraph",
+          "text": "Discovery should leave you with a decision you can explain: what problem matters, what the alternatives are, what you could test cheaply, and whether it is worth building at all."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "questions-before-you-commission-a-tool",
+      "heading": "Questions before you commission a tool",
+      "blocks": [
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Can we use what we already have?"
+        },
+        {
+          "type": "paragraph",
+          "text": "That is the starting point. We look at existing systems, how information moves between them, and whether a smaller integration or a change in process would help. Replacing everything is rarely a good first assumption."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "What will we own?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Shipyard is designed around organisational control and avoiding unnecessary dependency. The precise source-code, hosting, data access, handover and maintenance arrangements are agreed in the scope rather than left as assumptions."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Will our team be able to maintain it?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Documentation and a maintenance plan are part of the work. With Learn & Ship, developing your team's understanding is a core goal. With Ship It, we still agree the ownership and support arrangements before development begins."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Can we see examples?"
+        },
+        {
+          "type": "paragraph",
+          "text": "You can explore openly published products such as Drift , which experiments with more conversational forms, and Sets , a collection of browser-based tools. These show aspects of my own building practice, not a promise that every client project will look the same."
+        },
+        {
+          "type": "paragraph",
+          "text": "Related support: data strategy and architecture and responsible AI and technology decisions ."
+        }
+      ],
+      "links": [
+        {
+          "label": "Drift",
+          "url": "https://driftforms.app/"
+        },
+        {
+          "label": "Sets",
+          "url": "https://good-ship.co.uk/sets/"
+        },
+        {
+          "label": "data strategy and architecture",
+          "url": "https://good-ship.co.uk/data-strategy/"
+        },
+        {
+          "label": "responsible AI and technology decisions",
+          "url": "https://good-ship.co.uk/ai-technology-strategy/"
+        }
+      ]
+    },
+    {
       "id": "let-s-build-something-useful",
       "heading": "Let's build something useful",
       "blocks": [
@@ -360,6 +443,22 @@
     }
   ],
   "links": [
+    {
+      "label": "Drift",
+      "url": "https://driftforms.app/"
+    },
+    {
+      "label": "Sets",
+      "url": "https://good-ship.co.uk/sets/"
+    },
+    {
+      "label": "data strategy and architecture",
+      "url": "https://good-ship.co.uk/data-strategy/"
+    },
+    {
+      "label": "responsible AI and technology decisions",
+      "url": "https://good-ship.co.uk/ai-technology-strategy/"
+    },
     {
       "label": "book a call",
       "url": "https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k"

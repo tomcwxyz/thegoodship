@@ -19,25 +19,25 @@
         "id": "ai-and-technology-strategy",
         "name": "AI & Technology Strategy",
         "description": "Responsible AI adoption, digital sovereignty, and helping organisations think strategically about technology — not just chase the latest trend.",
-        "source_page": "https://good-ship.co.uk/#services"
+        "source_page": "https://good-ship.co.uk/ai-technology-strategy/"
       },
       {
         "id": "data-strategy-architecture-and-design",
         "name": "Data Strategy, Architecture & Design",
         "description": "Data strategy, data architecture, storytelling, and visualisation. From minimum viable standards to full data infrastructure — helping organisations see clearly and share openly.",
-        "source_page": "https://good-ship.co.uk/#services"
+        "source_page": "https://good-ship.co.uk/data-strategy/"
       },
       {
         "id": "organisational-resilience",
         "name": "Organisational Resilience",
         "description": "Frameworks, assessment, and strategic planning for navigating uncertainty. Purpose, money, people — nine principles for staying flexible.",
-        "source_page": "https://good-ship.co.uk/#services"
+        "source_page": "https://good-ship.co.uk/organisational-resilience/"
       },
       {
         "id": "product-and-team-development",
         "name": "Product & Team Development",
         "description": "Product management, facilitation, and team development. Helping teams ship better work through clearer priorities, participatory methods, and practical governance.",
-        "source_page": "https://good-ship.co.uk/#services"
+        "source_page": "https://good-ship.co.uk/shipyard/"
       },
       {
         "id": "learning-partnerships-and-coaching",
@@ -135,6 +135,21 @@
     }
   ],
   "other_pages": [
+    {
+      "name": "AI & Technology Strategy",
+      "url": "https://good-ship.co.uk/ai-technology-strategy/",
+      "json": "https://good-ship.co.uk/ai-technology-strategy/page.json"
+    },
+    {
+      "name": "Data Strategy",
+      "url": "https://good-ship.co.uk/data-strategy/",
+      "json": "https://good-ship.co.uk/data-strategy/page.json"
+    },
+    {
+      "name": "Organisational Resilience",
+      "url": "https://good-ship.co.uk/organisational-resilience/",
+      "json": "https://good-ship.co.uk/organisational-resilience/page.json"
+    },
     {
       "name": "Shipyard",
       "url": "https://good-ship.co.uk/shipyard/",

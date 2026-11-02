@@ -1,0 +1,282 @@
+{
+  "id": "https://good-ship.co.uk/ai-technology-strategy/",
+  "type": "web_page",
+  "title": "Responsible AI & Technology Strategy for Charities | The Good Ship",
+  "name": "Useful AI. On your terms.",
+  "description": "Practical AI strategy, policy and technology decisions for charities and social enterprises. Build confidence, protect judgement and reduce digital lock-in.",
+  "language": "en-GB",
+  "publisher": {
+    "name": "The Good Ship",
+    "url": "https://good-ship.co.uk/"
+  },
+  "canonical_url": "https://good-ship.co.uk/ai-technology-strategy/",
+  "source_page": "https://good-ship.co.uk/ai-technology-strategy/",
+  "json_url": "https://good-ship.co.uk/ai-technology-strategy/page.json",
+  "version": "0.1",
+  "introduction": [
+    {
+      "type": "paragraph",
+      "text": "A good AI strategy is not a shopping list of tools. It is a set of choices about what is useful, what should stay human and what your organisation is willing to depend on."
+    },
+    {
+      "type": "paragraph",
+      "text": "For charities, social enterprises and public-interest teams trying to make sense of changing technology without losing sight of their purpose."
+    }
+  ],
+  "introduction_links": [
+    {
+      "label": "Talk through your challenge",
+      "url": "https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k"
+    }
+  ],
+  "sections": [
+    {
+      "id": "you-don-t-need-to-adopt-everything",
+      "heading": "You don't need to adopt everything",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "There is enormous pressure to do something with AI. But the questions that matter are more familiar: which problems are worth solving? What happens to people's information? Who checks the work? Can staff disagree with a recommendation? And what happens if a provider changes its terms?"
+        },
+        {
+          "type": "paragraph",
+          "text": "For a small team, technology choices have consequences beyond an IT budget. They shape workload, trust, accessibility, data protection and the confidence people have in their own judgement. Strategy is about making those trade-offs visible before a tool becomes part of everyday practice."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "decisions-safeguards-and-useful-practice",
+      "heading": "Decisions, safeguards and useful practice",
+      "blocks": [
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Priorities before products"
+        },
+        {
+          "type": "paragraph",
+          "text": "Start with the work your organisation actually needs to do. Identify where AI may help, where it adds complexity and where doing less is better."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Responsible AI policy"
+        },
+        {
+          "type": "paragraph",
+          "text": "Develop practical principles for confidentiality, transparency, human review, accessibility, procurement and accountability — written so people can use them."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Technology sovereignty"
+        },
+        {
+          "type": "paragraph",
+          "text": "Examine ownership, portability, contracts, costs and open alternatives. Reduce avoidable lock-in without pretending every organisation can self-host everything."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Staff and trustee learning"
+        },
+        {
+          "type": "paragraph",
+          "text": "Facilitate conversations and hands-on exploration for people with different starting points. Build judgement rather than a dependence on prompts."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Small, bounded experiments"
+        },
+        {
+          "type": "paragraph",
+          "text": "Define a question, test a use case on suitable information, collect feedback and decide whether to stop, adapt or proceed."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Review and governance"
+        },
+        {
+          "type": "paragraph",
+          "text": "Establish ownership, decision records and review points so technology remains a choice the organisation can revisit."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "a-sensible-path-from-uncertainty-to-decisions",
+      "heading": "A sensible path from uncertainty to decisions",
+      "blocks": [
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Listen and map"
+        },
+        {
+          "type": "paragraph",
+          "text": "Understand the purpose, everyday workflows, existing tools and concerns. Start with what people actually do, not vendor demonstrations."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Choose and try"
+        },
+        {
+          "type": "paragraph",
+          "text": "Agree a few priorities and clear boundaries. Test something proportionate, or write the policy and decision framework first if that is what is missing."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Learn and retain control"
+        },
+        {
+          "type": "paragraph",
+          "text": "Capture what changed, who is accountable and when to review the choice. Leave people with a practical approach they can maintain."
+        }
+      ],
+      "links": []
+    },
+    {
+      "id": "you-can-see-some-of-the-thinking-already",
+      "heading": "You can see some of the thinking already",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "These are published resources and tools, not claims about client outcomes. They give a sense of the questions I am interested in and the things I build."
+        }
+      ],
+      "links": [
+        {
+          "label": "Responsible AI workshop A provocation and curated resources for organisations working in food systems.",
+          "url": "https://good-ship.co.uk/responsible-ai/"
+        },
+        {
+          "label": "Bearing An open way to compare AI models rather than choose on reputation alone.",
+          "url": "https://www.findbearing.org/"
+        },
+        {
+          "label": "Sets Small browser tools designed around doing useful work without sending files away.",
+          "url": "https://good-ship.co.uk/sets/"
+        },
+        {
+          "label": "Open Org Exploring data ownership, access and organisational self-sovereignty.",
+          "url": "https://good-ship.co.uk/open-org/"
+        }
+      ]
+    },
+    {
+      "id": "a-few-things-worth-asking",
+      "heading": "A few things worth asking",
+      "blocks": [
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "Do we need an AI policy before anyone starts experimenting?"
+        },
+        {
+          "type": "paragraph",
+          "text": "You need clear boundaries immediately, particularly around personal or confidential information. A useful policy can grow with what you learn; it does not need to be a large document before the first sensible conversation."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "How do we decide what is safe to try?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Begin with the consequence of getting something wrong. Consider data sensitivity, affected people, reversibility, accessibility and who can genuinely check the output. High-stakes decisions deserve much stronger scrutiny than an internal draft."
+        },
+        {
+          "type": "subheading",
+          "level": 3,
+          "text": "What if the best decision is not to use AI?"
+        },
+        {
+          "type": "paragraph",
+          "text": "That is a perfectly good outcome. Sometimes improving a process, understanding the data or buying a simpler tool is the more useful choice."
+        },
+        {
+          "type": "paragraph",
+          "text": "Related work: data strategy and architecture and bespoke organisational tools ."
+        }
+      ],
+      "links": [
+        {
+          "label": "data strategy and architecture",
+          "url": "https://good-ship.co.uk/data-strategy/"
+        },
+        {
+          "label": "bespoke organisational tools",
+          "url": "https://good-ship.co.uk/shipyard/"
+        }
+      ]
+    },
+    {
+      "id": "start-with-the-problem-not-a-pitch",
+      "heading": "Start with the problem, not a pitch",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Have something you are working through, or just a question forming? We can talk through what is happening, what you have tried and whether working together would be useful."
+        },
+        {
+          "type": "paragraph",
+          "text": "Prefer email? tom@good-ship.co.uk . Based in North East England, working with organisations elsewhere too."
+        }
+      ],
+      "links": [
+        {
+          "label": "Book an introductory call",
+          "url": "https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k"
+        },
+        {
+          "label": "tom@good-ship.co.uk",
+          "url": "mailto:tom@good-ship.co.uk"
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "label": "Talk through your challenge",
+      "url": "https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k"
+    },
+    {
+      "label": "Responsible AI workshop A provocation and curated resources for organisations working in food systems.",
+      "url": "https://good-ship.co.uk/responsible-ai/"
+    },
+    {
+      "label": "Bearing An open way to compare AI models rather than choose on reputation alone.",
+      "url": "https://www.findbearing.org/"
+    },
+    {
+      "label": "Sets Small browser tools designed around doing useful work without sending files away.",
+      "url": "https://good-ship.co.uk/sets/"
+    },
+    {
+      "label": "Open Org Exploring data ownership, access and organisational self-sovereignty.",
+      "url": "https://good-ship.co.uk/open-org/"
+    },
+    {
+      "label": "data strategy and architecture",
+      "url": "https://good-ship.co.uk/data-strategy/"
+    },
+    {
+      "label": "bespoke organisational tools",
+      "url": "https://good-ship.co.uk/shipyard/"
+    },
+    {
+      "label": "Book an introductory call",
+      "url": "https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k"
+    },
+    {
+      "label": "tom@good-ship.co.uk",
+      "url": "mailto:tom@good-ship.co.uk"
+    }
+  ],
+  "embeds": []
+}

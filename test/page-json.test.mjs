@@ -6,8 +6,8 @@ import { ORIGIN } from '../scripts/generate-site-json.mjs';
 
 const pages = generatePages();
 
-test('four editorial pages are exported with explicit canonical JSON URLs', () => {
-  assert.equal(Object.keys(pages).length, 4);
+test('all editorial and service pages are exported with explicit canonical JSON URLs', () => {
+  assert.equal(Object.keys(pages).length, PAGE_ROUTES.length);
   for (const { slug } of PAGE_ROUTES) {
     const page = pages[slug + '/page.json'];
     assert.equal(page.id, ORIGIN + '/' + slug + '/');
@@ -57,4 +57,21 @@ test('rejected links and invalid pages cannot be published', () => {
   assert.throws(() => generatePage(html, 'private'), /Unknown editorial/);
   const altered = html.replace('https://good-ship.co.uk/shipyard/', 'https://example.org/unrelated');
   assert.throws(() => generatePage(altered, 'shipyard'), /Unexpected canonical/);
+});
+
+test('new service pages have grounded content, relevant links and safe JSON exports', () => {
+  const expected = [
+    ['ai-technology-strategy', 'Responsible AI', '/responsible-ai/'],
+    ['data-strategy', 'Data Strategy', '/open-org/'],
+    ['organisational-resilience', 'Organisational Resilience', '/frameworks/garden-of-ideas.pdf'],
+  ];
+  for (const [slug, term, related] of expected) {
+    const page = pages[slug + '/page.json'];
+    assert.ok(page.name && page.description && page.sections.length >= 4);
+    assert.ok(page.sections.some(section => section.heading.length > 15));
+    assert.ok(JSON.stringify(page.sections).toLowerCase().includes(term.toLowerCase()));
+    assert.ok(page.links.some(link => link.url.includes(related)));
+    assert.ok(page.links.some(link => link.url.includes('driftforms.app/book/introductory-call-')));
+    assert.ok(page.sections.every(section => section.blocks.length > 0));
+  }
 });
