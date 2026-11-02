@@ -1,0 +1,51 @@
+{
+  "id": "https://good-ship.co.uk/#about",
+  "type": "organisation_description",
+  "name": "The Good Ship",
+  "title": "About The Good Ship",
+  "description": "The Good Ship helps social purpose organisations navigate uncertainty with strategy, technology, data, and open tools. Founded by Tom Campbell Watson.",
+  "founder": "Tom Campbell Watson",
+  "story": [
+    "I'm Tom Campbell Watson. I work with social purpose organisations — charities, social enterprises, B Corps, community businesses, and mission-driven public bodies — helping them think clearly about strategy, technology, data architecture, and resilience.",
+    "I build things as well as advise on them. I believe the best way to understand a problem is to make something that tries to solve it. That's why I've built open tools and data infrastructure alongside my consulting work — each one born from a real need I kept seeing.",
+    "I work in the open wherever I can. Frameworks are shared under Creative Commons. Data is open by default. Tools are built for use. Thinking happens in public on my blog .",
+    "Alongside The Good Ship, I previously co-founded Data for Action in 2023 — exploring what infrastructure the social purpose sector really needed. We embraced uncertainty over false certainty, tested ideas in the open, and built tools that outlasted the partnership. Data for Action ended in January 2026; the work continues here, and through the open tools built during that time."
+  ],
+  "facts": [
+    {
+      "label": "Based in",
+      "value": "North East England"
+    },
+    {
+      "label": "Working",
+      "value": "Globally"
+    },
+    {
+      "label": "By design",
+      "value": "Solo consultancy"
+    },
+    {
+      "label": "Approach",
+      "value": "Open by default"
+    }
+  ],
+  "organisations_worked_with": [
+    "Lloyds Bank Foundation",
+    "Joseph Rowntree Foundation",
+    "ClientEarth",
+    "Social Tech Trust",
+    "Power to Change",
+    "NPC",
+    "Wildlife Trusts",
+    "NHS England",
+    "NCSC",
+    "Cabinet Office",
+    "MHCLG"
+  ],
+  "contact": {
+    "website": "https://good-ship.co.uk/",
+    "email": "tom@good-ship.co.uk"
+  },
+  "canonical_url": "https://good-ship.co.uk/#about",
+  "source_page": "https://good-ship.co.uk/"
+}

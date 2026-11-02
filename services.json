@@ -1,0 +1,45 @@
+{
+  "type": "collection",
+  "name": "Services",
+  "description": "Public information from The Good Ship website. Generated from its HTML, not maintained separately.",
+  "source_page": "https://good-ship.co.uk/#services",
+  "count": 6,
+  "items": [
+    {
+      "id": "ai-and-technology-strategy",
+      "name": "AI & Technology Strategy",
+      "description": "Responsible AI adoption, digital sovereignty, and helping organisations think strategically about technology — not just chase the latest trend.",
+      "url": "https://good-ship.co.uk/#services"
+    },
+    {
+      "id": "data-strategy-architecture-and-design",
+      "name": "Data Strategy, Architecture & Design",
+      "description": "Data strategy, data architecture, storytelling, and visualisation. From minimum viable standards to full data infrastructure — helping organisations see clearly and share openly.",
+      "url": "https://good-ship.co.uk/#services"
+    },
+    {
+      "id": "organisational-resilience",
+      "name": "Organisational Resilience",
+      "description": "Frameworks, assessment, and strategic planning for navigating uncertainty. Purpose, money, people — nine principles for staying flexible.",
+      "url": "https://good-ship.co.uk/#services"
+    },
+    {
+      "id": "product-and-team-development",
+      "name": "Product & Team Development",
+      "description": "Product management, facilitation, and team development. Helping teams ship better work through clearer priorities, participatory methods, and practical governance.",
+      "url": "https://good-ship.co.uk/#services"
+    },
+    {
+      "id": "learning-partnerships-and-coaching",
+      "name": "Learning Partnerships & Coaching",
+      "description": "One-to-one development, team learning, and long-term advisory relationships. A steady light to navigate by.",
+      "url": "https://good-ship.co.uk/#services"
+    },
+    {
+      "id": "open-infrastructure",
+      "name": "Open Infrastructure",
+      "description": "Building shared digital tools for the sector. Not just talking about what's needed — actually making it.",
+      "url": "https://good-ship.co.uk/#services"
+    }
+  ]
+}
