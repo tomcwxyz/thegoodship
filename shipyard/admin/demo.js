@@ -12,6 +12,20 @@ const examples = [
     current_approach:'Shared spreadsheets and email updates',
     outcome:'Anyone planning shifts can see what is covered and what still needs help.',
     direction:'small', priority:'simplicity',state:'new',
+    needs_clarification:0,
+    conversation_json:JSON.stringify([
+      {role:'assistant',content:'What have you been thinking about making, changing or fixing?'},
+      {role:'user',content:'We have about 35 volunteers but our shift spreadsheet is a nightmare whenever somebody changes plans.'},
+      {role:'assistant',content:'It sounds like shifts get difficult when plans change. Who needs to see what is covered?'},
+      {role:'user',content:'Two coordinators and the volunteers who sign up for shifts.'},
+      {role:'assistant',content:'What would a good result look like for the coordinators?'},
+      {role:'user',content:'They would see immediately which shifts need covering and who can help.'}
+    ]),
+    emerging_notes_json:JSON.stringify({
+      problem:'Shift changes are difficult to coordinate with spreadsheets',
+      people:'Volunteers and two coordinators',
+      outcome:'See which shifts still need cover'
+    }),
     review_version:0,prototype_url:'',prototype_notes:'',
     ship_it_pence:null,learn_ship_pence:null,quote_notes:'',
     private_notes:'',prototype_approved_version:null,quote_approved_version:null
