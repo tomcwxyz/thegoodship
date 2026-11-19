@@ -35,6 +35,7 @@
     <form id="idea-form" novalidate>
       <p class="steps" id="step-label" aria-live="polite">Step 1 of 5</p>
       <div class="track" role="progressbar" aria-label="Idea exploration progress" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" id="progress"><span id="progress-fill"></span></div>
+      <div class="note inactive" id="preview-note" hidden>Preview mode: you can explore the questions and copy your idea brief. Online submissions are not open yet.</div>
       <div class="panel">
         <section class="step" data-step="0">
           <h2>What's difficult, frustrating or missing?</h2>
@@ -72,7 +73,7 @@
         </section>
         <section class="step" data-step="4" hidden>
           <h2>Here's your starting brief</h2>
-          <p>You can copy this without submitting anything. If you do send it, we'll review the idea privately and decide what a sensible next step might be.</p>
+          <p>This brief includes three routes worth exploring, from improving your current approach to testing a small prototype. These are starting points, not an automatic recommendation. You can copy it without submitting anything.</p>
           <div class="summary" id="summary" role="region" aria-label="Your idea summary"></div>
           <div class="field"><label class="label" for="contactName">Your name <small>(optional)</small></label><input id="contactName" maxlength="100" autocomplete="name"></div>
           <div class="field"><label class="label" for="contactEmail">Email address</label><input id="contactEmail" type="email" maxlength="254" autocomplete="email" required></div>
