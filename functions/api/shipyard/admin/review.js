@@ -75,7 +75,24 @@ export async function onRequestPost({request,env}) {
         if (!IDEA_STATES.includes(next)) throw new Error('Unknown review state');
         if (next==='internally_approved' && (!publicReviewState(row).prototypeApproved || !publicReviewState(row).quoteApproved))
           throw new Error('Approve both prototype and quote before marking ready');
-        statement=db.prepare('UPDATE shipyard_ideas SET state=?,updated_at=? WHERE id=?').bind(next,at,input.id);
+        if (next === 'internally_approved') {
+          // Recheck approvals in SQL in the same batch as the state transition.
+          statement=db.prepare(`
+            UPDATE shipyard_ideas SET state=?,updated_at=? WHERE id=?
+             AND EXISTS (
+               SELECT 1 FROM shipyard_reviews r
+                WHERE r.idea_id=shipyard_ideas.id AND r.review_version=?
+                  AND r.prototype_approved_version=? AND r.quote_approved_version=?
+                  AND r.prototype_url<>'' AND r.quote_notes<>''
+                  AND (r.ship_it_pence>0 OR r.learn_ship_pence>0)
+             )`
+          ).bind(next,at,input.id,input.version,input.version,input.version);
+        } else {
+          statement=db.prepare(`
+            UPDATE shipyard_ideas SET state=?,updated_at=? WHERE id=?
+             AND EXISTS (SELECT 1 FROM shipyard_reviews r WHERE r.idea_id=shipyard_ideas.id AND r.review_version=?)`
+          ).bind(next,at,input.id,input.version);
+        }
         details={state:next};
         break;
       }
@@ -84,19 +101,18 @@ export async function onRequestPost({request,env}) {
   } catch(e){return respond({ok:false,error:e.message || 'Invalid review'},400);}
 
   try {
-    const changed=await db.batch([
-      statement,
-      db.prepare('INSERT INTO shipyard_audit (id,idea_id,at,actor,action,details) VALUES (?,?,?,?,?,?)')
-        .bind(crypto.randomUUID(),input.id,at,admin,action,JSON.stringify(details))
-    ]);
-    // Updates protected by optimistic review-version checks.
-    if (action !== 'set_status' && changed[0]?.meta?.changes !== 1)
-      return respond({ok:false,error:'Review was changed concurrently. Reload the queue.'},409);
-
+    const statements=[statement];
     if (action==='save') {
-      // A changed review cannot remain marked as internally approved.
-      await db.prepare(`UPDATE shipyard_ideas SET state='reviewing',updated_at=? WHERE id=? AND state='internally_approved'`).bind(at,input.id).run();
+      // Apply invalidation atomically with the draft update.
+      statements.push(db.prepare(`UPDATE shipyard_ideas SET state='reviewing',updated_at=?
+        WHERE id=? AND state='internally_approved'`).bind(at,input.id));
     }
+    statements.push(db.prepare(
+      'INSERT INTO shipyard_audit (id,idea_id,at,actor,action,details) VALUES (?,?,?,?,?,?)'
+    ).bind(crypto.randomUUID(),input.id,at,admin,action,JSON.stringify(details)));
+    const changed=await db.batch(statements);
+    if (changed[0]?.meta?.changes !== 1)
+      return respond({ok:false,error:'Review was changed concurrently. Reload the queue.'},409);
     return respond({ok:true,deliveryEnabled:false});
   } catch {return respond({ok:false,error:'Could not save the review'},503);}
 }
