@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Explore your idea | Shipyard · The Good Ship</title>
+  <meta name="description" content="Start with your problem, not a technical specification. Shape a useful tool idea and ask The Good Ship to review it.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script async src="/analytics/browser.js"></script>
+  <style>
+    :root{--navy:#1b2a4a;--cream:#f5f0e8;--white:#fefcf9;--teal:#2d8b7a;--amber:#d4993d;--muted:#485771}
+    *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--navy);font:1rem/1.6 'DM Sans',system-ui,sans-serif}
+    h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.2}h1{font-size:clamp(2.3rem,5vw,3.65rem);margin:.35em 0}h2{font-size:clamp(1.7rem,3vw,2.2rem)}a{color:var(--teal)}
+    :focus-visible{outline:3px solid var(--amber);outline-offset:3px}.wrap{max-width:52rem;padding:0 1.25rem;margin:auto}
+    nav{border-bottom:1px solid #dedcd6;background:var(--white)}nav .wrap{max-width:70rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:1rem;padding-bottom:1rem}.brand{font:700 1.3rem Fraunces,Georgia,serif;color:var(--navy);text-decoration:none}
+    header{background:var(--navy);color:var(--cream);padding:3rem 0}.eyebrow{font:500 .78rem 'JetBrains Mono',monospace;color:#e1ae54}header p{max-width:42rem;color:#e0e4e9;font-size:1.12rem}
+    main{padding:2rem 0 5rem}.steps{font:500 .8rem 'JetBrains Mono',monospace;color:var(--muted);margin:0 0 .5rem}.track{background:#dadfdc;height:.38rem;border-radius:1rem;overflow:hidden}.track span{display:block;background:var(--teal);height:100%;width:20%;transition:width .2s}
+    .panel{margin:1.4rem 0 1rem;padding:clamp(1.2rem,4vw,2.2rem);border:1px solid #dedcd6;border-radius:.6rem;background:var(--white)}.panel p{color:var(--muted)}.step[hidden],.finish[hidden],.inactive[hidden]{display:none}
+    .field{margin:1.3rem 0}label.label{display:block;font-weight:700;margin-bottom:.5rem}textarea,input:not([type=radio]):not([type=checkbox]){width:100%;font:inherit;padding:.8rem;border:1px solid #a5afb5;border-radius:.4rem;background:white;color:var(--navy)}textarea{min-height:7rem;resize:vertical}
+    small,.hint{display:block;color:var(--muted);font-size:.85rem;margin-top:.4rem}.choices{border:0;margin:1rem 0;padding:0}.choices legend{font-weight:700;margin-bottom:.75rem}.choice{display:block;padding:.8rem;border:1px solid #d4d9d6;border-radius:.45rem;margin:.55rem 0;cursor:pointer}.choice:has(input:checked){background:#edf3ef;border-color:var(--teal)}.choice input{margin-right:.65rem;accent-color:var(--teal)}.choice span{font-weight:600}
+    .actions{display:flex;justify-content:space-between;align-items:center;gap:.75rem;flex-wrap:wrap;margin-top:1.4rem}button,.button{border:0;border-radius:.35rem;font:700 .95rem 'DM Sans',system-ui;cursor:pointer;padding:.8rem 1.2rem;background:var(--teal);color:white;text-decoration:none}button.secondary{background:transparent;border:1px solid #a7b0b1;color:var(--navy)}button:disabled{opacity:.48;cursor:not-allowed}
+    .summary{white-space:pre-wrap;background:#f0f2ee;border-left:3px solid var(--teal);padding:1rem;border-radius:.2rem;font-size:.95rem;overflow-wrap:anywhere}.note{font-size:.9rem;color:#45516b;padding:.85rem 1rem;border-left:3px solid var(--amber);background:#fbf6e7;margin:1.1rem 0}.inline{display:flex;gap:.65rem;align-items:flex-start}.inline input{margin-top:.35rem;accent-color:var(--teal)}
+    #message{font-size:.95rem;font-weight:600}#turnstile{min-height:3rem}.finish{text-align:left;padding:2rem;background:var(--white);border:1px solid #d4d9d6;border-radius:.5rem}footer{font-size:.88rem;color:var(--muted);padding:1.5rem}
+    @media(max-width:520px){.actions button{flex:1}header{padding:2rem 0}}
+  </style>
+</head>
+<body>
+  <nav><div class="wrap"><a class="brand" href="/">The Good Ship</a><a href="/shipyard/">← Shipyard</a></div></nav>
+  <header><div class="wrap"><span class="eyebrow">Shipyard / explore an idea</span><h1>What would you like to make better?</h1><p>You don't need to know what to build. We'll help you describe the problem, look at possible approaches and work towards something useful.</p></div></header>
+  <main class="wrap">
+    <form id="idea-form" novalidate>
+      <p class="steps" id="step-label" aria-live="polite">Step 1 of 5</p>
+      <div class="track" role="progressbar" aria-label="Idea exploration progress" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" id="progress"><span id="progress-fill"></span></div>
+      <div class="panel">
+        <section class="step" data-step="0">
+          <h2>What's difficult, frustrating or missing?</h2>
+          <p>Tell us about the thing you'd like to change. Use your own words — this isn't a technical brief.</p>
+          <div class="field"><label class="label" for="problem">Your idea or problem</label><textarea id="problem" name="problem" minlength="20" maxlength="2000" required placeholder="We spend hours each month copying information between systems…"></textarea><small>A few sentences is enough. Please don't include anybody's personal or sensitive information.</small></div>
+        </section>
+        <section class="step" data-step="1" hidden>
+          <h2>Who is this for, and how does it work now?</h2>
+          <p>A small amount of context helps us avoid suggesting a tool that makes things more complicated.</p>
+          <div class="field"><label class="label" for="people">Who would use or benefit from this?</label><textarea id="people" name="people" maxlength="1000" placeholder="Our volunteers, two coordinators and local partners…"></textarea></div>
+          <div class="field"><label class="label" for="currentApproach">How do you manage it today?</label><textarea id="currentApproach" name="currentApproach" maxlength="1200" placeholder="A spreadsheet, email and a bit of memory…"></textarea><small>It's fine if nothing exists yet.</small></div>
+        </section>
+        <section class="step" data-step="2" hidden>
+          <h2>What would a good result actually change?</h2>
+          <p>Imagine this problem is easier in six months. What's different for the people involved?</p>
+          <div class="field"><label class="label" for="outcome">The difference you're looking for</label><textarea id="outcome" name="outcome" required minlength="10" maxlength="1200" placeholder="We'd have one clear view of what's happening, with less time spent chasing updates…"></textarea></div>
+          <fieldset class="choices"><legend>What matters most?</legend>
+            <label class="choice"><input type="radio" name="priority" value="simplicity" required><span>Simple and easy for people to use</span></label>
+            <label class="choice"><input type="radio" name="priority" value="ownership"><span>Ownership and independence</span></label>
+            <label class="choice"><input type="radio" name="priority" value="speed"><span>Getting something useful quickly</span></label>
+            <label class="choice"><input type="radio" name="priority" value="cost"><span>Low ongoing cost</span></label>
+            <label class="choice"><input type="radio" name="priority" value="unsure"><span>Not sure yet</span></label>
+          </fieldset>
+        </section>
+        <section class="step" data-step="3" hidden>
+          <h2>What sort of next step makes sense?</h2>
+          <p>This isn't a commitment. We may recommend improving a process, choosing something that already exists, or building a small new tool.</p>
+          <fieldset class="choices"><legend>Which feels closest?</legend>
+            <label class="choice"><input type="radio" name="direction" value="unsure" required><span>I'm not sure — help me explore</span></label>
+            <label class="choice"><input type="radio" name="direction" value="improve"><span>Improve something we already use</span></label>
+            <label class="choice"><input type="radio" name="direction" value="small"><span>Try a small working prototype</span></label>
+            <label class="choice"><input type="radio" name="direction" value="explore"><span>Explore a larger idea, starting small</span></label>
+          </fieldset>
+          <div class="note">We won't automatically generate or send you a prototype or a price. A person at The Good Ship will review anything before it's shared.</div>
+        </section>
+        <section class="step" data-step="4" hidden>
+          <h2>Here's your starting brief</h2>
+          <p>You can copy this without submitting anything. If you do send it, we'll review the idea privately and decide what a sensible next step might be.</p>
+          <div class="summary" id="summary" role="region" aria-label="Your idea summary"></div>
+          <div class="field"><label class="label" for="contactName">Your name <small>(optional)</small></label><input id="contactName" maxlength="100" autocomplete="name"></div>
+          <div class="field"><label class="label" for="contactEmail">Email address</label><input id="contactEmail" type="email" maxlength="254" autocomplete="email" required></div>
+          <div class="field"><label class="label" for="organisation">Organisation <small>(optional)</small></label><input id="organisation" maxlength="150" autocomplete="organization"></div>
+          <div class="field"><label class="inline"><input id="consent" type="checkbox" required><span>I agree that The Good Ship can store these answers and my contact details to review and respond to my enquiry. Don't include confidential or sensitive client information. I can request deletion at any time.</span></label></div>
+          <div class="inactive" id="captcha-wrap" hidden><div id="turnstile"></div></div>
+          <div class="note inactive" id="offline-note" hidden>Public submissions aren't switched on yet. You can still copy your brief and discuss it with us directly.</div>
+          <div class="actions"><button type="button" class="secondary" id="copy">Copy my brief</button><a href="https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k">Book a conversation</a></div>
+        </section>
+      </div>
+      <div class="actions">
+        <button type="button" class="secondary" id="back" hidden>← Previous</button>
+        <button type="button" id="next">Continue →</button>
+        <button type="submit" id="send" hidden disabled>Send for human review</button>
+      </div>
+      <p id="message" role="status" aria-live="polite"></p>
+    </form>
+    <section class="finish" id="finish" hidden aria-live="polite"><h2>We've received your idea</h2><p>Your answers are in a private review queue. Nothing has been built or priced automatically, and no prototype or quote will be sent without a personal review.</p><p><a href="/shipyard/">Back to Shipyard</a></p></section>
+  </main>
+  <footer><div class="wrap">© 2026 The Good Ship Ltd · Your idea stays private unless you separately choose to share it.</div></footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
