@@ -70,6 +70,10 @@ function select(id) {
   text('idea-contact',[selected.contact_name,selected.contact_email].filter(Boolean).join(' · '));
   text('idea-organisation',selected.organisation);
   get('state').value=selected.state;
+  const preview=get('open-preview');
+  preview.hidden=!selected.prototype_url;
+  if(selected.prototype_url)preview.href=selected.prototype_url;
+  else preview.removeAttribute('href');
   const saved=toSavedForm(selected);
   for(const key of fields)get(key).value=saved[key];
   text('review-message','');
