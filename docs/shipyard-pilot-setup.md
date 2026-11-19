@@ -10,6 +10,19 @@ This branch adds the **next phase** beyond the gallery in PR #28: a working brow
 - `GET /api/shipyard/admin/ideas` — identity-gated review queue (up to 100 newest).
 - `POST /api/shipyard/admin/review` — identity-gated updates, separate prototype/quote approvals, no delivery.
 
+## Static preview and safe review rehearsal
+
+The public discovery route, `/shipyard/start/`, works without a database: visitors can complete the five steps and copy their brief. The Submit button is disabled until infrastructure and the explicit intake switch are configured.
+
+Reviewers can also open `/shipyard/admin/?demo=1` **on a static preview** to rehearse the dashboard with three fictional enquiries using `.test` email addresses. Demo mode:
+- intercepts review API requests locally and never calls the network;
+- supports saving costs, approving the prototype, approving the quote and marking an idea internally approved;
+- clears approvals if a saved draft changes and rejects stale versions;
+- persists nothing, sends no messages and never exposes actual client data;
+- resets completely when the page is reloaded.
+
+The production admin URL without `?demo=1` remains protected by the server-side Access JWT requirement. Protect the admin paths themselves with Cloudflare Access before launch.
+
 ## Setup before live public intake
 
 **Do not enable public submissions** until the review access and retention processes have been tested.
