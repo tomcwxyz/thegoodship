@@ -77,7 +77,7 @@
           <div class="field"><label class="label" for="contactName">Your name <small>(optional)</small></label><input id="contactName" maxlength="100" autocomplete="name"></div>
           <div class="field"><label class="label" for="contactEmail">Email address</label><input id="contactEmail" type="email" maxlength="254" autocomplete="email" required></div>
           <div class="field"><label class="label" for="organisation">Organisation <small>(optional)</small></label><input id="organisation" maxlength="150" autocomplete="organization"></div>
-          <div class="field"><label class="inline"><input id="consent" type="checkbox" required><span>I agree that The Good Ship can store these answers and my contact details to review and respond to my enquiry. Don't include confidential or sensitive client information. Enquiries are normally retained for up to 90 days unless we agree to continue. I can request deletion at any time.</span></label></div>
+          <div class="field"><label class="inline"><input id="consent" type="checkbox" required><span>I agree that The Good Ship can store these answers and my contact details to review and respond to my enquiry. Don't include confidential or sensitive client information. The Good Ship will retain this information only as needed to handle the enquiry. I can request deletion at any time. A full retention schedule will be confirmed before enquiries open.</span></label></div>
           <div class="inactive" id="captcha-wrap" hidden><div id="turnstile"></div></div>
           <div class="note inactive" id="offline-note" hidden>Public submissions aren't switched on yet. You can still copy your brief and discuss it with us directly.</div>
           <div class="actions"><button type="button" class="secondary" id="copy">Copy my brief</button><a href="https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k">Book a conversation</a></div>
@@ -90,7 +90,7 @@
       </div>
       <p id="message" role="status" aria-live="polite"></p>
     </form>
-    <section class="finish" id="finish" hidden aria-live="polite"><h2>We've received your idea</h2><p>Your answers are in a private review queue. Nothing has been built or priced automatically, and no prototype or quote will be sent without a personal review.</p><p><a href="/shipyard/">Back to Shipyard</a></p></section>
+    <section class="finish" id="finish" hidden tabindex="-1" aria-live="polite"><h2>We've received your idea</h2><p>Your answers are in a private review queue. Nothing has been built or priced automatically, and no prototype or quote will be sent without a personal review.</p><p><a href="/shipyard/">Back to Shipyard</a></p></section>
   </main>
   <footer><div class="wrap">© 2026 The Good Ship Ltd · Your idea stays private unless you separately choose to share it.</div></footer>
   <script type="module" src="./app.js"></script>
