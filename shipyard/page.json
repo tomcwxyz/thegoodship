@@ -3,7 +3,7 @@
   "type": "web_page",
   "title": "Shipyard | From ideas to working tools · The Good Ship",
   "name": "Shipyard",
-  "description": "Explore an idea through guided discovery, or browse working examples. Every prototype and quote is reviewed by The Good Ship before it could be shared.",
+  "description": "Explore an idea through natural conversation, see emerging notes and ask for a personal review. Every prototype and quote is reviewed by The Good Ship before being shared.",
   "language": "en-GB",
   "publisher": {
     "name": "The Good Ship",
@@ -12,7 +12,7 @@
   "canonical_url": "https://good-ship.co.uk/shipyard/",
   "source_page": "https://good-ship.co.uk/shipyard/",
   "json_url": "https://good-ship.co.uk/shipyard/page.json",
-  "version": "0.3",
+  "version": "0.4",
   "introduction": [
     {
       "type": "paragraph",
@@ -496,15 +496,15 @@
     },
     {
       "id": "explore-your-idea",
-      "heading": "Explore an idea",
+      "heading": "Talk an idea through",
       "blocks": [
         {
           "type": "paragraph",
-          "text": "Use a five-step guided discovery to describe a problem, people involved, desired outcome and possible direction. Copy the resulting brief or submit it privately when intake is enabled."
+          "text": "Start with a half-formed idea or real-world frustration. A conversational guide listens, asks useful follow-up questions, and gradually produces an emerging brief without asking the visitor to complete a specification."
         },
         {
           "type": "paragraph",
-          "text": "A human at The Good Ship must separately approve any eventual prototype and pricing. There is no automatic proposal or prototype email, and there is no auto-publication to the gallery."
+          "text": "Visitors can correct notes, explore non-build options and copy a brief at any point. When enabled, AI-assisted questions are processed privately with bounded sessions; submissions and human review remain separate. No prototype or quote can be sent without human approval."
         }
       ],
       "links": [
