@@ -81,7 +81,7 @@ export async function onRequestPost({request,env}){
     if(!response.ok)throw new Error('AI provider unavailable');
     completion=await response.json();
     const data=safeModelAnswer(parseModelJson(completion),history.at(-1).content);
-    return respond({ok:true,...data,turnsRemaining:CHAT_LIMIT});
+    return respond({ok:true,...data});
   }catch{
     // No raw conversation text or provider response in public error details/logs.
     return respond({ok:false,error:'I could not respond just now. Your conversation is still on this page; try again or review what we have.'},502);
