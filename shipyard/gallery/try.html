@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Try a Shipyard idea · The Good Ship</title>
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#1b2a4a">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script async src="/analytics/browser.js"></script>
+  <style>
+    :root{--navy:#1b2a4a;--teal:#2d8b7a;--cream:#f5f0e8;--white:#fefcf9;--amber:#d4993d}
+    *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--navy);font:1rem/1.55 'DM Sans',system-ui,sans-serif}
+    .wrap{width:min(66rem,calc(100% - 2.5rem));margin:0 auto}h1,h2{font-family:Fraunces,Georgia,serif;line-height:1.2}h1{font-size:clamp(2.3rem,5vw,3.5rem);margin:.3rem 0 .8rem}h2{font-size:1.55rem}
+    a{color:var(--teal)}:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+    nav{padding:1.1rem 0;background:var(--white);border-bottom:1px solid #ddd}nav .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.75rem}nav a{font-weight:700}
+    header{background:var(--navy);color:var(--cream);padding:2.7rem 0}header p{max-width:45rem;color:#e0e4e9;margin:0}.eyebrow{font:500 .78rem 'JetBrains Mono',monospace;color:#e0ad56}
+    .notice{border-left:4px solid var(--teal);padding:1rem 1.2rem;margin:1.6rem 0;background:#e8efeb}.notice p{margin:.25rem 0;font-size:.92rem}
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1.5rem 0}.stat{background:var(--white);border:1px solid #dedcd6;padding:1.1rem;border-radius:.5rem}.stat strong{display:block;font:600 2rem Fraunces,Georgia,serif}.stat span{color:#4e5b70;font-size:.9rem}
+    .panel{background:var(--white);border:1px solid #dedcd6;border-radius:.6rem;padding:1.4rem;margin:1.2rem 0 2.3rem}.panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap}.panel-head h2{margin:0 0 .5rem}.toolbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}select,input,button{font:inherit;border-radius:.3rem;padding:.55rem .7rem}select,input{border:1px solid #9da8aa;background:#fff;color:var(--navy)}button{border:0;background:var(--teal);color:#fff;cursor:pointer;font-weight:700}button:hover{background:#226d60}.muted{color:#4e5b70;font-size:.9rem}
+    .table-scroll{overflow-x:auto;margin:1.1rem 0 0}table{border-collapse:collapse;width:100%;min-width:540px;text-align:left}th,td{padding:.9rem .7rem;border-bottom:1px solid #e3e0d9}th{font-size:.82rem;color:#435069}td{font-size:.94rem}td button{font-size:.8rem;padding:.35rem .5rem;background:transparent;color:var(--teal);border:1px solid var(--teal)}
+    form{display:flex;flex-wrap:wrap;align-items:flex-end;gap:.85rem;padding:1rem 0 .25rem}label{font-size:.84rem;display:block;font-weight:700;margin-bottom:.35rem}form .field{min-width:12rem;flex:1}form input{width:100%}form button{align-self:end}.action{white-space:nowrap}
+    footer{padding:1.3rem 0;font-size:.84rem;color:#59667b}
+    @media(max-width:650px){.stats{grid-template-columns:1fr 1fr}.panel{padding:1rem}.toolbar{width:100%}.stats .stat:last-child{grid-column:span 2}}
+  </style>
+</head>
+<body>
+  <nav aria-label="Main"><div class="wrap"><a href="/shipyard/gallery/">← Back to the gallery</a><a href="/shipyard/">Shipyard</a></div></nav>
+  <header><div class="wrap"><span class="eyebrow">Shipyard / demonstration</span><h1 id="demo-title">Explore an example</h1><p id="demo-intro">A small, interactive example built with fictional data.</p></div></header>
+  <main class="wrap">
+    <div class="notice"><strong>Demonstration only</strong><p>Every name, task and figure is fictional. Changes only last while this page is open — nothing is stored or sent. This isn't a secure system for real personal or organisational data.</p></div>
+    <section class="stats" aria-label="Example summary">
+      <div class="stat"><strong id="total-count">0</strong><span id="total-label">Items</span></div>
+      <div class="stat"><strong id="active-count">0</strong><span id="active-label">Needs attention</span></div>
+      <div class="stat"><strong id="done-count">0</strong><span id="done-label">Completed</span></div>
+    </section>
+    <section class="panel" aria-label="Try the prototype">
+      <div class="panel-head"><div><h2 id="table-title">Entries</h2><p class="muted">Change a status or add a fictional entry to see how the overview responds.</p></div>
+        <div class="toolbar"><label for="status-filter">Show</label><select id="status-filter"><option value="all">All statuses</option></select></div>
+      </div>
+      <div class="table-scroll"><table><thead><tr><th scope="col" id="item-head">Item</th><th scope="col">Owner</th><th scope="col">Status</th><th scope="col">Next step</th></tr></thead><tbody id="items-body"></tbody></table></div>
+      <form id="add-form">
+        <div class="field"><label for="item-name" id="item-label">New entry</label><input id="item-name" maxlength="120" autocomplete="off" required placeholder="A fictional example"></div>
+        <div class="field"><label for="item-owner">Owner</label><input id="item-owner" maxlength="60" autocomplete="off" required placeholder="e.g. Sam"></div>
+        <button type="submit">Add example entry</button>
+      </form>
+      <p id="form-message" class="muted" role="status" aria-live="polite"></p>
+    </section>
+    <section aria-labelledby="what-next"><h2 id="what-next">What would a real tool need?</h2><p id="real-tool"></p><p><a href="/shipyard/gallery/">Try another example</a> · <a href="https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k">Discuss a problem worth solving</a></p></section>
+  </main>
+  <footer><div class="wrap">© 2026 The Good Ship Ltd · Illustrative example, not a client system.</div></footer>
+  <script type="module" src="./try.js"></script>
+</body>
+</html>
