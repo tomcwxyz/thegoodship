@@ -45,6 +45,16 @@
           <div class="answer"><strong>Enquirer</strong><p id="idea-contact"></p></div>
           <div class="answer"><strong>Organisation</strong><p id="idea-organisation"></p></div>
         </div>
+        <div class="draft" id="conversation-context">
+          <h2>How the idea emerged</h2>
+          <p class="muted">These notes are provisional. Read the person's own words before deciding what to build or quote.</p>
+          <div class="review-check" id="clarification-note" hidden>Some details remain unresolved. Check the conversation before scoping.</div>
+          <div class="details-grid" id="emerging-notes"></div>
+          <details style="margin:1.2rem 0;">
+            <summary style="cursor:pointer;font-weight:700;">Read the discovery conversation</summary>
+            <div id="conversation-log" style="display:grid;gap:.65rem;padding:1rem 0;"></div>
+          </details>
+        </div>
         <div class="draft">
           <h2>Review and assessment</h2>
           <div class="field"><label for="state">Enquiry state</label><select id="state"><option value="new">New</option><option value="reviewing">Reviewing</option><option value="needs_detail">Needs more information</option><option value="declined">Not proceeding</option><option value="internally_approved">Approved internally (NOT SENT)</option></select></div>
