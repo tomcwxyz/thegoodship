@@ -41,6 +41,41 @@ function approvalControls() {
     text('quote-check','Quote: save changes before approval. Previous approvals will be cleared.');
   }
 }
+function renderConversation(idea){
+  const log=get('conversation-log'),summary=get('emerging-notes');
+  log.replaceChildren();summary.replaceChildren();
+  let messages=[],notes={};
+  try{messages=JSON.parse(idea.conversation_json || '[]');}catch{}
+  try{notes=JSON.parse(idea.emerging_notes_json || '{}');}catch{}
+  get('conversation-context').hidden=!messages.length && !Object.keys(notes).length;
+  get('clarification-note').hidden=Number(idea.needs_clarification)!==1;
+  const labels={problem:'What needs to change',people:'Who it affects',currentApproach:'What happens now',
+    outcome:'What better looks like',constraints:'Things to bear in mind'};
+  for(const [key,label] of Object.entries(labels)){
+    if(typeof notes[key]!=='string' || !notes[key].trim())continue;
+    const row=document.createElement('div');row.className='answer';
+    const title=document.createElement('strong');title.textContent=label;
+    const value=document.createElement('p');value.textContent=notes[key];
+    row.append(title,value);summary.append(row);
+  }
+  for(const item of messages.slice(-24)){
+    if(!item || !['assistant','user'].includes(item.role) || typeof item.content!=='string')continue;
+    const entry=document.createElement('div');
+    entry.style.borderLeft='3px solid '+(item.role==='user'?'#2d8b7a':'#a7a9a3');
+    entry.style.padding='.45rem .8rem';
+    const who=document.createElement('strong');
+    who.textContent=item.role==='user'?'Enquirer':'Shipyard assistant (AI or preview)';
+    const message=document.createElement('p');
+    message.textContent=item.content;
+    message.style.whiteSpace='pre-wrap';
+    entry.append(who,message);log.append(entry);
+  }
+  if(!messages.length){
+    const p=document.createElement('p');
+    p.textContent='No conversation was attached to this enquiry.';
+    log.append(p);
+  }
+}
 function renderList() {
   const list=get('list-items');
   list.replaceChildren();
@@ -72,6 +107,7 @@ function select(id) {
   text('idea-priority',selected.priority);
   text('idea-contact',[selected.contact_name,selected.contact_email].filter(Boolean).join(' · '));
   text('idea-organisation',selected.organisation);
+  renderConversation(selected);
   get('state').value=selected.state;
   const preview=get('open-preview');
   preview.hidden=!selected.prototype_url;
