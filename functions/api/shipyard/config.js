@@ -1,4 +1,4 @@
-import {respond} from '../../../_lib/shipyard.mjs';
+import {respond} from '../../_lib/shipyard.mjs';
 
 // Public configuration contains only the public Turnstile site key.
 // Fail closed: no submissions unless both D1 and bot protection are configured.
