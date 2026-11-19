@@ -2,7 +2,7 @@ import {respond, validateIdea, sameOriginJson, readSmallJSON} from '../../_lib/s
 
 export async function onRequestPost({request,env}) {
   // Never accept data when any privacy/abuse-control dependency is unconfigured.
-  if (!env.SHIPYARD_DB || !env.SHIPYARD_TURNSTILE_SECRET || !env.SHIPYARD_TURNSTILE_SITE_KEY)
+  if (env.SHIPYARD_INTAKE_ENABLED !== 'true' || !env.SHIPYARD_DB || !env.SHIPYARD_TURNSTILE_SECRET || !env.SHIPYARD_TURNSTILE_SITE_KEY)
     return respond({ok:false,error:'Enquiries are not open yet. Please use the booking link.'},503);
   if (!sameOriginJson(request)) return respond({ok:false,error:'Invalid request origin'},403);
 
