@@ -64,7 +64,7 @@ async function withFakeFetch(fake, run) {
 }
 
 test('public intake stays closed without all three infrastructure settings',async()=>{
-  const r=await config({env:{SHIPYARD_DB:{},SHIPYARD_TURNSTILE_SITE_KEY:'site',SHIPYARD_TURNSTILE_SECRET:'secret'}});
+  const r=await config({env:{SHIPYARD_DB:{},SHIPYARD_TURNSTILE_SITE_KEY:'site',SHIPYARD_TURNSTILE_SECRET:'secret',SHIPYARD_INTAKE_ENABLED:'true'}});
   assert.equal((await r.json()).enabled,false);
   const result=await submitIdea({request:request('/api/shipyard/ideas',valid),env:{}});
   assert.equal(result.status,503);
@@ -81,7 +81,7 @@ test('public intake rejects cross-origin and missing consent',async()=>{
 });
 
 test('invalid Turnstile verification never writes an enquiry',async()=>{
-  const db=new FakeD1(),env={SHIPYARD_DB:db,SHIPYARD_TURNSTILE_SITE_KEY:'site',SHIPYARD_TURNSTILE_SECRET:'secret'};
+  const db=new FakeD1(),env={SHIPYARD_DB:db,SHIPYARD_TURNSTILE_SITE_KEY:'site',SHIPYARD_TURNSTILE_SECRET:'secret',SHIPYARD_INTAKE_ENABLED:'true'};
   await withFakeFetch(async()=>new Response(JSON.stringify({success:false,hostname:'good-ship.co.uk'})),async()=>{
     const result=await submitIdea({request:request('/api/shipyard/ideas',valid),env});
     assert.equal(result.status,400);
@@ -90,7 +90,7 @@ test('invalid Turnstile verification never writes an enquiry',async()=>{
 });
 
 test('valid submission stores a private idea, review placeholder and audit, with no email',async()=>{
-  const db=new FakeD1(),env={SHIPYARD_DB:db,SHIPYARD_TURNSTILE_SITE_KEY:'site',SHIPYARD_TURNSTILE_SECRET:'secret'};
+  const db=new FakeD1(),env={SHIPYARD_DB:db,SHIPYARD_TURNSTILE_SITE_KEY:'site',SHIPYARD_TURNSTILE_SECRET:'secret',SHIPYARD_INTAKE_ENABLED:'true'};
   let fetchCalls=0;
   await withFakeFetch(async(endpoint,options)=>{
     fetchCalls++;
@@ -114,7 +114,7 @@ test('valid submission stores a private idea, review placeholder and audit, with
 
 test('storage failures do not pretend to accept a submission',async()=>{
   const db=new FakeD1();db.batch=async()=>{throw Error('private database not reachable')};
-  const env={SHIPYARD_DB:db,SHIPYARD_TURNSTILE_SITE_KEY:'site',SHIPYARD_TURNSTILE_SECRET:'secret'};
+  const env={SHIPYARD_DB:db,SHIPYARD_TURNSTILE_SITE_KEY:'site',SHIPYARD_TURNSTILE_SECRET:'secret',SHIPYARD_INTAKE_ENABLED:'true'};
   await withFakeFetch(async()=>new Response(JSON.stringify({success:true,hostname:'good-ship.co.uk'})),async()=>{
     const result=await submitIdea({request:request('/api/shipyard/ideas',valid),env});
     assert.equal(result.status,503);
