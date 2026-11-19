@@ -92,7 +92,7 @@ Functional Cloudflare Pages and D1 integration tests still need configured previ
 ## After this phase
 1. Human test of discovery questions and admin review ergonomics.
 2. Privacy and retention completion; secure test data capture.
-3. Optional LLM-assisted question guidance within strict costs and data handling.
+3. Test the already implemented (but disabled) LLM-assisted dialogue in a protected Cloudflare staging environment, with the provider, limits, safeguards and transcript handling verified.
 4. Bounded sandboxed prototype agent with test summary and immutable artifact versions.
 5. Task-based costing, separate price approval and then a separately approved, idempotent delivery outbox.
 6. New, better gallery demonstrations; keep them separate from private client enquiries.
