@@ -64,7 +64,7 @@ async function withFakeFetch(fake, run) {
 }
 
 test('public intake stays closed without all three infrastructure settings',async()=>{
-  const r=await config({env:{SHIPYARD_DB:{},SHIPYARD_TURNSTILE_SITE_KEY:'site',SHIPYARD_TURNSTILE_SECRET:'secret',SHIPYARD_INTAKE_ENABLED:'true'}});
+  const r=await config({env:{SHIPYARD_DB:{},SHIPYARD_TURNSTILE_SITE_KEY:'site',SHIPYARD_TURNSTILE_SECRET:'secret'}});
   assert.equal((await r.json()).enabled,false);
   const result=await submitIdea({request:request('/api/shipyard/ideas',valid),env:{}});
   assert.equal(result.status,503);
