@@ -54,6 +54,7 @@ export async function onRequestPost({request,env}) {
         break;
       }
       case 'approve_prototype': {
+        if (input.confirmed !== true) throw new Error('Explicit inspection confirmation is required');
         if (!row.prototype_url) throw new Error('Add and save a prototype URL first');
         statement=db.prepare(
           'UPDATE shipyard_reviews SET prototype_approved_version=?, prototype_approved_by=?,reviewed_at=? WHERE idea_id=? AND review_version=?'
@@ -61,6 +62,7 @@ export async function onRequestPost({request,env}) {
         break;
       }
       case 'approve_quote': {
+        if (input.confirmed !== true) throw new Error('Explicit pricing confirmation is required');
         if (!publicReviewState({...row,quote_approved_version:input.version}).quoteApproved)
           throw new Error('Add a cost and pricing assumptions before approving');
         statement=db.prepare(
