@@ -33,8 +33,6 @@ export function possibleRoutes(answers) {
       description:'Prototype one important workflow with invented data, then test what is genuinely useful before committing to a full system.'
     }
   ];
-  if(answers.direction==='small' || answers.direction==='explore')
-    routes.push(routes.splice(2,1)[0]); // Keep all options visible, without prescribing.
   const note=priority==='ownership' ?
     'Pay particular attention to hosting, data portability, source-code ownership and ongoing maintenance.' :
     priority==='cost' ?
