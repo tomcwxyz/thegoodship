@@ -1,3 +1,6 @@
+import {createDemoApi} from './demo.js';
+const demoMode=new URLSearchParams(window.location.search).get('demo')==='1';
+const apiFetch=demoMode ? createDemoApi() : fetch;
 // Private Shipyard review UI. Never sends mail or publishes anything.
 const get=id=>document.getElementById(id);
 const fields=['prototypeUrl','prototypeNotes','shipIt','learnShip','quoteNotes','privateNotes'];
@@ -82,13 +85,13 @@ function select(id) {
 }
 async function load(keepId) {
   busy=true;
-  const response=await fetch('/api/shipyard/admin/ideas',{headers:{accept:'application/json'}});
+  const response=await apiFetch('/api/shipyard/admin/ideas',{headers:{accept:'application/json'}});
   const data=await response.json();
   if(!response.ok || !data.ok) throw new Error(data.error || 'Unable to load reviews');
   ideas=data.ideas || [];
   busy=false;
   get('workspace').hidden=false;
-  get('notice').textContent='Signed in as '+data.admin+'. This is an internal queue — no deliveries are enabled.';
+  get('notice').textContent=demoMode ? 'SIMULATION: all three enquiries and all approvals are fictional. Changes are never saved or sent.' : 'Signed in as '+data.admin+'. This is an internal queue — no deliveries are enabled.';
   select(keepId || ideas[0]?.id);
   renderList();
 }
@@ -99,7 +102,7 @@ async function action(name,extra={}) {
   busy=true;approvalControls();
   text('review-message','Saving…');
   try{
-    const response=await fetch('/api/shipyard/admin/review',{
+    const response=await apiFetch('/api/shipyard/admin/review',{
       method:'POST',
       headers:{'content-type':'application/json',accept:'application/json'},
       body:JSON.stringify({action:name,id,version:selected.review_version,...extra})
