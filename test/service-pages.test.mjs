@@ -77,7 +77,9 @@ test('Shipyard includes practical build-or-buy guidance and does not invent cust
   const html = readFileSync(join(root, 'shipyard', 'index.html'), 'utf8');
   assert.match(html, /Should you build software or buy something\?/);
   assert.match(html, /What will we own\?/);
-  assert.match(html, /these show aspects of my own building practice/i);
+  assert.match(html, /demonstrations use invented data/i);
+  assert.match(html, /href="\/shipyard\/gallery\/"/);
+  assert.match(html, /href="\/shipyard\/gallery\/try.html\?example=volunteers"/);
   assert.match(html, /href="\/ai-technology-strategy\/"/);
   assert.match(html, /href="\/data-strategy\/"/);
 });

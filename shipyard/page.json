@@ -1,9 +1,9 @@
 {
   "id": "https://good-ship.co.uk/shipyard/",
   "type": "web_page",
-  "title": "Bespoke Software for Charities & Social Enterprises | Shipyard",
+  "title": "Shipyard | From ideas to working tools · The Good Ship",
   "name": "Shipyard",
-  "description": "Bespoke software for charities and social enterprises. Discover what to build, decide when to buy, and create tools your organisation can maintain.",
+  "description": "Explore an idea through natural conversation, see emerging notes and ask for a personal review. Every prototype and quote is reviewed by The Good Ship before being shared.",
   "language": "en-GB",
   "publisher": {
     "name": "The Good Ship",
@@ -12,14 +12,23 @@
   "canonical_url": "https://good-ship.co.uk/shipyard/",
   "source_page": "https://good-ship.co.uk/shipyard/",
   "json_url": "https://good-ship.co.uk/shipyard/page.json",
-  "version": "0.1",
+  "version": "0.4",
   "introduction": [
     {
       "type": "paragraph",
-      "text": "Your organisation has problems that software could solve. Shipyard is how we discover them, design the right tools, build them properly, and ship them — fully deployed, documented, and yours to keep."
+      "text": "Have an idea for something useful? Shipyard helps you explore it, find the right approach and turn it into a working tool — or discover that you do not need to build anything at all."
     }
   ],
-  "introduction_links": [],
+  "introduction_links": [
+    {
+      "label": "Explore your idea",
+      "url": "https://good-ship.co.uk/shipyard/start/"
+    },
+    {
+      "label": "Explore working examples",
+      "url": "https://good-ship.co.uk/shipyard/gallery/"
+    }
+  ],
   "sections": [
     {
       "id": "tools-you-own-built-around-how-you-actually-work",
@@ -214,12 +223,56 @@
       "links": []
     },
     {
+      "id": "see-what-an-idea-could-become",
+      "heading": "See what an idea could become",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "These small interactive demonstrations use fictional data and help explore what a useful tool might look like."
+        },
+        {
+          "type": "list_item",
+          "text": "Volunteer organiser — simple shift overview, with invented data."
+        },
+        {
+          "type": "list_item",
+          "text": "Grant reporting — funding tasks, owners and next steps, with invented data."
+        },
+        {
+          "type": "list_item",
+          "text": "Referral tracker — example statuses and fictional reference numbers only."
+        },
+        {
+          "type": "paragraph",
+          "text": "The gallery also links to existing working products: Drift, Map my Patch and Sets."
+        }
+      ],
+      "links": [
+        {
+          "label": "Shipyard gallery",
+          "url": "https://good-ship.co.uk/shipyard/gallery/"
+        },
+        {
+          "label": "Volunteer organiser demo",
+          "url": "https://good-ship.co.uk/shipyard/gallery/try.html?example=volunteers"
+        },
+        {
+          "label": "Grant reporting demo",
+          "url": "https://good-ship.co.uk/shipyard/gallery/try.html?example=grants"
+        },
+        {
+          "label": "Referral tracker demo",
+          "url": "https://good-ship.co.uk/shipyard/gallery/try.html?example=referrals"
+        }
+      ]
+    },
+    {
       "id": "the-kind-of-tools-we-make",
       "heading": "The kind of tools we make",
       "blocks": [
         {
           "type": "paragraph",
-          "text": "Every project is different, but here are the sorts of things Shipyard produces."
+          "text": "Every project is different. These are illustrative possibilities, not completed client case studies. Visit the separate gallery for things you can try."
         },
         {
           "type": "subheading",
@@ -391,7 +444,7 @@
         },
         {
           "type": "paragraph",
-          "text": "You can explore openly published products such as Drift , which experiments with more conversational forms, and Sets , a collection of browser-based tools. These show aspects of my own building practice, not a promise that every client project will look the same."
+          "text": "Yes. The Shipyard gallery includes small interactive demonstrations using invented data, plus links to working products. They are not presented as completed client projects."
         },
         {
           "type": "paragraph",
@@ -440,9 +493,41 @@
           "url": "https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k"
         }
       ]
+    },
+    {
+      "id": "explore-your-idea",
+      "heading": "Talk an idea through",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Start with a half-formed idea or real-world frustration. A conversational guide listens, asks useful follow-up questions, and gradually produces an emerging brief without asking the visitor to complete a specification."
+        },
+        {
+          "type": "paragraph",
+          "text": "Visitors can correct notes, explore non-build options and copy a brief at any point. When enabled, AI-assisted questions are processed privately with bounded sessions; submissions and human review remain separate. No prototype or quote can be sent without human approval."
+        }
+      ],
+      "links": [
+        {
+          "label": "Explore an idea",
+          "url": "https://good-ship.co.uk/shipyard/start/"
+        }
+      ]
     }
   ],
   "links": [
+    {
+      "label": "Explore your idea",
+      "url": "https://good-ship.co.uk/shipyard/start/"
+    },
+    {
+      "label": "Shipyard gallery",
+      "url": "https://good-ship.co.uk/shipyard/gallery/"
+    },
+    {
+      "label": "Map my Patch",
+      "url": "https://www.mapmypatch.co.uk/"
+    },
     {
       "label": "Drift",
       "url": "https://driftforms.app/"

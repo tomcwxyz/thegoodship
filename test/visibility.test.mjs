@@ -63,7 +63,10 @@ test('short descriptive search metadata is separate from detailed discovery JSON
 
 test('sitemap contains all canonical HTML pages, not JSON representations', () => {
   const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
-  const expected = [ORIGIN + '/', ...generated['site.json'].other_pages.map(p => p.url)];
+  // The gallery is a distinct public landing page, not a service entry on the homepage.
+  const gallery = readFileSync(new URL('../shipyard/gallery/index.html', import.meta.url), 'utf8');
+  assert.match(gallery, /rel="canonical" href="https:\/\/good-ship\.co\.uk\/shipyard\/gallery\/"/);
+  const expected = [ORIGIN + '/', ...generated['site.json'].other_pages.map(p => p.url), ORIGIN + '/shipyard/gallery/'];
   assert.deepEqual([...urls].sort(), [...expected].sort());
   assert.equal(new Set(urls).size, urls.length);
   assert.ok(urls.every(url => url.startsWith(ORIGIN + '/')));
