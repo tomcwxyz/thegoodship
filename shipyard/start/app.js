@@ -1,3 +1,4 @@
+import {createBrief} from './brief.mjs';
 // Guided discovery v1: plain-language structured intake, no LLM calls and no background
 // prototype generation. Private reviews happen separately from public submissions.
 const form=document.querySelector('#idea-form');
@@ -8,41 +9,15 @@ let current=0,enabled=false,turnstileId=null,turnstileToken='';
 const choice=name=>form.querySelector('input[name="'+name+'"]:checked')?.value || '';
 const value=id=>byId(id).value.trim();
 
-const directionLabels={
-  unsure:'Explore alternatives first',
-  improve:'Improve an existing tool or process',
-  small:'Try a small working prototype',
-  explore:'Start small with a bigger idea'
-};
-const priorityLabels={
-  simplicity:'Ease of use',ownership:'Ownership and independence',
-  speed:'Speed to a useful result',cost:'Low ongoing costs',unsure:'Not sure yet'
-};
-
 function buildBrief() {
-  return [
-    'SHIPYARD — IDEA TO EXPLORE',
-    '',
-    'The problem',
-    value('problem'),
-    '',
-    'Who this is for',
-    value('people') || 'Not specified',
-    '',
-    'How things work now',
-    value('currentApproach') || 'Not specified',
-    '',
-    'A better outcome',
-    value('outcome'),
-    '',
-    'What matters most',
-    priorityLabels[choice('priority')] || 'Not specified',
-    '',
-    'An initial direction',
-    directionLabels[choice('direction')] || 'Not specified',
-    '',
-    'We may recommend a simpler process or an existing tool instead of bespoke development.'
-  ].join('\n');
+  return createBrief({
+    problem:value('problem'),
+    people:value('people'),
+    currentApproach:value('currentApproach'),
+    outcome:value('outcome'),
+    priority:choice('priority'),
+    direction:choice('direction')
+  });
 }
 
 function moveTo(index) {
@@ -112,11 +87,13 @@ async function initialiseSubmission() {
       byId('captcha-wrap').hidden=false;
       send.disabled=false;
     };
-    script.onerror=()=>{enabled=false;byId('offline-note').hidden=false;send.disabled=true;};
+    script.onerror=()=>{enabled=false;byId('offline-note').hidden=false;
+      byId('preview-note').hidden=false;send.disabled=true;};
     document.head.append(script);
   } catch {
     enabled=false;
     byId('offline-note').hidden=false;
+      byId('preview-note').hidden=false;
     send.disabled=true;
   }
 }
