@@ -64,7 +64,7 @@ async function withFakeFetch(fake, run) {
 }
 
 test('public intake stays closed without all three infrastructure settings',async()=>{
-  const r=await config({env:{SHIPYARD_DB:{}}});
+  const r=await config({env:{SHIPYARD_DB:{},SHIPYARD_TURNSTILE_SITE_KEY:'site',SHIPYARD_TURNSTILE_SECRET:'secret'}});
   assert.equal((await r.json()).enabled,false);
   const result=await submitIdea({request:request('/api/shipyard/ideas',valid),env:{}});
   assert.equal(result.status,503);
@@ -72,7 +72,7 @@ test('public intake stays closed without all three infrastructure settings',asyn
 
 test('public intake rejects cross-origin and missing consent',async()=>{
   const db=new FakeD1();
-  const env={SHIPYARD_DB:db,SHIPYARD_TURNSTILE_SITE_KEY:'site',SHIPYARD_TURNSTILE_SECRET:'secret'};
+  const env={SHIPYARD_DB:db,SHIPYARD_TURNSTILE_SITE_KEY:'site',SHIPYARD_TURNSTILE_SECRET:'secret',SHIPYARD_INTAKE_ENABLED:'true'};
   const cross=await submitIdea({request:request('/api/shipyard/ideas',valid,'https://attacker.example'),env});
   const consent=await submitIdea({request:request('/api/shipyard/ideas',{...valid,consent:false}),env});
   assert.equal(cross.status,403);
