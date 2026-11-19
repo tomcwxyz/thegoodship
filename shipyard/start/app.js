@@ -1,145 +1,284 @@
-import {createBrief} from './brief.mjs';
-// Guided discovery v1: plain-language structured intake, no LLM calls and no background
-// prototype generation. Private reviews happen separately from public submissions.
-const form=document.querySelector('#idea-form');
-const steps=[...document.querySelectorAll('[data-step]')];
-const byId=id=>document.getElementById(id);
-const back=byId('back'),next=byId('next'),send=byId('send');
-let current=0,enabled=false,turnstileId=null,turnstileToken='';
-const choice=name=>form.querySelector('input[name="'+name+'"]:checked')?.value || '';
-const value=id=>byId(id).value.trim();
+import {FIELDS,blankNotes,updateNotes,briefFromConversation,previewReply,submissionFields,cleanText} from './conversation.mjs';
 
-function buildBrief() {
-  return createBrief({
-    problem:value('problem'),
-    people:value('people'),
-    currentApproach:value('currentApproach'),
-    outcome:value('outcome'),
-    priority:choice('priority'),
-    direction:choice('direction')
+// Conversation-first Shipyard journey. A public preview uses a clearly-labelled
+// local guide. Configured production uses a server-side LLM with bounded sessions.
+const el=id=>document.getElementById(id);
+const state={
+  history:[],notes:blankNotes(),asked:[],pending:false,chatEnabled:false,
+  intakeEnabled:false,sessionToken:'',chatTurns:0,chatLimit:14,
+  chatCaptchaToken:'',intakeCaptchaToken:'',chatSiteKey:'',intakeSiteKey:'',
+  intakeCaptchaId:null,chatCaptchaId:null
+};
+const welcome='What have you been thinking about making, changing or fixing? It can be a half-formed idea or a frustration at work. Tell me a bit about it, in your own words.';
+const LABELS=Object.fromEntries(FIELDS);
+
+function message(role,content){
+  const article=document.createElement('article');
+  article.className='message '+(role==='user'?'visitor':'guide');
+  article.setAttribute('aria-label',role==='user'?'You said':'Shipyard said');
+  const label=document.createElement('div');label.className='who';
+  label.textContent=role==='user'?'You':'Shipyard';
+  const bubble=document.createElement('div');bubble.className='bubble';
+  bubble.textContent=content;
+  article.append(label,bubble);
+  el('messages').append(article);
+  el('messages').scrollTop=el('messages').scrollHeight;
+  state.history.push({role:role==='user'?'user':'assistant',content:cleanText(content,1500)});
+}
+
+function renderNotes(){
+  const list=el('notes-list');
+  list.replaceChildren();
+  for(const [key,label] of FIELDS){
+    const saved=state.notes[key]||{value:'',source:'',kind:'unknown'};
+    const section=document.createElement('section');section.className='note';
+    const heading=document.createElement('div');heading.className='note-head';
+    const strong=document.createElement('strong');strong.textContent=label;
+    const edit=document.createElement('button');edit.type='button';edit.textContent=saved.value?'Correct':'Add';
+    edit.setAttribute('aria-label',(saved.value?'Correct ':'Add ')+label.toLowerCase());
+    heading.append(strong,edit);
+    const value=document.createElement('div');value.className='note-value'+(!saved.value?' empty':'');
+    value.textContent=saved.value||'Still exploring';
+    const editor=document.createElement('div');editor.className='edit-box';
+    const text=document.createElement('textarea');
+    text.maxLength=900;text.value=saved.value; text.setAttribute('aria-label','Edit '+label.toLowerCase());
+    const save=document.createElement('button');save.type='button';save.className='btn';save.textContent='Save note';
+    const cancel=document.createElement('button');cancel.type='button';cancel.className='btn btn-secondary';cancel.textContent='Cancel';
+    editor.append(text,save,cancel);
+    edit.addEventListener('click',()=>{editor.classList.add('open');text.focus();});
+    cancel.addEventListener('click',()=>editor.classList.remove('open'));
+    save.addEventListener('click',()=>{
+      state.notes[key]={value:text.value.trim(),kind:'corrected',source:'Edited by you'};
+      renderNotes();
+    });
+    section.append(heading,value,editor);
+    list.append(section);
+  }
+  const hasWords=state.history.some(m=>m.role==='user');
+  el('review').disabled=!hasWords;
+  el('copy').disabled=!hasWords;
+}
+
+function sayStatus(content){el('status').textContent=content;}
+function previewLabel(){
+  el('mode').textContent='Guided preview · not live AI';
+  el('mode-note').textContent='This preview uses a simple, gap-aware guide, not a live language model. You can try the conversation and copy your brief. We’re developing the more natural AI-assisted version.';
+  el('mode-note').hidden=false;
+}
+
+function showReview(){
+  if(!state.history.some(m=>m.role==='user'))return;
+  el('workspace').hidden=true;
+  el('review-screen').hidden=false;
+  el('brief').textContent=briefFromConversation(state.notes,state.history);
+  el('review-title').focus?.();
+  window.scrollTo({top:0,behavior:'instant'});
+}
+
+async function copyBrief(){
+  const value=briefFromConversation(state.notes,state.history);
+  try{
+    await navigator.clipboard.writeText(value);
+    sayStatus('Your idea brief has been copied.');
+    el('submit-status').textContent='Your idea brief has been copied.';
+  }catch{
+    sayStatus('Copying was blocked. Open Review my idea and select the brief to copy it.');
+    el('submit-status').textContent='Select the brief above to copy it.';
+  }
+}
+
+function newTurnstile(siteKey,target,callback){
+  if(!siteKey)return Promise.reject(new Error('Verification is not configured'));
+  return new Promise((resolve,reject)=>{
+    const render=()=>{
+      if(!window.turnstile)return reject(new Error('Verification did not load'));
+      try{resolve(window.turnstile.render(target,{
+        sitekey:siteKey,
+        callback,
+        'expired-callback':()=>callback(''),
+        'error-callback':()=>callback('')
+      }));}catch(e){reject(e)}
+    };
+    if(window.turnstile){render();return;}
+    let existing=document.querySelector('script[data-shipyard-turnstile]');
+    if(!existing){
+      existing=document.createElement('script');
+      existing.setAttribute('data-shipyard-turnstile','1');
+      existing.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+      existing.async=true;
+      document.head.append(existing);
+    }
+    existing.addEventListener('load',render,{once:true});
+    existing.addEventListener('error',()=>reject(new Error('Verification unavailable')),{once:true});
   });
 }
 
-function moveTo(index) {
-  current=Math.max(0,Math.min(steps.length-1,index));
-  steps.forEach((step,i)=>step.hidden=i!==current);
-  byId('step-label').textContent='Step '+(current+1)+' of '+steps.length;
-  byId('progress').setAttribute('aria-valuenow',String(current+1));
-  byId('progress-fill').style.width=((current+1)/steps.length*100)+'%';
-  back.hidden=current===0;
-  next.hidden=current===steps.length-1;
-  send.hidden=current!==steps.length-1;
-  if(current===steps.length-1) byId('summary').textContent=buildBrief();
-  byId('message').textContent='';
-  document.querySelector('main').scrollIntoView({block:'start',behavior:'instant'});
-  const heading=steps[current].querySelector('h2');
-  heading?.setAttribute('tabindex','-1');
-  heading?.focus({preventScroll:true});
-}
-
-function validStep() {
-  const controls=[...steps[current].querySelectorAll('textarea[required],input[required]')];
-  for(const control of controls) {
-    if (control.type==='radio') {
-      if (!choice(control.name)) {
-        control.reportValidity();
-        return false;
-      }
-    } else if (!control.checkValidity()){
-      control.reportValidity();
-      return false;
-    }
-  }
-  return true;
-}
-
-back.addEventListener('click',()=>moveTo(current-1));
-next.addEventListener('click',()=>{if(validStep())moveTo(current+1)});
-
-byId('copy').addEventListener('click',async()=>{
+async function initialise(){
+  message('assistant',welcome);
+  renderNotes();
+  el('mode').textContent='Loading…';
   try{
-    await navigator.clipboard.writeText(buildBrief());
-    byId('message').textContent='Your brief has been copied.';
-  }catch{
-    byId('message').textContent='Copying was blocked by your browser. You can select the brief above to copy it.';
-  }
-});
-
-async function initialiseSubmission() {
-  try {
-    const response=await fetch('/api/shipyard/config',{headers:{accept:'application/json'}});
-    if (!response.ok) throw new Error('config unavailable');
-    const config=await response.json();
-    enabled=config.enabled===true && typeof config.siteKey==='string' && !!config.siteKey;
-    if (!enabled) throw new Error('intake not configured');
-
-    const script=document.createElement('script');
-    script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
-    script.async=true;
-    script.onload=()=>{
-      if(!window.turnstile) return;
-      turnstileId=window.turnstile.render('#turnstile',{
-        sitekey:config.siteKey,
-        callback:token=>{turnstileToken=token;},
-        'expired-callback':()=>{turnstileToken='';},
-        'error-callback':()=>{turnstileToken='';}
+    const response=await fetch('/api/shipyard/conversation/config',{headers:{accept:'application/json'}});
+    if(!response.ok)throw new Error('not configured');
+    const data=await response.json();
+    state.chatEnabled=data.enabled===true;
+    state.chatSiteKey=data.siteKey||'';
+    state.chatLimit=Math.min(14,Number(data.maxTurns)||14);
+  }catch{state.chatEnabled=false;}
+  if(state.chatEnabled){
+    el('mode').textContent='AI-assisted conversation';
+    el('mode-note').textContent='Messages are sent to our AI provider to guide this conversation. Please avoid personal, confidential or sensitive data. Nothing is stored as an enquiry unless you choose to submit it for review.';
+    el('mode-note').hidden=false;
+    el('verification').hidden=false;
+    try{
+      state.chatCaptchaId=await newTurnstile(state.chatSiteKey,'#chat-turnstile',token=>{
+        state.chatCaptchaToken=token;
       });
-      byId('captcha-wrap').hidden=false;
-      send.disabled=false;
-    };
-    script.onerror=()=>{enabled=false;byId('offline-note').hidden=false;
-      byId('preview-note').hidden=false;send.disabled=true;};
-    document.head.append(script);
-  } catch {
-    enabled=false;
-    byId('offline-note').hidden=false;
-      byId('preview-note').hidden=false;
-    send.disabled=true;
-  }
+    }catch{sayStatus('Verification is unavailable; please use the copyable guided preview.');state.chatEnabled=false;el('verification').hidden=true;previewLabel();}
+  }else previewLabel();
+
+  try{
+    const response=await fetch('/api/shipyard/config',{headers:{accept:'application/json'}});
+    if(response.ok){
+      const config=await response.json();
+      state.intakeEnabled=config.enabled===true;
+      state.intakeSiteKey=config.siteKey||'';
+    }
+  }catch{state.intakeEnabled=false;}
+  el('intake-closed').hidden=state.intakeEnabled;
+  el('review-form').hidden=!state.intakeEnabled;
 }
 
-form.addEventListener('submit',async event=>{
+async function startChatSession(){
+  if(state.sessionToken)return;
+  if(!state.chatCaptchaToken)throw new Error('Complete the verification above first.');
+  const res=await fetch('/api/shipyard/conversation/start',{
+    method:'POST',headers:{'content-type':'application/json',accept:'application/json'},
+    body:JSON.stringify({turnstileToken:state.chatCaptchaToken})
+  });
+  const result=await res.json();
+  if(!res.ok||!result.ok)throw new Error(result.error||'Could not start the conversation');
+  state.sessionToken=result.sessionToken;
+  el('verification').hidden=true;
+}
+
+async function respond(){
+  if(state.chatEnabled && state.chatTurns>=state.chatLimit)
+    throw new Error('This conversation has reached its limit. You can review or copy your idea now.');
+  if(!state.chatEnabled){
+    const latest=state.history.at(-1).content;
+    const result=previewReply(latest,state.notes,state.asked);
+    state.asked.push(result.focus);
+    return result;
+  }
+  await startChatSession();
+  const response=await fetch('/api/shipyard/conversation/message',{
+    method:'POST',headers:{'content-type':'application/json',accept:'application/json'},
+    body:JSON.stringify({
+      sessionToken:state.sessionToken,
+      history:state.history.slice(-20),
+      notes:state.notes
+    })
+  });
+  const result=await response.json();
+  if(!response.ok || result.ok!==true)
+    throw new Error(result.error||'The guide could not respond');
+  state.chatTurns++;
+  return result;
+}
+
+el('chat-form').addEventListener('submit',async event=>{
   event.preventDefault();
-  if (current!==steps.length-1 || !enabled || send.disabled) return;
-  if (!validStep()) return;
-  if (!turnstileToken) {
-    byId('message').textContent='Please complete the anti-spam check first.';
+  if(state.pending)return;
+  const input=el('message-input'),value=input.value.trim();
+  if(!value)return;
+  if(state.chatEnabled && !state.sessionToken && !state.chatCaptchaToken){
+    sayStatus('Please complete the verification above before sending.');
     return;
   }
-  const submission={
-    problem:value('problem'),
-    people:value('people'),
-    currentApproach:value('currentApproach'),
-    outcome:value('outcome'),
-    direction:choice('direction'),
-    priority:choice('priority'),
-    contactName:value('contactName'),
-    contactEmail:value('contactEmail'),
-    organisation:value('organisation'),
-    consent:byId('consent').checked,
-    companyWebsite:'', // Honeypot reserved for future automated clients.
-    turnstileToken
-  };
-  send.disabled=true;send.textContent='Submitting…';
+  state.pending=true;el('send').disabled=true;
+  input.value='';sayStatus('Thinking about what you said…');
+  message('user',value);
+  el('starters').hidden=true;
   try{
-    const response=await fetch('/api/shipyard/ideas',{
-      method:'POST',
-      headers:{'content-type':'application/json',accept:'application/json'},
-      body:JSON.stringify(submission)
-    });
-    const data=await response.json();
-    if(!response.ok || data.ok!==true) throw new Error(data.error || 'Something went wrong');
-    form.hidden=true;
-    byId('finish').hidden=false;
-    byId('finish').focus();
+    const answer=await respond();
+    state.notes=updateNotes(state.notes,answer.patch);
+    message('assistant',answer.reply);
+    renderNotes();
+    sayStatus(answer.ready?'You can review your idea whenever you like.':'');
   }catch(error){
-    byId('message').textContent=error.message || 'We could not send your idea.';
-    turnstileToken='';
-    if(turnstileId!==null && window.turnstile) window.turnstile.reset(turnstileId);
-  }finally{
-    send.disabled=!enabled;
-    send.textContent='Send for human review';
-  }
+    // Preserve the person's message and allow retry without duplicating it.
+    sayStatus(error.message||'The guide is not responding. Your words are still here.');
+    if(state.chatEnabled){
+      const retry=document.createElement('button');
+      // No automatic mode switching: never impersonate a live AI with scripted replies.
+      retry.type='button';retry.className='btn btn-secondary';
+      retry.textContent='Retry my last message';
+      retry.addEventListener('click',async()=>{
+        retry.remove();
+        state.pending=true;el('send').disabled=true;sayStatus('Trying again…');
+        try{const answer=await respond();state.notes=updateNotes(state.notes,answer.patch);message('assistant',answer.reply);renderNotes();sayStatus('');}
+        catch(e){sayStatus(e.message||'Still unavailable. You can review your idea.');}
+        finally{state.pending=false;el('send').disabled=false;}
+      },{once:true});
+      el('status').after(retry);
+    }
+  }finally{state.pending=false;el('send').disabled=false;input.focus();}
 });
-initialiseSubmission();
-moveTo(0);
+
+document.querySelectorAll('[data-starter]').forEach(button=>{
+  button.addEventListener('click',()=>{
+    el('message-input').value=button.getAttribute('data-starter');
+    el('message-input').focus();
+  });
+});
+el('review').addEventListener('click',showReview);
+el('copy').addEventListener('click',copyBrief);
+el('copy-brief').addEventListener('click',copyBrief);
+el('return').addEventListener('click',()=>{
+  el('review-screen').hidden=true;el('workspace').hidden=false;
+  el('message-input').focus();window.scrollTo({top:0,behavior:'instant'});
+});
+
+async function ensureIntakeCaptcha(){
+  if(!state.intakeEnabled || state.intakeCaptchaId!==null)return;
+  try{
+    state.intakeCaptchaId=await newTurnstile(state.intakeSiteKey,'#intake-captcha',token=>{
+      state.intakeCaptchaToken=token;
+    });
+  }catch{el('submit-status').textContent='Could not load verification. Please copy your brief or book a conversation.';}
+}
+el('review').addEventListener('click',ensureIntakeCaptcha);
+
+el('review-form').addEventListener('submit',async event=>{
+  event.preventDefault();
+  if(!state.intakeEnabled)return;
+  if(!el('review-form').reportValidity())return;
+  if(!state.intakeCaptchaToken){
+    el('submit-status').textContent='Complete the verification check to submit your enquiry.';
+    return;
+  }
+  const submit=el('submit-review');submit.disabled=true;
+  el('submit-status').textContent='Submitting for review…';
+  try{
+    const fields=submissionFields(state.notes,state.history);
+    const payload={...fields,contactName:el('contactName').value.trim(),
+      contactEmail:el('contactEmail').value.trim(),
+      organisation:el('organisation').value.trim(),
+      consent:el('consent').checked,companyWebsite:'',
+      turnstileToken:state.intakeCaptchaToken};
+    const response=await fetch('/api/shipyard/ideas',{
+      method:'POST',headers:{'content-type':'application/json',accept:'application/json'},
+      body:JSON.stringify(payload)
+    });
+    const answer=await response.json();
+    if(!response.ok||answer.ok!==true)throw new Error(answer.error||'Could not submit your idea');
+    el('review-screen').hidden=true;el('finish').hidden=false;
+    el('finish').focus();
+  }catch(error){
+    el('submit-status').textContent=error.message||'Please try again.';
+    state.intakeCaptchaToken='';
+    if(state.intakeCaptchaId!==null&&window.turnstile)window.turnstile.reset(state.intakeCaptchaId);
+  }finally{submit.disabled=false;}
+});
+initialise();
