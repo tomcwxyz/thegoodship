@@ -1,9 +1,12 @@
 # Shipyard guided discovery and private reviews (pilot)
 
-This branch adds the **next phase** beyond the gallery in PR #28: a working browser-based guided discovery journey and a human-only review queue. It does not yet run an LLM, generate a prototype, send email or publish gallery items. Those are deliberately later phases.
+This pilot now uses a **conversation-first** entry inspired by ImpactPath's natural follow-up and behind-the-scenes structured capture. It includes an optional, bounded LLM guide behind an explicit disabled-by-default configuration switch and a human-only review queue. It does **not** generate a prototype, calculate a quote, send email or publish gallery items.
 
 ## Routes
-- `/shipyard/start/` — public five-step guided experience; works in copy-only preview mode without configuration.
+- `/shipyard/start/` — conversational idea exploration, editable emerging notes and copyable brief. When AI isn't configured, a plainly labelled offline guide demonstrates the interaction without pretending to be an LLM.
+- `GET /api/shipyard/conversation/config` — availability and public Turnstile site key only.
+- `POST /api/shipyard/conversation/start` — bot-verified anonymous, short-lived session ticket.
+- `POST /api/shipyard/conversation/message` — capped AI follow-up using limited conversation history and grounded note updates; no persistence of the conversation at this stage.
 - `GET /api/shipyard/config` — public flag and Turnstile **site key** only.
 - `POST /api/shipyard/ideas` — consent-based private intake, requires Turnstile and a dedicated DB.
 - `/shipyard/admin/` — static UI; contains no private data unless the API authenticates successfully.
@@ -12,7 +15,7 @@ This branch adds the **next phase** beyond the gallery in PR #28: a working brow
 
 ## Static preview and safe review rehearsal
 
-The public discovery route, `/shipyard/start/`, works without a database: visitors can complete the five steps and copy their brief. The Submit button is disabled until infrastructure and the explicit intake switch are configured.
+The public discovery route, `/shipyard/start/`, works without a database: visitors can talk through an idea using a clearly labelled offline conversational preview, correct emerging notes and copy their brief. It is not a live AI assistant when the API is disabled. The submission option remains disabled until intake configuration and the explicit intake switch are enabled.
 
 Reviewers can also open `/shipyard/admin/?demo=1` **on a static preview** to rehearse the dashboard with three fictional enquiries using `.test` email addresses. Demo mode:
 - intercepts review API requests locally and never calls the network;
@@ -38,6 +41,9 @@ The production admin URL without `?demo=1` remains protected by the server-side 
    - `SHIPYARD_ACCESS_TEAM_DOMAIN` = full fixed team issuer, e.g. `https://YOUR-TEAM.cloudflareaccess.com`
    - `SHIPYARD_ACCESS_AUD` = the Access application Audience Tag (the app protecting API calls; configure both paths consistently)
    - `SHIPYARD_ADMIN_EMAILS` = comma-separated exact allowed admin email addresses
+   - `SHIPYARD_CONVERSATION_ENABLED` = `false` until the live LLM pilot is approved; this is an independent switch from enquiry submissions
+   - `SHIPYARD_CHAT_API_KEY` = server-side OpenAI API credential (secret, never in client code)
+   - `SHIPYARD_CHAT_MODEL` = configured JSON-mode model, e.g. `gpt-4o-mini`
    - `SHIPYARD_TURNSTILE_SITE_KEY` = public Turnstile site key
    - `SHIPYARD_TURNSTILE_SECRET` = matching **secret**, server only
 4. Set the Turnstile allowed hostname to `good-ship.co.uk`. Preview deployments with another hostname intentionally remain **copy-only** unless configured separately.
@@ -45,6 +51,18 @@ The production admin URL without `?demo=1` remains protected by the server-side 
 6. Test a real submission with a deliberately fictional organisation and confirm it only appears for an authorised admin. Test invalid Turnstile, malformed data, unauthorised reads and writes, all approval edge cases, and no outbound email.
 
 When a binding is missing, config returns `enabled:false`, submission fails with 503, and the public page still lets the person copy their summary. With Access configuration missing or invalid, all admin endpoints return 403.
+
+## Conversation behaviour and the ImpactPath pattern
+
+**Conversation first, structured brief second.** The model acknowledges what the person actually said, asks one useful follow-up, allows non-build options to emerge and quietly captures five provisional aspects: the problem, people affected, current approach, desired outcome and constraints. It should skip questions already answered, ask for real examples when vague, and help people correct its misunderstandings. The visitor can stop and review the brief at any point; **there is no visible five-stage form or completion percentage**.
+
+The optional AI service uses a fixed server-side prompt, a configured OpenAI chat-completions model returning JSON, and a grounded patch rule: each newly captured statement must be accompanied by an actual quotation from the person's latest message. Anything without a matching quotation is discarded. Even grounded summaries are only **provisional**; the person can edit them and the reviewer sees the underlying transcript. An AI response cannot trigger any delivery.
+
+**Abuse and privacy boundaries:** A Cloudflare Turnstile check creates an anonymous ticket in the dedicated D1 database, storing only a SHA-256 token hash, issue/expiry timestamps and counters — **not the conversation text**. Ticket validity lasts 45 minutes with a maximum 14 model calls and a minimum interval enforced atomically by D1. Expired tickets are pruned when new tickets are issued. Add Cloudflare WAF rate limits by source and application; the ticket limit alone does not protect against repeated ticket creation. The browser sends a limited rolling transcript to the model; no chat is stored as an enquiry until the visitor explicitly consents and submits the review form. The review request then stores the capped transcript and provisional notes in the private Shipyard D1 tables so the human reviewer has their words and context.
+
+For an existing pilot database created before conversational capture, apply `shipyard/migrations/0001_conversational_discovery.sql` **instead of** rerunning the full schema. New databases use only `shipyard/schema.sql`. Confirm that privacy notices, provider terms, retention/deletion arrangements, source-IP rate limiting and data-subject rights are in place **before enabling** either live AI or intake.
+
+**Not a live production service yet:** The static Netlify preview can demonstrate the conversation and notes UI but not the Cloudflare Pages Functions. Validate the API against a staging Cloudflare Pages deployment with its own D1 binding and Turnstile hostname before putting real people through it.
 
 ## How approvals work
 
@@ -62,11 +80,11 @@ When a binding is missing, config returns `enabled:false`, submission fails with
 - The server rejects cross-origin JSON posts, oversized payloads, missing consent, invalid fields and invalid Turnstile submissions. It returns no sensitive data to unauthorised clients.
 - Admin API performs independent JWT verification rather than trusting any client-supplied email or role.
 - The public page uses text content rather than unsafe HTML insertion.
-- The public page is **not** yet LLM-assisted. A future bounded LLM-assisted option should improve questions based on the problem but must never run a build or send a proposal solely from an unreviewed brief.
+- The LLM-assisted conversation endpoint is implemented but gated off; it must never run a build, create a binding estimate or send a proposal based on an unreviewed brief.
 
 ## Testing
 ```bash
-node --test test/shipyard-intake.test.mjs
+node --test test/shipyard-intake.test.mjs test/shipyard-routes.test.mjs test/shipyard-demo.test.mjs test/shipyard-conversation.test.mjs
 node --test test/shipyard-gallery.test.mjs
 ```
 Functional Cloudflare Pages and D1 integration tests still need configured preview bindings. A Netlify static deploy preview does not validate Cloudflare Pages Functions or D1.
