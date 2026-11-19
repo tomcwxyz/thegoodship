@@ -31,15 +31,37 @@ export async function onRequestPost({request,env}) {
   if (verification.success !== true || verification.hostname !== new URL(request.url).hostname)
     return respond({ok:false,error:'Verification failed. Please try again.'},400);
 
+  // A transcript is only stored after the enquirer explicitly submits and consents.
+  // Bound every field independently; no raw provider metadata or secrets are retained.
+  const messages=Array.isArray(submitted.conversation) ? submitted.conversation : [];
+  if(messages.length>24 || messages.some(m=>!m || !['user','assistant'].includes(m.role) ||
+    typeof m.content!=='string' || m.content.length>1800) ||
+    JSON.stringify(messages).length>20000)
+    return respond({ok:false,error:'The conversation is too long to submit'},400);
+  const captured={};
+  const allowed=['problem','people','currentApproach','outcome','constraints'];
+  if(submitted.emergingNotes != null &&
+    (typeof submitted.emergingNotes!=='object' || Array.isArray(submitted.emergingNotes)))
+    return respond({ok:false,error:'Invalid idea summary'},400);
+  for(const key of allowed){
+    const value=submitted.emergingNotes?.[key];
+    if(typeof value==='string'){
+      if(value.length>900)return respond({ok:false,error:'A summary is too long'},400);
+      captured[key]=value;
+    }
+  }
+  const needsClarification=submitted.needsClarification===true?1:0;
   const idea=validation.idea, id=crypto.randomUUID(), at=new Date().toISOString();
   try {
     await env.SHIPYARD_DB.batch([
       env.SHIPYARD_DB.prepare(
         `INSERT INTO shipyard_ideas
-        (id,created_at,contact_name,contact_email,organisation,problem,people,current_approach,outcome,direction,priority,consent_at,updated_at)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`
+        (id,created_at,contact_name,contact_email,organisation,problem,people,current_approach,outcome,
+         conversation_json,emerging_notes_json,needs_clarification,direction,priority,consent_at,updated_at)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`
       ).bind(id,at,idea.contactName,idea.contactEmail,idea.organisation,idea.problem,idea.people,
-        idea.currentApproach,idea.outcome,idea.direction,idea.priority,at,at),
+        idea.currentApproach,idea.outcome,JSON.stringify(messages),JSON.stringify(captured),
+        needsClarification,idea.direction,idea.priority,at,at),
       env.SHIPYARD_DB.prepare('INSERT INTO shipyard_reviews (idea_id) VALUES (?)').bind(id),
       env.SHIPYARD_DB.prepare(
         `INSERT INTO shipyard_audit (id,idea_id,at,actor,action) VALUES (?,?,?,?,?)`
