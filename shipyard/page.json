@@ -3,7 +3,7 @@
   "type": "web_page",
   "title": "Shipyard | From ideas to working tools · The Good Ship",
   "name": "Shipyard",
-  "description": "Have an idea for a useful tool? Explore working examples, decide whether to build, and choose Ship It or Learn & Ship.",
+  "description": "Explore an idea through guided discovery, or browse working examples. Every prototype and quote is reviewed by The Good Ship before it could be shared.",
   "language": "en-GB",
   "publisher": {
     "name": "The Good Ship",
@@ -12,7 +12,7 @@
   "canonical_url": "https://good-ship.co.uk/shipyard/",
   "source_page": "https://good-ship.co.uk/shipyard/",
   "json_url": "https://good-ship.co.uk/shipyard/page.json",
-  "version": "0.2",
+  "version": "0.3",
   "introduction": [
     {
       "type": "paragraph",
@@ -20,6 +20,10 @@
     }
   ],
   "introduction_links": [
+    {
+      "label": "Explore your idea",
+      "url": "https://good-ship.co.uk/shipyard/start/"
+    },
     {
       "label": "Explore working examples",
       "url": "https://good-ship.co.uk/shipyard/gallery/"
@@ -489,9 +493,33 @@
           "url": "https://driftforms.app/book/introductory-call---the-good-ship-R9qI4k"
         }
       ]
+    },
+    {
+      "id": "explore-your-idea",
+      "heading": "Explore an idea",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Use a five-step guided discovery to describe a problem, people involved, desired outcome and possible direction. Copy the resulting brief or submit it privately when intake is enabled."
+        },
+        {
+          "type": "paragraph",
+          "text": "A human at The Good Ship must separately approve any eventual prototype and pricing. There is no automatic proposal or prototype email, and there is no auto-publication to the gallery."
+        }
+      ],
+      "links": [
+        {
+          "label": "Explore an idea",
+          "url": "https://good-ship.co.uk/shipyard/start/"
+        }
+      ]
     }
   ],
   "links": [
+    {
+      "label": "Explore your idea",
+      "url": "https://good-ship.co.uk/shipyard/start/"
+    },
     {
       "label": "Shipyard gallery",
       "url": "https://good-ship.co.uk/shipyard/gallery/"
