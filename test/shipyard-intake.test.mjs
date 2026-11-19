@@ -118,5 +118,5 @@ test('server route is deliberately missing email delivery and publication action
   assert.match(api,/approve_prototype/);
   assert.match(api,/approve_quote/);
   assert.doesNotMatch(api+/\n/+intake,/sendEmail\s*\(|resend\.emails|smtp|createEmail\s*\(/i);
-  assert.match(page,/human review/i);
+  assert.match(page,/personal review|person will consider|review my idea/i);
 });
