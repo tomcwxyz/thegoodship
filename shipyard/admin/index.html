@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>Private Shipyard review | The Good Ship</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#1b2a4a;--cream:#f5f0e8;--white:#fefcf9;--teal:#2d8b7a;--amber:#d4993d;--muted:#4f5e74}
+    *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--navy);font:1rem/1.55 'DM Sans',system-ui,sans-serif}h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.2}h1{font-size:clamp(2rem,4vw,2.9rem)}h2{font-size:1.6rem}a{color:var(--teal)}:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+    .wrap{max-width:90rem;margin:auto;padding:0 1.2rem}nav{background:var(--navy);color:white;padding:1rem 0}nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}nav a{color:white}.brand{font:600 1.25rem Fraunces,Georgia,serif;text-decoration:none}
+    header{padding:2rem 0 .5rem}header p{color:var(--muted);max-width:55rem}.status{padding:1rem;background:#e7efe9;border-left:4px solid var(--teal);margin:1rem 0}#notice{color:#9d3d28;font-weight:700}
+    .grid{display:grid;grid-template-columns:minmax(16rem,21rem) minmax(0,1fr);gap:1.2rem;align-items:start;margin:1rem 0 4rem}.grid[hidden]{display:none}.list,.detail{border:1px solid #dedcd6;background:var(--white);border-radius:.5rem;min-width:0}.list{padding:1rem}.list-head{display:flex;justify-content:space-between;align-items:center;gap:1rem}.list-head h2{font-size:1.3rem}.list-items{display:grid;gap:.55rem;max-height:68vh;overflow:auto}
+    .idea-button{border:1px solid #d4d7d3;background:var(--cream);color:var(--navy);border-radius:.4rem;padding:.9rem;text-align:left;cursor:pointer;width:100%}.idea-button.active{border:2px solid var(--teal);background:#eaf2ee}.idea-button strong,.idea-button small{display:block}.idea-button small{color:var(--muted);margin-top:.3rem}
+    .detail{padding:clamp(1rem,3vw,2rem)}.detail[hidden]{display:none}.details-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}.answer{border-bottom:1px solid #e1e2dc;padding:.8rem 0;overflow-wrap:anywhere}.answer strong{display:block;font-size:.85rem}.answer p{margin:.2rem 0}.answer.wide{grid-column:1/-1}
+    .draft{border-top:1px solid #d6d9d3;margin-top:1.6rem}.field{margin:1rem 0}label{display:block;font-weight:700;font-size:.9rem;margin-bottom:.3rem}textarea,input,select{width:100%;font:inherit;color:var(--navy);padding:.6rem;border:1px solid #a5afb5;border-radius:.3rem;background:white}textarea{min-height:5rem}small,.muted{font-size:.85rem;color:var(--muted)}button{border:0;background:var(--teal);color:white;font:700 .88rem 'DM Sans',system-ui;padding:.75rem .95rem;border-radius:.3rem;cursor:pointer}button.secondary{color:var(--navy);background:transparent;border:1px solid #929c9a}button:disabled{opacity:.45;cursor:not-allowed}
+    .row{display:flex;gap:.65rem;flex-wrap:wrap;margin:.7rem 0}.row>*{min-width:0}.prices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.review-check{padding:.8rem 1rem;background:#e6ece8;margin:1rem 0;border-radius:.3rem}.review-check p{margin:.2rem 0}.warning{background:#fbf4e5;padding:1rem;border-left:4px solid var(--amber);margin:1rem 0}.pill{font-size:.78rem;font-weight:700;color:var(--muted)}#review-message{min-height:2rem;font-weight:700}
+    @media(max-width:780px){.grid{grid-template-columns:1fr}.list-items{max-height:18rem}.details-grid,.prices{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <nav><div class="wrap"><a class="brand" href="/">The Good Ship</a><a href="/shipyard/">← Shipyard</a></div></nav>
+  <header class="wrap"><h1>Shipyard — private review</h1><p>A place to judge ideas before anything is built or shared. Your assessment matters more than whatever an agent might suggest.</p></header>
+  <main class="wrap">
+    <div class="warning"><strong>Private, manual workflow.</strong> Nothing on this screen sends email, releases a prototype or publishes a gallery item. Your prototype and price approvals are recorded separately and invalidated whenever you revise the draft. A later release workflow will need another explicit sign-off.</div>
+    <p id="notice" role="status" aria-live="polite">Checking access…</p>
+    <div class="grid" id="workspace" hidden>
+      <aside class="list" aria-label="Incoming ideas">
+        <div class="list-head"><h2>Ideas <span id="count"></span></h2><button class="secondary" id="reload">Refresh</button></div>
+        <div id="list-items" class="list-items"></div>
+      </aside>
+      <section class="detail" id="detail" aria-labelledby="detail-title" hidden>
+        <p class="pill" id="idea-status"></p><h2 id="detail-title">Select an idea</h2>
+        <p class="muted" id="idea-date"></p>
+        <div class="details-grid">
+          <div class="answer wide"><strong>Problem</strong><p id="idea-problem"></p></div>
+          <div class="answer"><strong>Who it's for</strong><p id="idea-people"></p></div>
+          <div class="answer"><strong>How it works today</strong><p id="idea-current"></p></div>
+          <div class="answer wide"><strong>Desired outcome</strong><p id="idea-outcome"></p></div>
+          <div class="answer"><strong>Suggested direction</strong><p id="idea-direction"></p></div>
+          <div class="answer"><strong>Priority</strong><p id="idea-priority"></p></div>
+          <div class="answer"><strong>Enquirer</strong><p id="idea-contact"></p></div>
+          <div class="answer"><strong>Organisation</strong><p id="idea-organisation"></p></div>
+        </div>
+        <div class="draft" id="conversation-context">
+          <h2>How the idea emerged</h2>
+          <p class="muted">These notes are provisional. Read the person's own words before deciding what to build or quote.</p>
+          <div class="review-check" id="clarification-note" hidden>Some details remain unresolved. Check the conversation before scoping.</div>
+          <div class="details-grid" id="emerging-notes"></div>
+          <details style="margin:1.2rem 0;">
+            <summary style="cursor:pointer;font-weight:700;">Read the discovery conversation</summary>
+            <div id="conversation-log" style="display:grid;gap:.65rem;padding:1rem 0;"></div>
+          </details>
+        </div>
+        <div class="draft">
+          <h2>Review and assessment</h2>
+          <div class="field"><label for="state">Enquiry state</label><select id="state"><option value="new">New</option><option value="reviewing">Reviewing</option><option value="needs_detail">Needs more information</option><option value="declined">Not proceeding</option><option value="internally_approved">Approved internally (NOT SENT)</option></select></div>
+          <button class="secondary" id="save-state">Update state</button>
+          <div class="field"><label for="prototypeUrl">Private prototype preview (HTTPS)</label><input id="prototypeUrl" type="url" placeholder="https://preview.example.com/"><small>Only add a URL after checking that the link and demonstration data are safe to share later.</small></div>
+          <p><a id="open-preview" target="_blank" rel="noopener noreferrer" hidden>Open saved private prototype preview ↗</a></p>
+          <div class="field"><label for="prototypeNotes">Prototype notes and limitations</label><textarea id="prototypeNotes" maxlength="3000"></textarea></div>
+          <div class="prices">
+            <div class="field"><label for="shipIt">Ship It estimate (£)</label><input id="shipIt" inputmode="decimal" placeholder="e.g. 3500.00"></div>
+            <div class="field"><label for="learnShip">Learn & Ship estimate (£)</label><input id="learnShip" inputmode="decimal" placeholder="e.g. 4200.00"></div>
+          </div>
+          <div class="field"><label for="quoteNotes">Pricing assumptions, scope, VAT and ongoing costs</label><textarea id="quoteNotes" maxlength="3000" placeholder="Scope, exclusions, estimate type, VAT position, hosting and ongoing support…"></textarea></div>
+          <div class="field"><label for="privateNotes">Private notes (never included in an outgoing proposal)</label><textarea id="privateNotes" maxlength="3000"></textarea></div>
+          <p class="muted">Saving a changed draft invalidates both previous approvals. Approve each new version separately.</p>
+          <button id="save-review">Save draft</button>
+          <div class="review-check" id="review-check" aria-live="polite">
+            <p id="prototype-check"></p><p id="quote-check"></p><p>Delivery: unavailable until a separate approved sending workflow is built.</p>
+          </div>
+          <div class="row"><button class="secondary" id="approve-prototype">Approve prototype</button><button class="secondary" id="approve-quote">Approve quote</button><button id="internal-ready">Mark internally approved</button></div>
+          <p id="review-message" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="./admin.js"></script>
+</body>
+</html>

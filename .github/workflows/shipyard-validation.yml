@@ -1,0 +1,59 @@
+name: Shipyard validation
+
+on:
+  push:
+    branches:
+      - feat/shipyard-gallery-review-first
+      - feat/shipyard-intake-private-review
+    paths:
+      - 'shipyard/**'
+      - 'functions/_lib/shipyard*.mjs'
+      - 'functions/api/shipyard/**'
+      - 'test/shipyard-*.test.mjs'
+      - '.github/workflows/shipyard-validation.yml'
+  pull_request:
+    paths:
+      - 'shipyard/**'
+      - 'functions/_lib/shipyard.mjs'
+      - 'functions/api/shipyard/**'
+      - 'test/shipyard-*.test.mjs'
+      - '.github/workflows/shipyard-validation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: shipyard-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate Shipyard files and JavaScript syntax
+        run: |
+          node --check functions/_lib/shipyard.mjs
+          node --check functions/_lib/shipyard-chat.mjs
+          node --check functions/api/shipyard/conversation/config.js
+          node --check functions/api/shipyard/conversation/start.js
+          node --check functions/api/shipyard/conversation/message.js
+          node --check functions/api/shipyard/config.js
+          node --check functions/api/shipyard/ideas.js
+          node --check functions/api/shipyard/admin/ideas.js
+          node --check functions/api/shipyard/admin/review.js
+          node --check shipyard/start/app.js
+          node --check shipyard/start/brief.mjs
+          node --check shipyard/start/conversation.mjs
+          node --check shipyard/admin/admin.js
+          node --check shipyard/admin/demo.js
+          node --check shipyard/gallery/try.js
+      - name: Run Shipyard security and interaction tests
+        run: node --test test/shipyard-gallery.test.mjs test/shipyard-intake.test.mjs test/shipyard-routes.test.mjs test/shipyard-demo.test.mjs test/shipyard-brief.test.mjs test/shipyard-conversation.test.mjs test/shipyard-sqlite-integration.test.mjs
