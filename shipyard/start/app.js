@@ -117,14 +117,20 @@ async function initialise(){
   message('assistant',welcome);
   renderNotes();
   el('mode').textContent='Loading…';
+  let configIssue='';
   try{
     const response=await fetch('/api/shipyard/conversation/config',{headers:{accept:'application/json'}});
-    if(!response.ok)throw new Error('not configured');
-    const data=await response.json();
-    state.chatEnabled=data.enabled===true;
-    state.chatSiteKey=data.siteKey||'';
-    state.chatLimit=Math.min(14,Number(data.maxTurns)||14);
-  }catch{state.chatEnabled=false;}
+    const contentType=response.headers.get('content-type')||'';
+    if(!response.ok||!contentType.includes('application/json')){
+      configIssue='The AI endpoint is not available at this preview URL.';
+    }else{
+      const data=await response.json();
+      state.chatEnabled=data.enabled===true;
+      state.chatSiteKey=data.siteKey||'';
+      state.chatLimit=Math.min(14,Number(data.maxTurns)||14);
+      if(!state.chatEnabled)configIssue='The AI endpoint is deployed, but this environment has not enabled the conversation service.';
+    }
+  }catch{configIssue='The AI endpoint could not be reached from this deployment.';}
   if(state.chatEnabled){
     el('mode').textContent='AI-assisted conversation';
     el('mode-note').textContent='Messages are sent to our AI provider to guide this conversation. Please avoid personal, confidential or sensitive data. Nothing is stored as an enquiry unless you choose to submit it for review.';
@@ -135,7 +141,16 @@ async function initialise(){
         state.chatCaptchaToken=token;
       });
     }catch{sayStatus('Verification is unavailable; please use the copyable guided preview.');state.chatEnabled=false;el('verification').hidden=true;previewLabel();}
-  }else previewLabel();
+  }else {
+    previewLabel();
+    if(location.hostname.endsWith('.netlify.app')){
+      el('mode-note').textContent='This is a static Netlify preview. It cannot run Shipyard’s Cloudflare Pages Functions or read its settings. Open a Cloudflare Pages preview ending in .pages.dev to test live AI.';
+    }else if(configIssue && location.hostname.endsWith('.pages.dev')){
+      el('mode-note').textContent=configIssue+' Check the Cloudflare Pages Preview environment bindings, secrets and exact “true” flag, then redeploy the preview branch.';
+    }else if(configIssue){
+      el('mode-note').textContent=configIssue+' You can still try the guided demonstration and copy the brief.';
+    }
+  }
 
   try{
     const response=await fetch('/api/shipyard/config',{headers:{accept:'application/json'}});
