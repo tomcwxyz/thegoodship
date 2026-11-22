@@ -1,6 +1,6 @@
 import {respond} from '../../../_lib/shipyard.mjs';
 import {chatAvailable,disabled,secureWrite,readChatJson,cleanHistory,cleanNotes,
-  digestToken,safeModelAnswer,CHAT_LIMIT} from '../../../_lib/shipyard-chat.mjs';
+   digestToken,safeModelAnswer,CHAT_LIMIT,chatDailyMax,chatDailyBudget} from '../../../_lib/shipyard-chat.mjs';
 
 const PROMPT=`You are the Shipyard guide at The Good Ship, a UK consultancy helping people develop useful tools for social purpose organisations. Your job is discovery, NOT app generation.
 
@@ -54,15 +54,37 @@ export async function onRequestPost({request,env}){
   const now=Math.floor(Date.now()/1000);
   const hash=await digestToken(token);
 
-  // Enforce per-session spending quota and a brief pause *atomically in D1*.
-  // Replaying a session token cannot bypass the turn count.
+  // Charge a per-session limit AND a shared daily budget atomically in D1.
+  // Without the shared limit, visitors could create unlimited new Turnstile
+  // sessions and spend the entire provider balance even with 14 turns/session.
+  // The daily counter reuses the existing table; no additional migration.
+  const budget=chatDailyBudget(now),dailyLimit=chatDailyMax(env);
   try{
-    const updated=await env.SHIPYARD_DB.prepare(
-      `UPDATE shipyard_chat_tickets SET turns_used=turns_used+1,last_call_epoch=?
-       WHERE token_hash=? AND expires_epoch>? AND turns_used<? AND last_call_epoch<=?`
-    ).bind(now,hash,now,CHAT_LIMIT,now-2).run();
-    if(updated?.meta?.changes!==1)
-      return respond({ok:false,error:'This session has reached its limit or needs a short pause. Your draft can still be copied.'},429);
+    const results=await env.SHIPYARD_DB.batch([
+      env.SHIPYARD_DB.prepare(
+        `INSERT OR IGNORE INTO shipyard_chat_tickets
+        (token_hash,issued_epoch,expires_epoch,turns_used,last_call_epoch)
+        VALUES (?,?,?,?,?)`
+      ).bind(budget.key,now,budget.expires,0,0),
+      env.SHIPYARD_DB.prepare(
+        `UPDATE shipyard_chat_tickets
+         SET turns_used=turns_used+1,last_call_epoch=?
+         WHERE token_hash=? AND expires_epoch>? AND turns_used<?
+         AND EXISTS (
+           SELECT 1 FROM shipyard_chat_tickets AS t
+           WHERE t.token_hash=? AND t.expires_epoch>?
+             AND t.turns_used<? AND t.last_call_epoch<=?
+         )`
+      ).bind(now,budget.key,now,dailyLimit,hash,now,CHAT_LIMIT,now-2),
+      env.SHIPYARD_DB.prepare(
+        `UPDATE shipyard_chat_tickets
+         SET turns_used=turns_used+1,last_call_epoch=?
+         WHERE token_hash=? AND expires_epoch>? AND turns_used<? AND last_call_epoch<=?
+           AND (SELECT turns_used FROM shipyard_chat_tickets WHERE token_hash=?)<=?`
+      ).bind(now,hash,now,CHAT_LIMIT,now-2,budget.key,dailyLimit)
+    ]);
+    if(results[1]?.meta?.changes!==1 || results[2]?.meta?.changes!==1)
+      return respond({ok:false,error:'This pilot has reached its session or daily AI limit. Your idea can still be reviewed or copied.'},429);
   }catch{return respond({ok:false,error:'The conversation service is unavailable'},503);}
 
   let completion;
