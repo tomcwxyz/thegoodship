@@ -5,6 +5,18 @@ import {sameOriginJson,readSmallJSON,respond} from './shipyard.mjs';
 
 export const CHAT_LIMIT=14;
 export const CHAT_DURATION_SECONDS=60*45;
+// Cost protection without a new migration: a reserved, non-random key in the
+// existing ticket table tracks the total model calls allowed per UTC day.
+// It is never returned to browsers, and session tokens are always SHA-256 hex.
+export function chatDailyMax(env){
+  const requested=Number(env.SHIPYARD_CHAT_DAILY_LIMIT || 120);
+  return Number.isSafeInteger(requested) && requested>0 ? Math.min(requested,500) : 120;
+}
+export function chatDailyBudget(now){
+  const date=new Date(now*1000).toISOString().slice(0,10);
+  const nextDay=Math.floor(Date.parse(date+'T00:00:00.000Z')/1000)+86400;
+  return {key:'daily-budget:'+date,expires:nextDay};
+}
 
 export function chatAvailable(env){
   return env.SHIPYARD_CONVERSATION_ENABLED==='true' &&
