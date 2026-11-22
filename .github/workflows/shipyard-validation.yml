@@ -56,4 +56,4 @@ jobs:
           node --check shipyard/admin/demo.js
           node --check shipyard/gallery/try.js
       - name: Run Shipyard security and interaction tests
-        run: node --test test/shipyard-gallery.test.mjs test/shipyard-intake.test.mjs test/shipyard-routes.test.mjs test/shipyard-demo.test.mjs test/shipyard-brief.test.mjs test/shipyard-conversation.test.mjs
+        run: node --test test/shipyard-gallery.test.mjs test/shipyard-intake.test.mjs test/shipyard-routes.test.mjs test/shipyard-demo.test.mjs test/shipyard-brief.test.mjs test/shipyard-conversation.test.mjs test/shipyard-sqlite-integration.test.mjs
