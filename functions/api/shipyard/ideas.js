@@ -7,7 +7,7 @@ export async function onRequestPost({request,env}) {
   if (!sameOriginJson(request)) return respond({ok:false,error:'Invalid request origin'},403);
 
   let submitted;
-  try {submitted=await readSmallJSON(request);} catch{return respond({ok:false,error:'Invalid or oversized submission'},400);}
+  try {submitted=await readSmallJSON(request,40000);} catch{return respond({ok:false,error:'Invalid or oversized submission'},400);}
   if (submitted.companyWebsite) return respond({ok:true,received:true}); // Honeypot: store nothing.
   const validation=validateIdea(submitted);
   if (!validation.ok) return respond({ok:false,error:validation.error},400);
