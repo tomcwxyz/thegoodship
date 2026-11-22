@@ -107,7 +107,7 @@ test('a consented enquiry with a transcript over the old size limit saves atomic
   try {
     const conversation=Array.from({length:12},(_,i)=>({
       role:i%2===0?'user':'assistant',
-      content:'Our fictional team is exploring how to reduce duplicated admin work. '+('Example detail. '.repeat(32))
+      content:'Our fictional team is exploring how to reduce duplicated admin work. '+('Example detail. '.repeat(52))
     }));
     const idea={
       problem:'Our team is frustrated by duplicated administrative work across different spreadsheets.',
