@@ -26,6 +26,10 @@ const enabledEnv={
 
 class D1 {
   constructor(){this.statements=[];this.result={meta:{changes:1}};}
+  async batch(statements){
+    this.statements.push(...statements.map(statement=>({sql:statement.sql,values:statement.values})));
+    return statements.map(()=>this.result);
+  }
   prepare(sql){
     const self=this;
     return {
@@ -149,9 +153,12 @@ test('AI message endpoint checks anonymous session, quotes and bounded call',asy
     assert.equal(payload.model,true);
     assert.ok(!JSON.stringify(payload).includes('test-key'));
   });
-  assert.equal(db.statements.length,1);
-  assert.match(db.statements[0].sql,/turns_used=turns_used\+1/);
-  assert.ok(db.statements[0].values.includes(CHAT_LIMIT));
+  assert.equal(db.statements.length,3);
+  assert.match(db.statements[0].sql,/INSERT OR IGNORE/);
+  assert.match(db.statements[1].sql,/turns_used=turns_used\+1/);
+  assert.match(db.statements[2].sql,/turns_used=turns_used\+1/);
+  assert.ok(db.statements[2].values.includes(CHAT_LIMIT));
+  assert.ok(db.statements[1].values.includes(120));
 });
 
 test('session budget exhausted prevents provider requests',async()=>{
